@@ -479,6 +479,15 @@ footer {
   }
 }
 
+/* Add monospace font for event name */
+.event-name {
+  font-family: "Roboto Mono", "Consolas", "Menlo", "Monaco", "Liberation Mono",
+    monospace;
+  /* letter-spacing: 0.02em; */
+  font-weight: 400;
+  color: var(--success-color);
+}
+
 /* Animations */
 @keyframes fadeIn {
   from {

@@ -1,6 +1,6 @@
-# CaenCaTech - Tech Event Landing Page
+# C:\aen\Tech - Tech Event Landing Page
 
-This repository contains the source code for the CaenCaTech tech event landing page. The site is built with HTML, CSS, and JavaScript and is hosted on GitHub Pages.
+This repository contains the source code for the C:\aen\Tech tech event landing page. The site is built with HTML, CSS, and JavaScript and is hosted on GitHub Pages.
 
 ## Features
 
