@@ -484,7 +484,7 @@ footer {
   font-family: "Roboto Mono", "Consolas", "Menlo", "Monaco", "Liberation Mono",
     monospace;
   /* letter-spacing: 0.02em; */
-  font-weight: 400;
+  font-weight: bolder;
   color: var(--success-color);
 }
 
