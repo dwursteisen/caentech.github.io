@@ -96,4 +96,21 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelector('.hero').classList.add('animated');
     animateOnScroll();
     window.addEventListener('scroll', animateOnScroll);
+
+    // Image slideshow for the about section
+    const images = document.querySelectorAll('.slideshow-image');
+    let currentImageIndex = 0;
+
+    function showNextImage() {
+        if (images.length > 0) {
+            images[currentImageIndex].classList.remove('active');
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            images[currentImageIndex].classList.add('active');
+        }
+    }
+
+    if (images.length > 0) {
+        images[currentImageIndex].classList.add('active');
+        setInterval(showNextImage, 5000); // Change image every 5 seconds
+    }
 });
