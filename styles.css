@@ -176,6 +176,24 @@ nav ul li a:hover {
     font-weight: bold;
 }
 
+.cfp-banner {
+    margin: 1.5em auto 0;
+    padding: 1.2em 2em;
+    max-width: 550px;
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    background: rgba(141, 238, 178, 0.05);
+    text-align: center;
+}
+
+.cfp-catchphrase {
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--primary-color);
+    margin-bottom: 0.8em;
+    font-weight: 300;
+}
+
 .cta-buttons {
     margin-top: 1.2em;
 }
@@ -191,6 +209,11 @@ nav ul li a:hover {
 
     .hero .subtitle {
         font-size: 1rem;
+    }
+
+    .cfp-banner {
+        padding: 1em 1.2em;
+        max-width: 100%;
     }
 }
 
@@ -547,6 +570,7 @@ footer {
 
 .hero h2,
 .hero .subtitle,
+.hero .cfp-banner,
 .hero .cta-buttons {
     animation: fadeIn 1s ease-out forwards;
 }
