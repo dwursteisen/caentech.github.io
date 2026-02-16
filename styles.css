@@ -160,7 +160,7 @@ nav ul li a:hover {
     text-align: center;
 }
 
-.hero h2 {
+.hero h1 {
     font-size: 2.2rem;
     margin-bottom: 0.5em;
     color: var(--primary-color);
@@ -203,7 +203,7 @@ nav ul li a:hover {
         padding: 25px 0 15px 0;
     }
 
-    .hero h2 {
+    .hero h1 {
         font-size: 1.3rem;
     }
 
@@ -568,7 +568,7 @@ footer {
     }
 }
 
-.hero h2,
+.hero h1,
 .hero .subtitle,
 .hero .cfp-banner,
 .hero .cta-buttons {
@@ -649,7 +649,7 @@ section.animated {
         margin-top: 1rem;
     }
 
-    .hero h2 {
+    .hero h1 {
         font-size: 2.2rem;
     }
 
