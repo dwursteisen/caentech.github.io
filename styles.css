@@ -107,7 +107,14 @@ header .wrap {
 }
 
 .header-logo img {
+  height: 70px;
+  margin-top: -16px;
+  transition: all 0.3s ease;
+}
+
+.header-logo.scrolled img {
   height: 40px;
+  margin-top: 0;
 }
 
 #main-nav {

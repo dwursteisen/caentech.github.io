@@ -1,4 +1,24 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Logo scroll effect
+    const headerLogo = document.querySelector('.header-logo');
+    const headerLogoImg = headerLogo.querySelector('img');
+    const originalSrc = headerLogoImg.src;
+    const miniSrc = 'images/logo-caen-tech-mini.svg';
+    
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 100) {
+            if (!headerLogo.classList.contains('scrolled')) {
+                headerLogo.classList.add('scrolled');
+                headerLogoImg.src = miniSrc;
+            }
+        } else {
+            if (headerLogo.classList.contains('scrolled')) {
+                headerLogo.classList.remove('scrolled');
+                headerLogoImg.src = originalSrc;
+            }
+        }
+    });
+
     // Smooth scrolling
     document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', function (e) {

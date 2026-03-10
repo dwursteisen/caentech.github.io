@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="80.469307mm"
+   height="61.675079mm"
+   viewBox="0 0 80.469307 61.675079"
+   version="1.1"
+   id="svg1"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm">
+    <inkscape:page
+       x="0"
+       y="0"
+       width="80.469307"
+       height="61.675079"
+       id="page2"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath63">
+      <path
+         d="M 0,841.89 H 1190.551 V 0 H 0 Z"
+         transform="translate(-290.56201,-427.41071)"
+         id="path63" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath49">
+      <path
+         d="M 0,841.89 H 1190.551 V 0 H 0 Z"
+         transform="translate(-538.78494,-832.81092)"
+         id="path49" />
+    </clipPath>
+  </defs>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-17.462497,-167.48124)">
+    <path
+       id="path48"
+       d="m -255.00002,-315.00002 c 5.532,5.8 13.213,9.079 21.255,9.079 h 56.088 L -329.559,-471.399 c -5.559,-5.954 -13.348,-9.349 -21.494,-9.349 h -54.706 z"
+       style="fill:#ffdd00;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       transform="matrix(0.35277776,0,0,-0.35277776,160.60525,59.55912)"
+       clip-path="url(#clipPath49)"
+       sodipodi:nodetypes="csccscc"
+       inkscape:export-filename="favicon.svg"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       id="path62"
+       d="M 0,0 C -0.131,-29.223 -44.564,-29.221 -44.691,0.001 -44.56,29.223 -0.127,29.221 0,0"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       transform="matrix(0.35277776,0,0,-0.35277776,73.037715,202.5753)"
+       clip-path="url(#clipPath63)" />
+  </g>
+</svg>
