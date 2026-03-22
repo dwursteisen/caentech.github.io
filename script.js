@@ -1,4 +1,16 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Billetterie time-based switch
+    var ticketAnnounce = document.getElementById('ticket-announce');
+    var ticketBtn = document.getElementById('ticket-btn');
+    var billetterieOpen = new Date('2026-03-23T09:00:00+01:00');
+    var hasBilletterieParam = new URLSearchParams(window.location.search).has('billetterie');
+
+    if (hasBilletterieParam || Date.now() >= billetterieOpen.getTime()) {
+        ticketBtn.style.display = '';
+    } else {
+        ticketAnnounce.style.display = '';
+    }
+
     // Logo scroll effect
     const headerLogo = document.querySelector('.header-logo');
     const headerLogoImg = headerLogo.querySelector('img');
