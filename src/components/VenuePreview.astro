@@ -1,0 +1,51 @@
+---
+---
+
+<section class="Section">
+  <div class="Wrap">
+    <div class="VenuePreview">
+      <div class="VenuePreview-image">
+        <img src="/images/moho-atrium.webp" alt="Le MoHo, Caen" width="1200" height="800" loading="lazy" />
+      </div>
+      <div class="VenuePreview-content">
+        <h2>Le lieu</h2>
+        <p>Caen.Tech se tient au <strong>MoHo</strong>, tiers-lieu d'innovation ancré au cœur de Caen. Un espace unique qui rassemble entrepreneurs, chercheurs, étudiants et créatifs — le cadre idéal pour une journée de rencontres tech.</p>
+        <p>16 bis Quai Amiral Hamelin, 14000 Caen</p>
+        <a href="/infos-pratiques" class="Btn outline">Infos pratiques & accès</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .VenuePreview {
+    display: grid;
+    gap: var(--space-lg);
+    align-items: center;
+  }
+
+  @media (min-width: 768px) {
+    .VenuePreview {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .VenuePreview-image img {
+    border-radius: var(--radius-lg);
+    width: 100%;
+    height: auto;
+  }
+
+  .VenuePreview-content h2 {
+    margin-bottom: var(--space-md);
+  }
+
+  .VenuePreview-content p {
+    color: var(--color-text-light);
+    margin-bottom: var(--space-md);
+  }
+
+  .VenuePreview-content .Btn {
+    margin-top: var(--space-sm);
+  }
+</style>

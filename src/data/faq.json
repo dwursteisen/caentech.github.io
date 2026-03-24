@@ -1,0 +1,22 @@
+[
+  {
+    "id": "faq-1",
+    "question": "La conférence est-elle accessible aux personnes à mobilité réduite ?",
+    "answer": "Oui, le MoHo est entièrement accessible PMR. Si vous avez des besoins spécifiques, contactez-nous via notre page contact."
+  },
+  {
+    "id": "faq-2",
+    "question": "Le repas du midi est-il inclus ?",
+    "answer": "Oui, un buffet est prévu pour tous les participant·es. Si vous avez des allergies alimentaires, merci de nous le signaler lors de l'inscription."
+  },
+  {
+    "id": "faq-3",
+    "question": "Les conférences seront-elles enregistrées ?",
+    "answer": "Certaines conférences seront filmées et publiées après l'événement. Nous vous tiendrons informés sur nos réseaux sociaux."
+  },
+  {
+    "id": "faq-4",
+    "question": "Comment venir au MoHo ?",
+    "answer": "Le MoHo se trouve au 16 bis Quai Amiral Hamelin, 14000 Caen. Accessible en tramway (arrêt Quai de Juillet), en bus, à vélo (station Vélolib à proximité), ou en voiture (parking Quai de Juillet)."
+  }
+]

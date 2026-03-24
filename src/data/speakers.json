@@ -1,0 +1,69 @@
+[
+  {
+    "id": "sophie-martin",
+    "name": "Sophie Martin",
+    "role": "Lead Developer",
+    "company": "NormanTech",
+    "bio": "Développeuse passionnée depuis 15 ans, Sophie accompagne les équipes dans leur transition vers des architectures modernes. Spécialiste Rust et WebAssembly.",
+    "photo": "/images/speakers/sophie-martin.webp",
+    "featured": true
+  },
+  {
+    "id": "thomas-durand",
+    "name": "Thomas Durand",
+    "role": "CTO",
+    "company": "DataCaen",
+    "bio": "Co-fondateur de DataCaen, Thomas construit des pipelines data à grande échelle pour des clients industriels normands.",
+    "photo": "/images/speakers/thomas-durand.webp",
+    "featured": true
+  },
+  {
+    "id": "amina-benali",
+    "name": "Amina Benali",
+    "role": "Product Manager",
+    "company": "PixelNormandie",
+    "bio": "Amina conçoit des produits numériques centrés utilisateur. Elle partage ses retours d'expérience sur la discovery produit en startup.",
+    "photo": "/images/speakers/amina-benali.webp",
+    "featured": true
+  },
+  {
+    "id": "julien-lefevre",
+    "name": "Julien Lefèvre",
+    "role": "DevOps Engineer",
+    "company": "CloudWest",
+    "bio": "Julien automatise tout ce qui peut l'être. Passionné de Kubernetes et d'infrastructure as code, il milite pour des déploiements sereins."
+  },
+  {
+    "id": "claire-dubois",
+    "name": "Claire Dubois",
+    "role": "UX Designer",
+    "company": "Studio Crea",
+    "bio": "Designer pluridisciplinaire, Claire explore les intersections entre design, accessibilité et performance web.",
+    "photo": "/images/speakers/claire-dubois.webp",
+    "featured": true
+  },
+  {
+    "id": "marc-petit",
+    "name": "Marc Petit",
+    "role": "Data Scientist",
+    "company": "IA Normandie",
+    "bio": "Marc applique le machine learning à des problématiques industrielles locales. Il démystifie l'IA avec pragmatisme."
+  },
+  {
+    "id": "elena-roux",
+    "name": "Éléna Roux",
+    "role": "Entrepreneuse",
+    "company": "GreenCode",
+    "bio": "Fondatrice de GreenCode, Éléna développe des outils pour mesurer et réduire l'empreinte carbone du numérique.",
+    "photo": "/images/speakers/elena-roux.webp",
+    "featured": true
+  },
+  {
+    "id": "nicolas-garnier",
+    "name": "Nicolas Garnier",
+    "role": "Architecte Logiciel",
+    "company": "Freelance",
+    "bio": "Architecte indépendant, Nicolas accompagne les PME normandes dans la modernisation de leurs systèmes d'information.",
+    "featured": true
+  }
+]

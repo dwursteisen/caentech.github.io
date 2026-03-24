@@ -1,0 +1,43 @@
+---
+import { getCollection } from "astro:content";
+
+const allProgram = await getCollection("program");
+const allSpeakers = await getCollection("speakers");
+
+const featured = allProgram.filter((p) => p.data.featured);
+
+function getSpeakerNames(speakerIds: string[]) {
+  return speakerIds
+    .map((id) => allSpeakers.find((s) => s.data.id === id)?.data.name)
+    .filter(Boolean)
+    .join(", ");
+}
+
+function formatTime(iso: string) {
+  return new Date(iso).toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
+}
+---
+
+<section class="Section">
+  <div class="Wrap">
+    <h2 class="Section-title">Programme</h2>
+    <p class="Section-subtitle">Quelques temps forts de la journée</p>
+    <div class="Grid cols2">
+      {featured.map((item) => (
+        <div class="Card">
+          <div class="Card-body">
+            <p class="Card-meta">
+              <span class="Tag theme">{item.data.theme}</span>
+              <span class="Tag">{formatTime(item.data.startTime)} – {formatTime(item.data.endTime)}</span>
+            </p>
+            <h3 class="Card-title">{item.data.title}</h3>
+            <p class="Card-text">{getSpeakerNames(item.data.speakerIds)}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+    <div class="Section-cta">
+      <a href="/programme" class="Btn outline">Voir le programme complet</a>
+    </div>
+  </div>
+</section>

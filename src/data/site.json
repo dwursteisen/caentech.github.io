@@ -1,0 +1,19 @@
+[
+  {
+    "id": "caen-tech-2026",
+    "eventDate": "2026-06-09",
+    "venue": {
+      "name": "MoHo",
+      "address": "16 bis Quai Amiral Hamelin",
+      "city": "Caen",
+      "postalCode": "14000"
+    },
+    "socialLinks": {
+      "linkedin": "https://www.linkedin.com/company/caentech/",
+      "discord": "https://discord.gg/HpSWEUuD8A",
+      "whatsapp": "https://chat.whatsapp.com/L3Ey4V0pbWSGDNtleP4pRU"
+    },
+    "billetterieUrl": "https://www.billetweb.fr/caen-tech-2026",
+    "email": "hello@caen.tech"
+  }
+]

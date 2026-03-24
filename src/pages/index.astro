@@ -1,0 +1,39 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import WhyAttend from "../components/WhyAttend.astro";
+import ProgramTeaser from "../components/ProgramTeaser.astro";
+import SpeakersTeaser from "../components/SpeakersTeaser.astro";
+import VenuePreview from "../components/VenuePreview.astro";
+import SponsorsTeaser from "../components/SponsorsTeaser.astro";
+import CtaFinal from "../components/CtaFinal.astro";
+import { getEntry } from "astro:content";
+import { MapPin, Calendar } from "lucide-astro";
+
+const siteEntry = await getEntry("site", "caen-tech-2026");
+const site = siteEntry!.data;
+---
+
+<BaseLayout title="Caen.Tech | 9 juin 2026 — Conférences tech à Caen">
+  <section class="Hero">
+    <div class="Hero-wrap Wrap">
+      <img class="Hero-logo" src="/images/logo-bar-white.svg" alt="Caen.Tech" width="280" height="80" />
+      <h1 class="Hero-title">Une journée pour ceux qui font la Tech à Caen</h1>
+      <p class="Hero-subtitle">Conférences, retours d'expérience et rencontres — 9 juin 2026</p>
+      <div class="Hero-meta">
+        <span class="Hero-metaItem"><MapPin size={18} /> {site.venue.name}</span>
+        <span class="Hero-metaItem"><Calendar size={18} /> 09/06/2026</span>
+      </div>
+      <div class="Hero-actions">
+        <a href={site.billetterieUrl} target="_blank" class="Btn dark">S'inscrire</a>
+        <a href="/programme" class="Btn outline">Voir le programme</a>
+      </div>
+    </div>
+  </section>
+
+  <WhyAttend />
+  <ProgramTeaser />
+  <SpeakersTeaser />
+  <VenuePreview />
+  <SponsorsTeaser />
+  <CtaFinal />
+</BaseLayout>

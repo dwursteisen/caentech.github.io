@@ -1,0 +1,160 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CalendarGrid from "../components/CalendarGrid.astro";
+import TalkModal from "../components/TalkModal.astro";
+import SpeakerList from "../components/SpeakerList.astro";
+import { getCollection } from "astro:content";
+
+// Load data
+const allProgram = await getCollection("program");
+const allSpeakers = await getCollection("speakers");
+const allRooms = await getCollection("rooms");
+
+const rooms = allRooms.map((r) => ({
+  id: r.data.id,
+  name: r.data.name,
+  seats: r.data.seats,
+  color: r.data.color,
+}));
+
+function formatTime(iso: string) {
+  return new Date(iso).toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
+}
+
+function getSpeakerNames(speakerIds: string[]) {
+  return speakerIds
+    .map((id) => allSpeakers.find((s) => s.data.id === id)?.data.name)
+    .filter(Boolean)
+    .join(", ");
+}
+
+// Build unique time slots sorted chronologically
+const timeSet = new Set<string>();
+allProgram.forEach((p) => timeSet.add(p.data.startTime));
+const sortedTimes = [...timeSet].sort();
+
+// Build calendar data
+const timeSlots = sortedTimes.map((time) => {
+  const slots = rooms.map((room) => {
+    const item = allProgram.find(
+      (p) => p.data.startTime === time && p.data.roomId === room.id
+    );
+    return {
+      roomId: room.id,
+      item: item
+        ? {
+            id: item.data.id,
+            title: item.data.title,
+            speakerNames: getSpeakerNames(item.data.speakerIds),
+            startTime: item.data.startTime,
+            endTime: item.data.endTime,
+            formattedStart: formatTime(item.data.startTime),
+            formattedEnd: formatTime(item.data.endTime),
+            theme: item.data.theme,
+            level: item.data.level,
+            type: item.data.type,
+            roomId: item.data.roomId,
+            isAllRooms: item.data.roomId === "all",
+          }
+        : null,
+    };
+  });
+
+  // Check for "all rooms" items
+  const allRoomsItem = allProgram.find(
+    (p) => p.data.startTime === time && p.data.roomId === "all"
+  );
+  if (allRoomsItem) {
+    slots.push({
+      roomId: "all",
+      item: {
+        id: allRoomsItem.data.id,
+        title: allRoomsItem.data.title,
+        speakerNames: getSpeakerNames(allRoomsItem.data.speakerIds),
+        startTime: allRoomsItem.data.startTime,
+        endTime: allRoomsItem.data.endTime,
+        formattedStart: formatTime(allRoomsItem.data.startTime),
+        formattedEnd: formatTime(allRoomsItem.data.endTime),
+        theme: allRoomsItem.data.theme,
+        level: allRoomsItem.data.level,
+        type: allRoomsItem.data.type,
+        roomId: allRoomsItem.data.roomId,
+        isAllRooms: true,
+      },
+    });
+  }
+
+  return {
+    time,
+    formattedTime: formatTime(time),
+    slots,
+  };
+});
+
+const calendarData = { timeSlots, rooms };
+
+// Build full talk data for the modal (serialized as JSON)
+const talksJson = allProgram.map((p) => ({
+  id: p.data.id,
+  title: p.data.title,
+  description: p.data.description,
+  speakers: p.data.speakerIds
+    .map((sid) => {
+      const s = allSpeakers.find((sp) => sp.data.id === sid);
+      return s
+        ? {
+            name: s.data.name,
+            role: s.data.role,
+            company: s.data.company,
+            bio: s.data.bio,
+            photo: s.data.photo || "/images/placeholder-avatar.svg",
+          }
+        : null;
+    })
+    .filter(Boolean),
+  startTime: p.data.startTime,
+  endTime: p.data.endTime,
+  room: (() => {
+    if (p.data.roomId === "all") return { name: "Toutes les salles", color: "#ffdd00" };
+    const room = rooms.find((r) => r.id === p.data.roomId);
+    return room ? { name: room.name, color: room.color } : { name: "", color: "" };
+  })(),
+  theme: p.data.theme,
+  level: p.data.level,
+  type: p.data.type,
+}));
+---
+
+<BaseLayout title="Programme — Caen.Tech 2026" description="Découvrez le programme complet de Caen.Tech 2026 : conférences, ateliers et intervenants.">
+  <section class="Section">
+    <div class="Wrap medium">
+      <h1>Programme</h1>
+      <p class="Section-intro Programme-intro">
+        Une journée de conférences et d'ateliers dédiés aux retours d'expérience concrets.
+        Développement, data, produit, design, infrastructure, entrepreneuriat — le programme
+        reflète la diversité de l'écosystème tech caennais et normand. Des gens qui font,
+        qui partagent, qui construisent ici.
+      </p>
+    </div>
+  </section>
+
+  <section class="Section alt" id="programme">
+    <div class="Wrap">
+      <h2 class="Section-title">La journée du 9 juin</h2>
+      <CalendarGrid calendarData={calendarData} />
+    </div>
+  </section>
+
+  <SpeakerList />
+
+  <TalkModal />
+
+  <script type="application/json" id="talks-data" set:html={JSON.stringify(talksJson)} />
+  <script src="../scripts/modal.ts"></script>
+</BaseLayout>
+
+<style>
+  .Programme-intro {
+    line-height: 1.8;
+  }
+</style>

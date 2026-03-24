@@ -1,0 +1,27 @@
+---
+import { getEntry } from "astro:content";
+
+const siteEntry = await getEntry("site", "caen-tech-2026");
+const site = siteEntry!.data;
+---
+
+<section class="Section dark _darkBg">
+  <div class="Wrap Section-cta">
+    <h2 class="CtaFinal-title">9 juin 2026 — MoHo, Caen</h2>
+    <p class="CtaFinal-text">
+      Une journée de conférences, d'ateliers et de rencontres pour l'écosystème tech caennais.
+    </p>
+    <a href={site.billetterieUrl} target="_blank" class="Btn primary">S'inscrire</a>
+  </div>
+</section>
+
+<style>
+  .CtaFinal-title {
+    margin-bottom: var(--space-md);
+  }
+
+  .CtaFinal-text {
+    margin-bottom: var(--space-lg);
+    font-size: var(--text-lg);
+  }
+</style>

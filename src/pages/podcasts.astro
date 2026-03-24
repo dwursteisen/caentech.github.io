@@ -1,0 +1,102 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import { Headphones } from "lucide-astro";
+
+const allPodcasts = await getCollection("podcasts");
+---
+
+<BaseLayout title="Podcasts — Caen.Tech" description="Les podcasts Caen.Tech : échanges et retours d'expérience de l'écosystème tech caennais.">
+  <section class="Section">
+    <div class="Wrap">
+      <h1>Podcasts</h1>
+    </div>
+  </section>
+
+  <section class="Section alt">
+    <div class="Wrap medium">
+      <div class="Podcasts-header">
+        <Headphones size={150} />
+        <div>
+          <h2>Le podcast Caen.Tech</h2>
+          <p class="Podcasts-subtitle">Des échanges avec celles et ceux qui font la tech en Normandie. Parcours, retours d'expérience, sujets de fond — à écouter partout.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="Section">
+    <div class="Wrap">
+      <div class="PodcastList">
+        {allPodcasts.map((episode) => (
+          <div class="Card">
+            <div class="PodcastEpisode">
+              <img class="PodcastEpisode-image" src={episode.data.image} alt={episode.data.title} width="400" height="400" loading="lazy" />
+              <div class="Card-body">
+                <h3 class="Card-title">{episode.data.title}</h3>
+                <p class="Card-text">{episode.data.summary}</p>
+                <div class="PodcastEpisode-links">
+                  {Object.entries(episode.data.links).map(([platform, url]) => (
+                    <a href={url} target="_blank" class="Btn outline">
+                      {platform.charAt(0).toUpperCase() + platform.slice(1)}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .Podcasts-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+  }
+
+  .Podcasts-subtitle {
+    color: var(--color-text-light);
+  }
+
+  .PodcastList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .PodcastEpisode {
+    display: grid;
+    gap: var(--space-md);
+  }
+
+  @media (min-width: 768px) {
+    .PodcastEpisode {
+      grid-template-columns: 200px 1fr;
+    }
+  }
+
+  .PodcastEpisode-image {
+    border-radius: var(--radius-md);
+    width: 100%;
+    max-width: 200px;
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+
+  .PodcastEpisode-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+  }
+
+  .PodcastEpisode-links .Btn {
+    font-size: var(--text-xs);
+    padding: 0.4rem 0.8rem;
+  }
+</style>

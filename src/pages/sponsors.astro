@@ -1,0 +1,119 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import { Trophy } from "lucide-astro";
+
+const allSponsors = await getCollection("sponsors");
+
+const tiers = [
+  { key: "gold" as const, label: "Gold", color: "#d4a017" },
+  { key: "silver" as const, label: "Silver", color: "#8a8a8a" },
+  { key: "bronze" as const, label: "Bronze", color: "#a0522d" },
+];
+---
+
+<BaseLayout title="Sponsors — Caen.Tech 2026" description="Nos sponsors et partenaires qui rendent Caen.Tech possible.">
+  <section class="Section">
+    <div class="Wrap">
+      <h1>Sponsors</h1>
+      <p class="Section-intro Sponsors-intro">
+        Caen.Tech est rendu possible grâce au soutien de nos sponsors. Entreprises locales et partenaires technologiques, ils contribuent à faire vivre l'écosystème tech caennais.
+      </p>
+    </div>
+  </section>
+
+  {tiers.map(({ key, label, color }) => {
+    const sponsors = allSponsors.filter((s) => s.data.tier === key);
+    if (sponsors.length === 0) return null;
+    return (
+      <section class="Section alt">
+        <div class="Wrap">
+          <h2 class="Section-title TrophyTitle">
+            <Trophy size={24} color={color} /> {label}
+          </h2>
+          <div class:list={["SponsorsGrid", key]}>
+            {sponsors.map((sponsor) => (
+              <a href={sponsor.data.url} target="_blank" class="SponsorsGrid-item">
+                <img src={sponsor.data.logo} alt={sponsor.data.name} loading="lazy" />
+                <span>{sponsor.data.name}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  })}
+
+  <section class="Section dark _darkBg">
+    <div class="Wrap Section-cta">
+      <h2 class="Sponsors-ctaTitle">Devenir sponsor</h2>
+      <p class="Sponsors-ctaText">Vous souhaitez soutenir l'événement et gagner en visibilité auprès de la communauté tech caennaise ?</p>
+      <a href="/contact" class="Btn primary">Contactez-nous</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .Sponsors-intro {
+    max-width: 60ch;
+  }
+
+  .TrophyTitle {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .Sponsors-ctaTitle {
+    margin-bottom: var(--space-md);
+  }
+
+  .Sponsors-ctaText {
+    margin-bottom: var(--space-lg);
+  }
+
+  .SponsorsGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-xl);
+    align-items: center;
+  }
+
+  .SponsorsGrid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    text-decoration: none;
+    transition: transform var(--transition);
+  }
+
+  .SponsorsGrid-item:hover {
+    transform: scale(1.05);
+  }
+
+  .SponsorsGrid-item img {
+    object-fit: contain;
+  }
+
+  .SponsorsGrid.gold img {
+    height: 100px;
+    max-width: 240px;
+  }
+
+  .SponsorsGrid.silver img {
+    height: 70px;
+    max-width: 180px;
+  }
+
+  .SponsorsGrid.bronze img {
+    height: 50px;
+    max-width: 140px;
+  }
+
+  .SponsorsGrid-item span {
+    font-size: var(--text-sm);
+    color: var(--color-text-light);
+  }
+</style>

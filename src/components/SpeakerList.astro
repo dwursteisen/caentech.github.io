@@ -1,0 +1,73 @@
+---
+import { getCollection } from "astro:content";
+
+const allSpeakers = await getCollection("speakers");
+---
+
+<section class="Section" id="intervenants">
+  <div class="Wrap">
+    <h2 class="Section-title">Intervenants</h2>
+    <div class="Grid cols3">
+      {allSpeakers.map((speaker) => (
+        <div class="SpeakerCard">
+          <div class="SpeakerCard-photo">
+            <img
+              src={speaker.data.photo || "/images/placeholder-avatar.svg"}
+              alt={speaker.data.name}
+              width="240"
+              height="240"
+              loading="lazy"
+            />
+          </div>
+          <div class="SpeakerCard-info">
+            <h3 class="SpeakerCard-name">{speaker.data.name}</h3>
+            <p class="SpeakerCard-role">{speaker.data.role} — {speaker.data.company}</p>
+            <p class="SpeakerCard-bio">{speaker.data.bio}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .SpeakerCard {
+    display: flex;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    background-color: var(--color-bg-alt);
+    border-radius: var(--radius-lg);
+  }
+
+  .SpeakerCard-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    background-color: var(--color-border);
+  }
+
+  .SpeakerCard-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .SpeakerCard-name {
+    font-size: var(--text-base);
+    font-weight: 600;
+  }
+
+  .SpeakerCard-role {
+    font-size: var(--text-sm);
+    color: var(--color-text-light);
+    margin-bottom: var(--space-xs);
+  }
+
+  .SpeakerCard-bio {
+    font-size: var(--text-sm);
+    color: var(--color-text-light);
+    line-height: 1.5;
+  }
+</style>

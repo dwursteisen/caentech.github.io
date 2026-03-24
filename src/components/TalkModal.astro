@@ -1,0 +1,17 @@
+---
+import { X } from "lucide-astro";
+---
+
+<div class="Modal" id="talk-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="Modal-overlay" data-modal-close></div>
+  <div class="Modal-content">
+    <button class="Modal-close" data-modal-close aria-label="Fermer">
+      <X size={24} />
+    </button>
+    <div class="Modal-header">
+      <h2 class="Modal-title" id="modal-title"></h2>
+      <div class="Modal-meta" id="modal-meta"></div>
+    </div>
+    <div class="Modal-body" id="modal-body"></div>
+  </div>
+</div>

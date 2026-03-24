@@ -1,0 +1,191 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection, getEntry } from "astro:content";
+
+const siteEntry = await getEntry("site", "caen-tech-2026");
+const site = siteEntry!.data;
+const faqItems = await getCollection("faq");
+---
+
+<BaseLayout title="Infos pratiques — Caen.Tech 2026" description="Lieu, accès, billetterie et FAQ pour Caen.Tech 2026 au MoHo, Caen.">
+  <section class="Section">
+    <div class="Wrap">
+      <h1>Infos pratiques</h1>
+    </div>
+  </section>
+
+  <section class="Section alt" id="lieu">
+    <div class="Wrap">
+      <h2 class="Section-title">Lieu & accès</h2>
+      <div class="InfoLieu">
+        <div class="InfoLieu-details">
+          <p><strong>{site.venue.name}</strong></p>
+          <p>{site.venue.address}<br />{site.venue.postalCode} {site.venue.city}</p>
+
+          <h3>Accès</h3>
+          <ul class="InfoLieu-list">
+            <li><strong>Tramway :</strong> Arrêt Quai de Juillet</li>
+            <li><strong>Bus :</strong> Plusieurs lignes desservent le centre-ville</li>
+            <li><strong>Gare SNCF :</strong> Caen centre, à 15 min à pied</li>
+            <li><strong>Vélo :</strong> Station Vélolib à proximité</li>
+            <li><strong>Voiture :</strong> Parking Quai de Juillet</li>
+          </ul>
+
+          <p><strong>Accessibilité PMR :</strong> Le MoHo est entièrement accessible aux personnes à mobilité réduite.</p>
+        </div>
+        <div class="InfoLieu-map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3270.462537062962!2d-0.3554899875271947!3d49.17742427808214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x480a42db9d380fb3%3A0x9f8344dfff721ca0!2sMoHo!5e1!3m2!1sen!2sfr!4v1773812059724!5m2!1sen!2sfr" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="Section" id="billetterie">
+    <div class="Wrap">
+      <div class="Billetterie">
+        <div class="Billetterie-photo">
+          <img src="/images/moho-event.webp" alt="Le MoHo en mode événement" width="500" height="750" loading="lazy" />
+        </div>
+        <div class="Billetterie-content">
+        <h2>Billetterie</h2>
+        <h3>Ce que comprend votre billet :</h3>
+        <ul class="Billetterie-list">
+          <li>Accès à toutes les conférences et ateliers</li>
+          <li>Petit-déjeuner et café d'accueil</li>
+          <li>Buffet déjeuner</li>
+          <li>Accès aux espaces partenaires</li>
+        </ul>
+        <p class="Billetterie-price">Prix : <em>à venir</em></p>
+        <a href={site.billetterieUrl} target="_blank" class="Btn primary">Réserver sa place</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="Section alt" id="faq">
+    <div class="Wrap">
+      <h2 class="Section-title">FAQ</h2>
+      <div class="Faq">
+        {faqItems.map((item) => (
+          <details class="Faq-item">
+            <summary class="Faq-question">{item.data.question}</summary>
+            <p class="Faq-answer">{item.data.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .InfoLieu {
+    display: grid;
+    gap: var(--space-lg);
+  }
+
+  @media (min-width: 768px) {
+    .InfoLieu {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .InfoLieu-list {
+    list-style: disc;
+    padding-left: var(--space-lg);
+    margin: var(--space-md) 0;
+  }
+
+  .InfoLieu-list li {
+    margin-bottom: var(--space-sm);
+  }
+
+  .InfoLieu-map iframe {
+    border: 0;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .InfoLieu-details p {
+    margin-bottom: var(--space-md);
+  }
+
+  .InfoLieu-details h3 {
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-sm);
+  }
+
+  .Billetterie {
+    display: grid;
+    gap: var(--space-lg);
+  }
+
+  @media (min-width: 768px) {
+    .Billetterie {
+      grid-template-columns: 250px 1fr;
+      align-items: center;
+    }
+  }
+
+  .Billetterie-photo img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+  }
+
+  .Billetterie-content h2 {
+    margin-bottom: var(--space-md);
+  }
+
+  .Billetterie-list {
+    list-style: disc;
+    padding-left: var(--space-lg);
+    margin: var(--space-md) 0;
+  }
+
+  .Billetterie-list li {
+    margin-bottom: var(--space-sm);
+  }
+
+  .Billetterie-price {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    margin: var(--space-lg) 0;
+  }
+
+  .Faq-item {
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-md) 0;
+  }
+
+  .Faq-question {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: var(--text-base);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .Faq-question::after {
+    content: "+";
+    font-size: 1.5rem;
+    font-weight: 300;
+    transition: transform var(--transition);
+  }
+
+  details[open] .Faq-question::after {
+    transform: rotate(45deg);
+  }
+
+  .Faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .Faq-answer {
+    margin-top: var(--space-sm);
+    color: var(--color-text-light);
+    line-height: 1.7;
+  }
+</style>

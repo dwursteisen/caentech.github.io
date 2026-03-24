@@ -1,0 +1,138 @@
+/* =============================================
+   .Calendar — Programme schedule grid
+   ============================================= */
+
+.Calendar {
+  display: grid;
+  grid-template-columns: auto repeat(var(--room-count, 3), 1fr);
+  gap: 1px;
+  background-color: var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+/* Header row */
+.Calendar-header {
+  display: contents;
+}
+
+.Calendar-headerCorner {
+  background-color: var(--color-bg);
+  padding: var(--space-md);
+}
+
+.Calendar-headerCell {
+  background-color: var(--color-bg);
+  padding: var(--space-md);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  text-align: center;
+  border-bottom: 3px solid var(--room-color, var(--color-primary));
+}
+
+/* Time labels */
+.Calendar-timeLabel {
+  background-color: var(--color-bg);
+  padding: var(--space-md);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-light);
+  white-space: nowrap;
+}
+
+/* Program item cells */
+.Calendar-slot {
+  background-color: var(--color-bg);
+  padding: var(--space-md);
+  border-left: 3px solid var(--room-color, var(--color-border));
+  cursor: pointer;
+  transition: background-color var(--transition);
+}
+
+.Calendar-slot:hover,
+.Calendar-slot:focus-visible {
+  background-color: var(--color-bg-alt);
+}
+
+.Calendar-slot.allRooms {
+  border-left-color: var(--color-primary);
+  text-align: center;
+  background-color: var(--color-bg-alt);
+}
+
+.Calendar-slotTitle {
+  font-weight: 600;
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-xs);
+}
+
+.Calendar-slotSpeaker {
+  font-size: var(--text-xs);
+  color: var(--color-text-light);
+}
+
+.Calendar-slotTime {
+  font-size: var(--text-xs);
+  color: var(--color-text-light);
+  margin-top: var(--space-xs);
+}
+
+.Calendar-slotTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-top: var(--space-sm);
+}
+
+.Calendar-empty {
+  background-color: var(--color-bg);
+  padding: var(--space-md);
+}
+
+/* Mobile: stacked layout */
+@media (max-width: 767px) {
+  .Calendar {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background-color: transparent;
+  }
+
+  .Calendar-header {
+    display: none;
+  }
+
+  .Calendar-headerCorner,
+  .Calendar-headerCell {
+    display: none;
+  }
+
+  .Calendar-timeLabel {
+    background-color: var(--color-bg-dark);
+    color: var(--color-primary);
+    font-size: var(--text-base);
+    font-weight: 700;
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .Calendar-slot {
+    border-left-width: 4px;
+    border-radius: 0;
+    margin-bottom: 1px;
+  }
+
+  .Calendar-slotRoom {
+    display: inline-block;
+  }
+
+  .Calendar-empty {
+    display: none;
+  }
+}
+
+/* Desktop: hide mobile room tag */
+@media (min-width: 768px) {
+  .Calendar-slotRoom {
+    display: none;
+  }
+}

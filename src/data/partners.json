@@ -1,0 +1,16 @@
+[
+  {
+    "id": "moho",
+    "name": "MoHo",
+    "logo": "/images/partners/moho.svg",
+    "url": "https://moho-caen.com",
+    "description": "Le MoHo accueille Caen.Tech dans ses locaux au cœur de Caen. Tiers-lieu d'innovation, il réunit entrepreneurs, chercheurs et créatifs."
+  },
+  {
+    "id": "normandie-web-xperts",
+    "name": "Normandie Web Xperts",
+    "logo": "/images/partners/nwx.webp",
+    "url": "https://nwx.fr",
+    "description": "Le réseau des professionnels du web en Normandie. NWX fédère la communauté tech depuis plus de 10 ans."
+  }
+]

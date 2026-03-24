@@ -1,0 +1,20 @@
+[
+  {
+    "id": "room-a",
+    "name": "Amphithéâtre",
+    "seats": 200,
+    "color": "#4A90D9"
+  },
+  {
+    "id": "room-b",
+    "name": "Salle Atelier",
+    "seats": 50,
+    "color": "#E85D75"
+  },
+  {
+    "id": "room-c",
+    "name": "Espace Lab",
+    "seats": 30,
+    "color": "#50B86C"
+  }
+]

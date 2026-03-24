@@ -1,0 +1,65 @@
+[
+  {
+    "id": "normandie-dev",
+    "name": "Normandie Dev",
+    "logo": "/images/sponsors/normandie-dev.webp",
+    "url": "https://normandiedev.fr",
+    "tier": "gold"
+  },
+  {
+    "id": "tech-ouest",
+    "name": "Tech Ouest",
+    "logo": "/images/sponsors/tech-ouest.webp",
+    "url": "https://techouest.fr",
+    "tier": "gold"
+  },
+  {
+    "id": "caen-la-mer",
+    "name": "Caen la Mer",
+    "logo": "/images/sponsors/caen-la-mer.webp",
+    "url": "https://www.caenlamer.fr",
+    "tier": "silver"
+  },
+  {
+    "id": "digital-normandy",
+    "name": "Digital Normandy",
+    "logo": "/images/sponsors/digital-normandy.webp",
+    "url": "https://digitalnormandy.fr",
+    "tier": "bronze"
+  },
+  {
+    "id": "caen-digital",
+    "name": "Caen Digital",
+    "logo": "/images/sponsors/caen-digital.webp",
+    "url": "https://caen-digital.fr",
+    "tier": "bronze"
+  },
+  {
+    "id": "normandie-ia",
+    "name": "Normandie IA",
+    "logo": "/images/sponsors/normandie-ia.webp",
+    "url": "https://normandie-ia.fr",
+    "tier": "bronze"
+  },
+  {
+    "id": "code-factory",
+    "name": "Code Factory",
+    "logo": "/images/sponsors/code-factory.webp",
+    "url": "https://codefactory.fr",
+    "tier": "bronze"
+  },
+  {
+    "id": "web-solutions-14",
+    "name": "Web Solutions 14",
+    "logo": "/images/sponsors/web-solutions-14.webp",
+    "url": "https://websolutions14.fr",
+    "tier": "bronze"
+  },
+  {
+    "id": "dev-normandie",
+    "name": "Dev Normandie",
+    "logo": "/images/sponsors/dev-normandie.webp",
+    "url": "https://devnormandie.fr",
+    "tier": "bronze"
+  }
+]

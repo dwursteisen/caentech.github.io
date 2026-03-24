@@ -1,0 +1,32 @@
+[
+  {
+    "id": "alice-moreau",
+    "name": "Alice Moreau",
+    "photo": "/images/team/alice-moreau.webp",
+    "contact": "https://www.linkedin.com/in/alice-moreau",
+    "volunteer": false
+  },
+  {
+    "id": "remi-lambert",
+    "name": "Rémi Lambert",
+    "photo": "/images/team/remi-lambert.webp",
+    "volunteer": false
+  },
+  {
+    "id": "lea-fournier",
+    "name": "Léa Fournier",
+    "photo": "/images/team/lea-fournier.webp",
+    "volunteer": true
+  },
+  {
+    "id": "paul-girard",
+    "name": "Paul Girard",
+    "volunteer": true
+  },
+  {
+    "id": "julie-renault",
+    "name": "Julie Renault",
+    "contact": "https://www.linkedin.com/in/julie-renault",
+    "volunteer": true
+  }
+]

@@ -1,0 +1,6 @@
+.local
+.plans
+.astro
+
+node_modules
+dist

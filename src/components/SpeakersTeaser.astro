@@ -1,0 +1,63 @@
+---
+import { getCollection } from "astro:content";
+
+const allSpeakers = await getCollection("speakers");
+const featured = allSpeakers.filter((s) => s.data.featured);
+---
+
+<section class="Section alt">
+  <div class="Wrap">
+    <h2 class="Section-title">Intervenants</h2>
+    <div class="Grid cols3">
+      {featured.map((speaker) => (
+        <div class="SpeakersTeaser-item">
+          <div class="SpeakersTeaser-photo">
+            <img
+              src={speaker.data.photo || "/images/placeholder-avatar.svg"}
+              alt={speaker.data.name}
+              width="240"
+              height="240"
+              loading="lazy"
+            />
+          </div>
+          <h3 class="SpeakersTeaser-name">{speaker.data.name}</h3>
+          <p class="SpeakersTeaser-role">{speaker.data.role} — {speaker.data.company}</p>
+        </div>
+      ))}
+    </div>
+    <div class="Section-cta">
+      <a href="/programme/#intervenants" class="Btn outline">Voir tous les intervenants</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .SpeakersTeaser-item {
+    text-align: center;
+  }
+
+  .SpeakersTeaser-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto var(--space-md);
+    background-color: var(--color-bg-alt);
+  }
+
+  .SpeakersTeaser-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .SpeakersTeaser-name {
+    font-size: var(--text-base);
+    font-weight: 600;
+  }
+
+  .SpeakersTeaser-role {
+    font-size: var(--text-sm);
+    color: var(--color-text-light);
+  }
+</style>

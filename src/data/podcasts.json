@@ -1,0 +1,32 @@
+[
+  {
+    "id": "ep-01-ecosysteme",
+    "title": "Épisode 1 — L'écosystème tech caennais, état des lieux",
+    "image": "/images/podcasts/ep-01.webp",
+    "summary": "Premier épisode : on dresse le portrait de la tech à Caen. Qui sont les acteurs, quels sont les enjeux, et pourquoi il est temps de se rassembler.",
+    "links": {
+      "spotify": "https://open.spotify.com/show/example-caentech",
+      "apple": "https://podcasts.apple.com/podcast/example-caentech"
+    }
+  },
+  {
+    "id": "ep-02-reconversion",
+    "title": "Épisode 2 — Reconversion dans la tech : parcours et réalités",
+    "image": "/images/podcasts/ep-02.webp",
+    "summary": "Trois personnes reconverties dans la tech racontent leur parcours, les galères, et ce qui les a fait tenir.",
+    "links": {
+      "spotify": "https://open.spotify.com/show/example-caentech-02",
+      "apple": "https://podcasts.apple.com/podcast/example-caentech-02"
+    }
+  },
+  {
+    "id": "ep-03-remote",
+    "title": "Épisode 3 — Travailler en remote depuis Caen",
+    "image": "/images/podcasts/ep-03.webp",
+    "summary": "Le télétravail depuis la Normandie : avantages, limites, et comment rester connecté à la communauté locale.",
+    "links": {
+      "spotify": "https://open.spotify.com/show/example-caentech-03",
+      "apple": "https://podcasts.apple.com/podcast/example-caentech-03"
+    }
+  }
+]
