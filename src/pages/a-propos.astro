@@ -6,7 +6,10 @@ const allPartners = await getCollection("partners");
 const allTeam = await getCollection("team");
 ---
 
-<BaseLayout title="À propos — Caen.Tech 2026" description="Découvrez l'histoire, l'équipe et les valeurs de Caen.Tech.">
+<BaseLayout
+  title="À propos — Caen.Tech 2026"
+  description="Découvrez l'histoire, l'équipe et les valeurs de Caen.Tech."
+>
   <section class="Section">
     <div class="Wrap">
       <h1>À propos</h1>
@@ -15,12 +18,28 @@ const allTeam = await getCollection("team");
 
   <section class="Section alt">
     <div class="Wrap medium">
-      <h2 class="Section-title">La raison d'être de C:\aen\Tech</h2>
+      <h2 class="Section-title">La raison d'être de Caen.Tech</h2>
       <div class="AboutText">
-        <p><strong>C:\aen\Tech</strong> est née d'un constat simple : l'écosystème tech caennais est riche, dynamique, mais il manquait un rendez-vous pour le rassembler.</p>
-        <p>Nos valeurs sont <strong>local, concret, humain</strong>. Pas de grandes promesses ni de discours hors-sol — des retours d'expérience par des gens qui font, ici, au quotidien.</p>
-        <p>Ce n'est pas un salon commercial, ni une conférence réservée aux experts. C'est un espace ouvert à toutes et tous ceux qui participent à la tech en Normandie : développeuses, designers, POs, ops, entrepreneurs, étudiants, reconvertis.</p>
-        <p>Notre vision : un événement annuel, un podcast qui vit toute l'année, et une communauté locale qui grandit ensemble.</p>
+        <p>
+          <strong>Caen.Tech</strong> est née d'un constat simple : l'écosystème tech
+          caennais est riche, dynamique, mais il manquait un rendez-vous pour le rassembler.
+        </p>
+        <p>
+          Nos valeurs sont <strong>local, concret, humain</strong>. Pas de
+          grandes promesses ni de discours hors-sol — des retours d'expérience
+          par des gens qui font, ici, au quotidien.
+        </p>
+        <p>
+          Ce n'est pas un salon commercial, ni une conférence réservée aux
+          experts. C'est un espace ouvert à toutes et tous ceux qui participent
+          à la tech en Normandie : développeuses, designers, POs, ops,
+          entrepreneurs, étudiants, reconvertis.
+        </p>
+        <p>
+          Notre vision : un événement annuel, des rencontres informelles et
+          régulières, un podcast qui vit toute l'année, et une communauté locale
+          qui grandit ensemble.
+        </p>
       </div>
     </div>
   </section>
@@ -29,21 +48,35 @@ const allTeam = await getCollection("team");
     <div class="Wrap">
       <h2 class="Section-title">Nos partenaires</h2>
       <div class="Grid cols2">
-        {allPartners.map((partner) => (
-          <div class="Card">
-            <div class="Card-body Partners-cardBody">
-              <a href={partner.data.url} target="_blank" class="Partners-logo">
-                <img src={partner.data.logo} alt={partner.data.name} width="160" height="48" loading="lazy" />
-              </a>
-              <div>
-                <h3 class="Card-title">
-                  <a href={partner.data.url} target="_blank">{partner.data.name}</a>
-                </h3>
-                <p class="Card-text">{partner.data.description}</p>
+        {
+          allPartners.map((partner) => (
+            <div class="Card">
+              <div class="Card-body Partners-cardBody">
+                <a
+                  href={partner.data.url}
+                  target="_blank"
+                  class="Partners-logo"
+                >
+                  <img
+                    src={partner.data.logo}
+                    alt={partner.data.name}
+                    width="160"
+                    height="48"
+                    loading="lazy"
+                  />
+                </a>
+                <div>
+                  <h3 class="Card-title">
+                    <a href={partner.data.url} target="_blank">
+                      {partner.data.name}
+                    </a>
+                  </h3>
+                  <p class="Card-text">{partner.data.description}</p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
   </section>
@@ -52,21 +85,31 @@ const allTeam = await getCollection("team");
     <div class="Wrap">
       <h2 class="Section-title">L'équipe</h2>
       <div class="Grid cols4">
-        {allTeam.map((member) => (
-          <div class="TeamMember">
-            <div class="TeamMember-photo">
-              <img src={member.data.photo || "/images/placeholder-avatar.svg"} alt={member.data.name} width="240" height="240" loading="lazy" />
+        {
+          allTeam.map((member) => (
+            <div class="TeamMember">
+              <div class="TeamMember-photo">
+                <img
+                  src={member.data.photo || "/images/placeholder-avatar.svg"}
+                  alt={member.data.name}
+                  width="240"
+                  height="240"
+                  loading="lazy"
+                />
+              </div>
+              <h3 class="TeamMember-name">
+                {member.data.contact ? (
+                  <a href={member.data.contact} target="_blank">
+                    {member.data.name}
+                  </a>
+                ) : (
+                  member.data.name
+                )}
+              </h3>
+              {member.data.volunteer && <span class="Tag">Bénévole</span>}
             </div>
-            <h3 class="TeamMember-name">
-              {member.data.contact ? (
-                <a href={member.data.contact} target="_blank">{member.data.name}</a>
-              ) : (
-                member.data.name
-              )}
-            </h3>
-            {member.data.volunteer && <span class="Tag">Bénévole</span>}
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
   </section>
