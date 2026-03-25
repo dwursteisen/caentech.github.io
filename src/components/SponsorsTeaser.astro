@@ -7,13 +7,25 @@ const goldSponsors = allSponsors.filter((s) => s.data.tier === "gold");
 
 <section class="Section alt">
   <div class="Wrap">
-    <h2 class="Section-title">Sponsors</h2>
+    <h2 class="Section-title">Sponsor Gold</h2>
     <div class="SponsorsTeaser-logos">
-      {goldSponsors.map((sponsor) => (
-        <a href={sponsor.data.url} target="_blank" class="SponsorsTeaser-logo">
-          <img src={sponsor.data.logo} alt={sponsor.data.name} width="480" height="144" loading="lazy" />
-        </a>
-      ))}
+      {
+        goldSponsors.map((sponsor) => (
+          <a
+            href={sponsor.data.url}
+            target="_blank"
+            class="SponsorsTeaser-logo"
+          >
+            <img
+              src={sponsor.data.logo}
+              alt={sponsor.data.name}
+              width="480"
+              height="144"
+              loading="lazy"
+            />
+          </a>
+        ))
+      }
     </div>
     <div class="Section-cta">
       <a href="/contact" class="Btn outline">Devenir sponsor</a>

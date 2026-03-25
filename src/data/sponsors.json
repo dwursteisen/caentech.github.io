@@ -1,65 +1,58 @@
 [
   {
-    "id": "normandie-dev",
-    "name": "Normandie Dev",
-    "logo": "/images/sponsors/normandie-dev.webp",
-    "url": "https://normandiedev.fr",
+    "id": "veolia-flexcity",
+    "name": "Veolia Flexcity",
+    "logo": "/images/sponsors/veolia.svg",
+    "url": "https://veolia.com/fr",
     "tier": "gold"
   },
   {
-    "id": "tech-ouest",
-    "name": "Tech Ouest",
-    "logo": "/images/sponsors/tech-ouest.webp",
-    "url": "https://techouest.fr",
-    "tier": "gold"
-  },
-  {
-    "id": "caen-la-mer",
-    "name": "Caen la Mer",
-    "logo": "/images/sponsors/caen-la-mer.webp",
-    "url": "https://www.caenlamer.fr",
+    "id": "normandie-numerique",
+    "name": "Normandie Numérique",
+    "logo": "/images/sponsors/normandie-numerique.webp",
+    "url": "https://normandie-numerique.fr/",
     "tier": "silver"
   },
   {
-    "id": "digital-normandy",
-    "name": "Digital Normandy",
-    "logo": "/images/sponsors/digital-normandy.webp",
-    "url": "https://digitalnormandy.fr",
+    "id": "supinfo",
+    "name": "Supinfo",
+    "logo": "/images/sponsors/supinfo.webp",
+    "url": "https://www.supinfo.com/ecole-informatique-caen",
+    "tier": "silver"
+  },
+  {
+    "id": "legallais",
+    "name": "Legallais",
+    "logo": "/images/sponsors/legallais.webp",
+    "url": "https://www.legallais.com",
     "tier": "bronze"
   },
   {
-    "id": "caen-digital",
-    "name": "Caen Digital",
-    "logo": "/images/sponsors/caen-digital.webp",
-    "url": "https://caen-digital.fr",
+    "id": "normandie-french-tech",
+    "name": "Normandie French Tech",
+    "logo": "/images/sponsors/normandie-french-tech.webp",
+    "url": "https://www.normandie-french-tech.fr",
     "tier": "bronze"
   },
   {
-    "id": "normandie-ia",
-    "name": "Normandie IA",
-    "logo": "/images/sponsors/normandie-ia.webp",
-    "url": "https://normandie-ia.fr",
+    "id": "redlab",
+    "name": "RedLab",
+    "logo": "/images/sponsors/redlab.webp",
+    "url": "https://www.redlab.io",
     "tier": "bronze"
   },
   {
-    "id": "code-factory",
-    "name": "Code Factory",
-    "logo": "/images/sponsors/code-factory.webp",
-    "url": "https://codefactory.fr",
+    "id": "sii",
+    "name": "SII",
+    "logo": "/images/sponsors/sii.svg",
+    "url": "https://www.sii-group.com",
     "tier": "bronze"
   },
   {
-    "id": "web-solutions-14",
-    "name": "Web Solutions 14",
-    "logo": "/images/sponsors/web-solutions-14.webp",
-    "url": "https://websolutions14.fr",
-    "tier": "bronze"
-  },
-  {
-    "id": "dev-normandie",
-    "name": "Dev Normandie",
-    "logo": "/images/sponsors/dev-normandie.webp",
-    "url": "https://devnormandie.fr",
+    "id": "you-switch",
+    "name": "YouSwitch",
+    "logo": "/images/sponsors/you-switch.webp",
+    "url": "https://youswitch.co",
     "tier": "bronze"
   }
 ]
