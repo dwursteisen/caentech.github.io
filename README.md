@@ -48,6 +48,27 @@ Chaque fichier dans **`src/pages/`** = une page du site. Le chemin du fichier do
 
 Les pages utilisent un layout commun (`src/layouts/BaseLayout.astro`) et importent les données JSON + les composants (`src/components/`).
 
+## Interstice
+
+La page `/interstice` est un affichage plein écran (1920×1080) pensé pour être projeté sur un écran TV pendant la conférence. Elle fait défiler automatiquement trois slides toutes les 10 secondes :
+
+1. **Programme** — Le programme de la journée, avec la salle principale en colonne large et les salles secondaires à droite.
+2. **Sponsors** — Les sponsors classés par tier (Gold, Silver, Bronze).
+3. **Session courante** — Les sessions en cours à l'instant T, avec mise en avant de la salle active.
+
+### Paramètres URL
+
+| Paramètre | Valeur par défaut | Description |
+| --- | --- | --- |
+| `salle` | `room-a` | ID de la salle principale. Détermine quelle salle apparaît en colonne large sur le slide Programme, et quelle carte de session est mise en avant sur le slide Session courante. |
+| `heure` | *(heure réelle)* | Simule une heure au format `HH:MM` (ex. `11:00`). Utile pour tester le slide Session courante sans attendre le jour J. |
+
+Exemples :
+
+- `/interstice` — Salle A par défaut, heure réelle.
+- `/interstice?salle=room-b` — Affiche la salle B en principal.
+- `/interstice?salle=room-a&heure=14:30` — Simule 14h30 pour voir les sessions en cours à cette heure.
+
 ## Le résultat du build
 
 `npm run build` produit un dossier **`dist/`** contenant uniquement des fichiers statiques (HTML, CSS, JS, images).
