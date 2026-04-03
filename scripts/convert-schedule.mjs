@@ -30,7 +30,7 @@ function mapLevel(level) {
 }
 
 function mapTrack(track) {
-  const map = { Conference: "conference", Amphi: "auditorium" };
+  const map = { Conference: "conference", Amphi: "auditorium", Amphithéâtre: "auditorium" };
   return map[track] || "conference";
 }
 
@@ -66,13 +66,20 @@ function toLocalTime(isoString) {
   return isoString.replace(/\.000Z$/, "").replace(/Z$/, "");
 }
 
-// Group sessions by start time to detect solo slots (span all rooms)
-const sessionsByStart = new Map();
-for (const session of data.sessions) {
-  const start = session.start;
-  if (!sessionsByStart.has(start)) sessionsByStart.set(start, []);
-  sessionsByStart.get(start).push(session);
-}
+// Event-wide fixed entries
+const EVENT_DATE = "2026-06-09";
+const OUVERTURE_DES_PORTES = {
+  id: "ouverture-des-portes",
+  title: "Ouverture des portes — Accueil café",
+  description: "",
+  speakerIds: [],
+  startTime: `${EVENT_DATE}T08:00:00`,
+  endTime: `${EVENT_DATE}T09:00:00`,
+  roomId: "all",
+  theme: "Networking",
+  level: "débutant",
+  type: "conférence",
+};
 
 // Extract unique speakers
 const speakersMap = new Map();
@@ -115,9 +122,7 @@ for (const session of data.sessions) {
     theme = mapCategories(session.proposal.categories);
   }
 
-  // Sessions alone in their time slot span all rooms
-  const isAloneInSlot = sessionsByStart.get(session.start).length === 1;
-  const roomId = isAloneInSlot ? "all" : mapTrack(session.track);
+  const roomId = mapTrack(session.track);
 
   program.push({
     id: slugify(session.title),
@@ -132,6 +137,9 @@ for (const session of data.sessions) {
     type,
   });
 }
+
+// Add fixed event entries
+program.push(OUVERTURE_DES_PORTES);
 
 // Sort by start time, then by room
 program.sort((a, b) => {

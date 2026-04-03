@@ -10,7 +10,7 @@ const allProgram = await getCollection("program");
 const allSpeakers = await getCollection("speakers");
 const allRooms = await getCollection("rooms");
 
-// Preserve display order from rooms.json (conference first, auditorium second)
+// Preserve display order from rooms.json (conference first, amphitheatre second)
 const roomOrder = ["conference", "auditorium"];
 const rooms = roomOrder
   .map((id) => allRooms.find((r) => r.data.id === id))
@@ -150,6 +150,15 @@ const talksJson = allProgram.map((p) => ({
     </div>
   </section>
 
+  <section class="Section">
+    <div class="Wrap medium">
+      <p class="Programme-apero">
+        Un apéritif sera proposé à l'issue de la session de clôture de Caen.Tech. L'occasion
+        de prolonger les échanges dans une ambiance conviviale.
+      </p>
+    </div>
+  </section>
+
   <SpeakerList />
 
   <TalkModal />
@@ -161,5 +170,12 @@ const talksJson = allProgram.map((p) => ({
 <style>
   .Programme-intro {
     line-height: 1.8;
+  }
+
+  .Programme-apero {
+    text-align: center;
+    font-size: var(--text-lg);
+    line-height: 1.8;
+    color: var(--color-text-light);
   }
 </style>
