@@ -10,12 +10,17 @@ const allProgram = await getCollection("program");
 const allSpeakers = await getCollection("speakers");
 const allRooms = await getCollection("rooms");
 
-const rooms = allRooms.map((r) => ({
-  id: r.data.id,
-  name: r.data.name,
-  seats: r.data.seats,
-  color: r.data.color,
-}));
+// Preserve display order from rooms.json (conference first, auditorium second)
+const roomOrder = ["conference", "auditorium"];
+const rooms = roomOrder
+  .map((id) => allRooms.find((r) => r.data.id === id))
+  .filter(Boolean)
+  .map((r) => ({
+    id: r!.data.id,
+    name: r!.data.name,
+    seats: r!.data.seats,
+    color: r!.data.color,
+  }));
 
 function formatTime(iso: string) {
   return new Date(iso).toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
