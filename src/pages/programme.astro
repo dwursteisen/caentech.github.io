@@ -10,16 +10,14 @@ const allProgram = await getCollection("program");
 const allSpeakers = await getCollection("speakers");
 const allRooms = await getCollection("rooms");
 
-// Preserve display order from rooms.json (conference first, amphitheatre second)
-const roomOrder = ["conference", "auditorium"];
-const rooms = roomOrder
-  .map((id) => allRooms.find((r) => r.data.id === id))
-  .filter(Boolean)
+const rooms = allRooms
+  .slice()
+  .sort((a, b) => a.data.order - b.data.order)
   .map((r) => ({
-    id: r!.data.id,
-    name: r!.data.name,
-    seats: r!.data.seats,
-    color: r!.data.color,
+    id: r.data.id,
+    name: r.data.name,
+    seats: r.data.seats,
+    color: r.data.color,
   }));
 
 function formatTime(iso: string) {

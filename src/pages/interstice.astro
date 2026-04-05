@@ -46,7 +46,12 @@ const programJson = JSON.stringify(
   })),
 );
 
-const roomsJson = JSON.stringify(allRooms.map((r) => ({ id: r.id, name: r.data.name, color: r.data.color })));
+const roomsJson = JSON.stringify(
+  allRooms
+    .slice()
+    .sort((a, b) => a.data.order - b.data.order)
+    .map((r) => ({ id: r.id, name: r.data.name, color: r.data.color })),
+);
 ---
 
 <html lang="fr">
@@ -157,7 +162,7 @@ const roomsJson = JSON.stringify(allRooms.map((r) => ({ id: r.id, name: r.data.n
       const rooms = JSON.parse(roomsJson);
 
       const params = new URLSearchParams(window.location.search);
-      const activeSalle = params.get("salle") || "room-a";
+      const activeSalle = params.get("salle") || "conference";
 
       // Compare only hours/minutes so the page works on any day
       const heureParam = params.get("heure");

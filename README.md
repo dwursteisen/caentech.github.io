@@ -60,14 +60,14 @@ La page `/interstice` est un affichage plein écran (1920×1080) pensé pour êt
 
 | Paramètre | Valeur par défaut | Description |
 | --- | --- | --- |
-| `salle` | `room-a` | ID de la salle principale. Détermine quelle salle apparaît en colonne large sur le slide Programme, et quelle carte de session est mise en avant sur le slide Session courante. |
+| `salle` | `conference` | ID de la salle principale. Détermine quelle salle apparaît en colonne large sur le slide Programme, et quelle carte de session est mise en avant sur le slide Session courante. |
 | `heure` | *(heure réelle)* | Simule une heure au format `HH:MM` (ex. `11:00`). Utile pour tester le slide Session courante sans attendre le jour J. |
 
 Exemples :
 
-- `/interstice` — Salle A par défaut, heure réelle.
-- `/interstice?salle=room-b` — Affiche la salle B en principal.
-- `/interstice?salle=room-a&heure=14:30` — Simule 14h30 pour voir les sessions en cours à cette heure.
+- `/interstice` — Salle Conférence par défaut, heure réelle.
+- `/interstice?salle=auditorium` — Affiche l'amphithéâtre en principal.
+- `/interstice?salle=conference&heure=14:30` — Simule 14h30 pour voir les sessions en cours à cette heure.
 
 ## Le résultat du build
 

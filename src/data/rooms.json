@@ -3,12 +3,21 @@
     "id": "conference",
     "name": "Conférence",
     "seats": 250,
-    "color": "#4A90D9"
+    "color": "#4A90D9",
+    "order": 1
   },
   {
     "id": "auditorium",
     "name": "Amphithéâtre",
     "seats": 130,
-    "color": "#E85D75"
+    "color": "#E85D75",
+    "order": 2
+  },
+  {
+    "id": "atelier",
+    "name": "Salle Atelier",
+    "seats": 30,
+    "color": "#50B86C",
+    "order": 3
   }
 ]

@@ -44,7 +44,7 @@
     "speakerIds": ["julien-lefevre"],
     "startTime": "2026-06-09T10:00:00",
     "endTime": "2026-06-09T11:30:00",
-    "roomId": "auditorium",
+    "roomId": "atelier",
     "theme": "Infrastructure",
     "level": "débutant",
     "type": "atelier"
@@ -118,7 +118,7 @@
     "speakerIds": ["marc-petit"],
     "startTime": "2026-06-09T14:00:00",
     "endTime": "2026-06-09T15:30:00",
-    "roomId": "auditorium",
+    "roomId": "atelier",
     "theme": "Data",
     "level": "intermédiaire",
     "type": "atelier"

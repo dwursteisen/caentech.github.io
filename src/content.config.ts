@@ -60,6 +60,7 @@ const rooms = defineCollection({
     name: z.string(),
     seats: z.number(),
     color: z.string(),
+    order: z.number(),
   }),
 });
 
