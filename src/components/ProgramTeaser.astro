@@ -4,11 +4,18 @@ import { getCollection } from "astro:content";
 const allProgram = await getCollection("program");
 const allSpeakers = await getCollection("speakers");
 
-function getSpeakerNames(speakerIds: string[]) {
+function getSpeakers(speakerIds: string[]) {
   return speakerIds
-    .map((id) => allSpeakers.find((s) => s.data.id === id)?.data.name)
-    .filter(Boolean)
-    .join(", ");
+    .map((id) => {
+      const s = allSpeakers.find((sp) => sp.data.id === id);
+      if (!s) return null;
+      return {
+        id: s.data.id,
+        name: s.data.name,
+        photo: s.data.photo || "/images/placeholder-avatar.svg",
+      };
+    })
+    .filter(Boolean);
 }
 
 // Keep only real talks (exclude breaks / all-room slots)
@@ -20,7 +27,7 @@ const talks = allProgram
     theme: p.data.theme,
     startTime: p.data.startTime,
     endTime: p.data.endTime,
-    speakers: getSpeakerNames(p.data.speakerIds),
+    speakers: getSpeakers(p.data.speakerIds),
   }));
 ---
 
@@ -67,6 +74,20 @@ const talks = allProgram
       return [talks[first], talks[second]];
     }
 
+    function renderAvatars(speakers) {
+      if (!speakers || speakers.length === 0) return "";
+      return `
+        <div class="ProgramTeaser-avatars">
+          ${speakers
+            .map(
+              (s) =>
+                `<img class="ProgramTeaser-avatar" src="${escapeHtml(s.photo)}" alt="${escapeHtml(s.name)}" title="${escapeHtml(s.name)}" width="32" height="32" loading="lazy" />`,
+            )
+            .join("")}
+        </div>
+      `;
+    }
+
     function render() {
       const picks = pickTwo();
       grid.innerHTML = picks
@@ -79,7 +100,7 @@ const talks = allProgram
                   <span class="Tag">${formatTime(item.startTime)} – ${formatTime(item.endTime)}</span>
                 </p>
                 <h3 class="Card-title">${escapeHtml(item.title)}</h3>
-                <p class="Card-text">${escapeHtml(item.speakers)}</p>
+                ${renderAvatars(item.speakers)}
               </div>
             </a>
           `,
@@ -92,10 +113,27 @@ const talks = allProgram
   })();
 </script>
 
-<style>
+<style is:global>
   #program-teaser-grid .Card {
     display: block;
     text-decoration: none;
     color: inherit;
+  }
+
+  .ProgramTeaser-avatars {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    margin-top: var(--space-sm);
+  }
+
+  .ProgramTeaser-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: var(--color-border);
+    border: 2px solid var(--color-bg);
+    box-shadow: 0 0 0 1px var(--color-border);
   }
 </style>
