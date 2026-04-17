@@ -104,6 +104,7 @@ for (const session of data.sessions) {
 // Build program entries
 const program = [];
 for (const session of data.sessions) {
+  if (!session.title) continue;
   const speakerIds = [];
   let level = "débutant";
   let type = "conférence";

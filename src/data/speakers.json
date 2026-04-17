@@ -1,69 +1,128 @@
 [
   {
-    "id": "sophie-martin",
-    "name": "Sophie Martin",
-    "role": "Lead Developer",
-    "company": "NormanTech",
-    "bio": "Développeuse passionnée depuis 15 ans, Sophie accompagne les équipes dans leur transition vers des architectures modernes. Spécialiste Rust et WebAssembly.",
-    "photo": "/images/speakers/sophie-martin.webp",
-    "featured": true
+    "id": "david-wursteisen",
+    "name": "David Wursteisen",
+    "role": "",
+    "company": "",
+    "bio": "David est développeur chez Memo Bank depuis 2017, où il travaille sur les systèmes de paiement et l'architecture backend. Installé en Normandie, il fait partie de ceux qui ont choisi de rester dans la région tout en travaillant pour des entreprises extérieures. Co-fondateur de C:\\aen\\Tech, il s'investit pour créer des liens entre les professionnels de la tech à Caen et ses alentours.",
+    "photo": "https://lh3.googleusercontent.com/a/ACg8ocIoFYNRrrjFUQpaiLDgREmrA16-YgUVipZWE5D6SXTaQFduTKs=s96-c"
   },
   {
-    "id": "thomas-durand",
-    "name": "Thomas Durand",
-    "role": "CTO",
-    "company": "DataCaen",
-    "bio": "Co-fondateur de DataCaen, Thomas construit des pipelines data à grande échelle pour des clients industriels normands.",
-    "photo": "/images/speakers/thomas-durand.webp",
-    "featured": true
+    "id": "maxime-stevenot",
+    "name": "Maxime Stevenot",
+    "role": "",
+    "company": "Backwise",
+    "bio": ""
   },
   {
-    "id": "amina-benali",
-    "name": "Amina Benali",
-    "role": "Product Manager",
-    "company": "PixelNormandie",
-    "bio": "Amina conçoit des produits numériques centrés utilisateur. Elle partage ses retours d'expérience sur la discovery produit en startup.",
-    "photo": "/images/speakers/amina-benali.webp",
-    "featured": true
+    "id": "abdoulkader-gassama",
+    "name": "Abdoulkader Gassama",
+    "role": "",
+    "company": "Caen Tech",
+    "bio": ""
   },
   {
-    "id": "julien-lefevre",
-    "name": "Julien Lefèvre",
-    "role": "DevOps Engineer",
-    "company": "CloudWest",
-    "bio": "Julien automatise tout ce qui peut l'être. Passionné de Kubernetes et d'infrastructure as code, il milite pour des déploiements sereins."
+    "id": "mathias-deshayes",
+    "name": "Mathias Deshayes",
+    "role": "",
+    "company": "Caen Tech",
+    "bio": ""
   },
   {
-    "id": "claire-dubois",
-    "name": "Claire Dubois",
-    "role": "UX Designer",
-    "company": "Studio Crea",
-    "bio": "Designer pluridisciplinaire, Claire explore les intersections entre design, accessibilité et performance web.",
-    "photo": "/images/speakers/claire-dubois.webp",
-    "featured": true
+    "id": "cedric-bidet",
+    "name": "Cédric Bidet",
+    "role": "",
+    "company": "Caen Tech",
+    "bio": ""
   },
   {
-    "id": "marc-petit",
-    "name": "Marc Petit",
-    "role": "Data Scientist",
-    "company": "IA Normandie",
-    "bio": "Marc applique le machine learning à des problématiques industrielles locales. Il démystifie l'IA avec pragmatisme."
+    "id": "thomas-charrier",
+    "name": "Thomas Charrier",
+    "role": "",
+    "company": "",
+    "bio": "Urbaniste de formation et formé aux enjeux environnementaux, Thomas est intervenu comme chef de projet à la direction RSE de Nexity sur les Appels à Projets Urbains Innovants. Avant cela, il a passé près de 3 ans au sein du cabinet de la Maire du 14ème arrondissement de Paris, comme conseiller technique et politique sur l’urbanisme, l’espace public et les transports. Il a également effectué des missions en bureaux d’études (Terao, Grecam) et sur les chantiers (Eiffage Construction). A son compte depuis son arrivée à Caen en 2021, il fonde l’agence territoire circulaire (territoirecirculaire.fr) avec comme but premier la réalisation de pasdevacances.org, avec le soutien de l’Ademe. Depuis, il travaille activement à une meilleure connaissance de l’existant auprès de publics variés. Étant tombé dans le terrier de lapin que constituent le commerce et l’urbanisme commercial, il tente depuis de faire converger les impératifs de sobriété avec ceux d’un marché qui semble inarrêtable. En parallèle, Thomas est engagé dans divers associations locales (PTCE La Bulle, Vent d'Ouest, Territoires Pionniers) et nationales (surface+utile)"
   },
   {
-    "id": "elena-roux",
-    "name": "Éléna Roux",
-    "role": "Entrepreneuse",
-    "company": "GreenCode",
-    "bio": "Fondatrice de GreenCode, Éléna développe des outils pour mesurer et réduire l'empreinte carbone du numérique.",
-    "photo": "/images/speakers/elena-roux.webp",
-    "featured": true
+    "id": "jasmine-c",
+    "name": "Jasmine C.",
+    "role": "",
+    "company": "",
+    "bio": "Jasmine Chaid Akacem, ingénieure backend depuis 3 ans à Market Pay Financial Institutions (anciennement Dejamobile). J'ai intégré l'entreprise suite à un stage de fin d'études pour réaliser des tests de performance sur le backend de notre produit d'acquisition. Ensuite, j'ai rapidement été orienté vers des problèmes de monitoring de la solution, en plus de mes tâches de développement et ma participation à la sécurité de l'applicatif. Aujourd'hui, je suis responsable de la solution de monitoring de notre produit d'acquisition, après moult travaux sur le sujet réalisés par mes soins.",
+    "photo": "https://media.licdn.com/dms/image/v2/D4D03AQHd8nMl7PXjlw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1679937202101?e=1778112000&v=beta&t=_P3UfBjgfwd1jbsvrrOgPbMbPKulZijWue_xlt2kld0"
   },
   {
-    "id": "nicolas-garnier",
-    "name": "Nicolas Garnier",
-    "role": "Architecte Logiciel",
-    "company": "Freelance",
-    "bio": "Architecte indépendant, Nicolas accompagne les PME normandes dans la modernisation de leurs systèmes d'information.",
-    "featured": true
+    "id": "francois",
+    "name": "Francois",
+    "role": "",
+    "company": "",
+    "bio": "https://www.linkedin.com/in/fran%C3%A7ois-nikolenko?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+  },
+  {
+    "id": "ivan-dalmet",
+    "name": "Ivan Dalmet",
+    "role": "",
+    "company": "BearStudio",
+    "bio": "With over 15 years of experience, Ivan Dalmet is a seasoned React developer and UX design leader passionate about creating user-first digital experiences. He bridges the gap between design and development, crafting seamless, ergonomic interfaces that prioritize accessibility and efficiency. Drawing on his deep expertise, Ivan champions thoughtful workflows and a design-first mindset, enabling teams to deliver high-quality products with exceptional user experiences. His interests include web ergonomics, frontend performance, and fostering collaboration between design and development disciplines. Co-founder and Lead Designer UI/UX of BearStudio. Co-founder and organizer of Fork It! conferences.",
+    "photo": "https://lh3.googleusercontent.com/-I1W6L3ZCqaw/AAAAAAAAAAI/AAAAAAAAAeo/IH_htc7vFpE/photo.jpg"
+  },
+  {
+    "id": "christophe-rosenberger",
+    "name": "Christophe Rosenberger",
+    "role": "",
+    "company": "",
+    "bio": "Christophe Rosenberger a obtenu son doctorat en technologies de l'information à l'Université de Rennes 1 en 1999. Il a rejoint l'école d'ingénieurs ENSI de Bourges (aujourd'hui INSA Centre Val de Loire) en tant que maître de conférences en 2000. En 2007, il a rejoint l'école d'ingénieurs ENSICAEN à Caen en tant que professeur des universités. Il fait partie de l'équipe de recherche SAFE (Sécurité, Architecture, Forensique, biométrie) au sein du laboratoire de recherche GREYC. Ses travaux actuels portent sur le domaine de la cybersécurité, en particulier sur la biométrie (dynamique de frappe au clavier, biométrie douce, évaluation des systèmes biométriques, protection de la vie privée) et l'investigation numérique. Il a participé à la direction de 28 doctorants (dont 3 en cours) et est co-auteur de plus de 250 publications, dont 16 chapitres de livres, 50 articles dans des revues internationales et 5 brevets (5 WO, 5 EP, 5 FR, 2 US, 1 PT)."
+  },
+  {
+    "id": "la-bulle-ptce-caen",
+    "name": "La Bulle PTCE Caen",
+    "role": "",
+    "company": "",
+    "bio": "Romuald Poretti, Cofondateur du PTCE de Caen Métropole (Pôle Territorial de Coopération Économique) et animateur de coopérations territoriales Diplômé en sciences politiques et management, Romuald Poretti a suivi un parcours original du cinéma vers l'animation territoriale. Il est cofondateur de La Bulle, un PTCE (Pôle Territorial de Coopération Économique) reconnu par l'État, où il œuvre au développement d'activités durables en s'appuyant sur les acteurs locaux — artisans, producteurs, entreprises à échelle humaine. Son rôle : fédérer les forces vives d'un territoire pour faire émerger des projets collectifs au service de la transition écologique et solidaire. Ses thématiques d'expertise incluent les circuits courts, la biodiversité, l'urbanisme responsable, les mobilités douces et l'économie circulaire. Il met également ses compétences d'animateur et de médiateur au service des transitions comme collaborateur de Grand Format et Village Magazine, et intervient dans l'enseignement supérieur pour former les futurs acteurs du territoire.",
+    "photo": "https://lh3.googleusercontent.com/a/ACg8ocKGFCvN2nmt59DvuBuFRYOvUdL4pmCJ8VAF97s3av829s1dbQk=s96-c"
+  },
+  {
+    "id": "kevin-guerin",
+    "name": "Kevin GUERIN",
+    "role": "",
+    "company": "",
+    "bio": "Kevin Guérin est entrepreneur, conférencier et expert indépendant en Numérique Responsable. Diplômé en informatique, il débute sa carrière comme technicien avant d'occuper des postes de chef de projet au sein de PME puis de grandes entreprises, HP, Dell, AXA, en France et à l'international, acquérant ainsi une vision généraliste des Systèmes d'Information. C'est dès 2007 qu'il prend conscience de l'impact environnemental du numérique, au contact de la directive européenne RoHS et de la mise au rebut massive d'équipements fonctionnels. Impliqué bénévolement à la Jeune Chambre Internationale, il y découvre les Objectifs de Développement Durable de l'ONU et choisit d'incarner, dans son parcours professionnel, le changement qu'il souhaite voir dans le monde. En 2017, il fonde ASVOLA pour allier transition numérique et écologie. Certifié Numérique Responsable et consultant Label Numérique Responsable, il accompagne les organisations dans leur démarche de sobriété et de labellisation, en s'appuyant sur une méthodologie propre visant à responsabiliser et autonomiser les équipes. Il est le fondateur du Cyber World CleanUp Day, devenu le Digital Cleanup Day, co-porté par l'Institut du Numérique Responsable et le World Cleanup Day : une opération mondiale qui sensibilise les citoyens à l'empreinte environnementale du numérique et initie des démarches concrètes à toutes les échelles."
+  },
+  {
+    "id": "quentin-deslandes",
+    "name": "Quentin Deslandes",
+    "role": "",
+    "company": "Meta",
+    "bio": "Ingénieur chez Meta depuis presque 5 ans, je suis le mainteneur de bpfilter : une initiative visant à moderniser le filtrage de paquets Linux en combinant l'accessibilité d'iptables avec les performances de BPF."
+  },
+  {
+    "id": "chloe-masse",
+    "name": "Chloé Masse",
+    "role": "",
+    "company": "Collectif Casseuses de Codes",
+    "bio": "Issue d’une reconversion professionnelle, je suis aujourd’hui développeuse back-end (Go, .NET) chez Lukla. Passionnée par les sujets d’inclusion et de diversité, j’ai co-fondé l’association Casseuses de Codes, qui œuvre pour créer une communauté de femmes dans la tech et sensibiliser aux questions de harcèlement sexiste et sexuel dans les milieux de la formation et du travail.",
+    "photo": "https://lh3.googleusercontent.com/a/ACg8ocIlZ90SgjKxDjtTGyPSAuh3h7waEmLzEgDW56WgYrxbhFqIj7L1=s96-c"
+  },
+  {
+    "id": "mehdi-lahmam",
+    "name": "Mehdi Lahmam",
+    "role": "",
+    "company": "Grinta",
+    "bio": "I’m the co-founder and CPTO of Grinta, a platform helping retailers and amateur sports clubs connect through tailored online shops. Before that, I was CTO at act for sport, a company I co-founded and later sold. Earlier in my career, I worked at Captain Train (now Trainline) after running a small consultancy where I helped 40+ startups build and grow their products over seven years. Outside of work, I enjoy spending time with my kids and lately pretending to be a DJ with living room sets. My toughest crowd yet! I also share my thoughts through public speaking. You can find some of my talks on my Speakerdeck. I keep a low profile online, but you can still find me on Linkedin or GitHub. Feel free to say hi!",
+    "photo": "https://avatars3.githubusercontent.com/u/224928?v=4"
+  },
+  {
+    "id": "vinorth",
+    "name": "Vinorth",
+    "role": "",
+    "company": "OCTO Technology",
+    "bio": "Senior Data Scientist et Tech Lead chez OCTO Technology. 7 ans d'expérience en Data : Computer Vision, LLM/GenAI, MLOps. Actuellement en mission dans le secteur bancaire, je conçois des pipelines de traitement documentaire avec des LLM multimodaux. Diplômé en robotique (UTC) et véhicules autonomes (Cranfield University, UK), auteur de publications IEEE (60+ citations). Auteur sur le blog OCTO et speaker à La Grosse Conf 2026.",
+    "photo": "https://media.licdn.com/dms/image/v2/D4E03AQHwNAVfqJRZNA/profile-displayphoto-crop_800_800/B4EZ1TSMoRHsAI-/0/1775218773938?e=1776902400&v=beta&t=B4unavTy7y-oxuh90BLXC5nO9bSSYCWkh5S0x5BXKsU"
+  },
+  {
+    "id": "emmanuel-lagree",
+    "name": "Emmanuel Lagrée",
+    "role": "",
+    "company": "",
+    "bio": "Après de nombreuses années chez Société Générale en charge des serveurs applicatifs, j'ai rejoint l'aventure Mirakl en 2020 dans l'équipe Site Reliability Engineering. Fort de ces quelques années d'expérience, j'ai eu l'opportunité de prendre un peu de recul sur la technique et d'encadrer l'une des équipes SRE en tant qu'Engineering Manager. Avec 2 Database Administrators et des fous du templating Helm/Golang, nous avons vécu des soirées parfois trop longues, mais surtout de beaux succès !"
   }
 ]
