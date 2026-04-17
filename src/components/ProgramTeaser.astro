@@ -4,8 +4,6 @@ import { getCollection } from "astro:content";
 const allProgram = await getCollection("program");
 const allSpeakers = await getCollection("speakers");
 
-const featured = allProgram.filter((p) => p.data.featured);
-
 function getSpeakerNames(speakerIds: string[]) {
   return speakerIds
     .map((id) => allSpeakers.find((s) => s.data.id === id)?.data.name)
@@ -13,31 +11,91 @@ function getSpeakerNames(speakerIds: string[]) {
     .join(", ");
 }
 
-function formatTime(iso: string) {
-  return new Date(iso).toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
-}
+// Keep only real talks (exclude breaks / all-room slots)
+const talks = allProgram
+  .filter((p) => p.data.roomId !== "all")
+  .map((p) => ({
+    id: p.data.id,
+    title: p.data.title,
+    theme: p.data.theme,
+    startTime: p.data.startTime,
+    endTime: p.data.endTime,
+    speakers: getSpeakerNames(p.data.speakerIds),
+  }));
 ---
 
 <section class="Section">
   <div class="Wrap">
     <h2 class="Section-title">Programme</h2>
     <p class="Section-subtitle">Quelques temps forts de la journée</p>
-    <div class="Grid cols2">
-      {featured.map((item) => (
-        <div class="Card">
-          <div class="Card-body">
-            <p class="Card-meta">
-              <span class="Tag theme">{item.data.theme}</span>
-              <span class="Tag">{formatTime(item.data.startTime)} – {formatTime(item.data.endTime)}</span>
-            </p>
-            <h3 class="Card-title">{item.data.title}</h3>
-            <p class="Card-text">{getSpeakerNames(item.data.speakerIds)}</p>
-          </div>
-        </div>
-      ))}
-    </div>
+    <div class="Grid cols2" id="program-teaser-grid" aria-live="polite"></div>
     <div class="Section-cta">
       <a href="/programme" class="Btn outline">Voir le programme complet</a>
     </div>
   </div>
 </section>
+
+<script type="application/json" id="program-teaser-data" set:html={JSON.stringify(talks)} />
+
+<script is:inline>
+  (function () {
+    const grid = document.getElementById("program-teaser-grid");
+    const dataEl = document.getElementById("program-teaser-data");
+    if (!grid || !dataEl) return;
+
+    const talks = JSON.parse(dataEl.textContent || "[]");
+    if (talks.length === 0) return;
+
+    function formatTime(iso) {
+      return new Date(iso).toLocaleTimeString("fr-FR", {
+        hour: "2-digit",
+        minute: "2-digit",
+      });
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement("div");
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    function pickTwo() {
+      if (talks.length <= 2) return talks.slice();
+      const first = Math.floor(Math.random() * talks.length);
+      let second = Math.floor(Math.random() * (talks.length - 1));
+      if (second >= first) second += 1;
+      return [talks[first], talks[second]];
+    }
+
+    function render() {
+      const picks = pickTwo();
+      grid.innerHTML = picks
+        .map(
+          (item) => `
+            <a class="Card interactive" href="/programme#talk-${encodeURIComponent(item.id)}">
+              <div class="Card-body">
+                <p class="Card-meta">
+                  <span class="Tag theme">${escapeHtml(item.theme)}</span>
+                  <span class="Tag">${formatTime(item.startTime)} – ${formatTime(item.endTime)}</span>
+                </p>
+                <h3 class="Card-title">${escapeHtml(item.title)}</h3>
+                <p class="Card-text">${escapeHtml(item.speakers)}</p>
+              </div>
+            </a>
+          `,
+        )
+        .join("");
+    }
+
+    render();
+    setInterval(render, 30000);
+  })();
+</script>
+
+<style>
+  #program-teaser-grid .Card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+</style>

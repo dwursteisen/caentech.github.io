@@ -28,11 +28,18 @@
   background-color: var(--color-bg);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
-  max-width: 640px;
-  width: 100%;
+  width: 70%;
+  max-width: 70vw;
   max-height: 85vh;
   overflow-y: auto;
   animation: modalIn 0.25s ease;
+}
+
+@media (max-width: 768px) {
+  .Modal-content {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
 @keyframes modalIn {

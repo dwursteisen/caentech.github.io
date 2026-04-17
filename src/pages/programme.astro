@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import CalendarGrid from "../components/CalendarGrid.astro";
 import TalkModal from "../components/TalkModal.astro";
 import SpeakerList from "../components/SpeakerList.astro";
+import SpeakerModal from "../components/SpeakerModal.astro";
 import { getCollection } from "astro:content";
 
 // Load data
@@ -160,9 +161,11 @@ const talksJson = allProgram.map((p) => ({
   <SpeakerList />
 
   <TalkModal />
+  <SpeakerModal />
 
   <script type="application/json" id="talks-data" set:html={JSON.stringify(talksJson)} />
   <script src="../scripts/modal.ts"></script>
+  <script src="../scripts/speaker-modal.ts"></script>
 </BaseLayout>
 
 <style>

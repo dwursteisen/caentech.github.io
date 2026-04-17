@@ -2,14 +2,46 @@
 import { getCollection } from "astro:content";
 
 const allSpeakers = await getCollection("speakers");
+const allProgram = await getCollection("program");
+
+const sortedSpeakers = [...allSpeakers].sort((a, b) =>
+  a.data.name.localeCompare(b.data.name, "fr"),
+);
+
+const speakersJson = sortedSpeakers.map((speaker) => {
+  const sessions = allProgram
+    .filter((p) => p.data.speakerIds.includes(speaker.data.id))
+    .sort((a, b) => a.data.startTime.localeCompare(b.data.startTime))
+    .map((p) => ({
+      id: p.data.id,
+      title: p.data.title,
+      startTime: p.data.startTime,
+      endTime: p.data.endTime,
+    }));
+
+  return {
+    id: speaker.data.id,
+    name: speaker.data.name,
+    role: speaker.data.role,
+    company: speaker.data.company,
+    bio: speaker.data.bio,
+    photo: speaker.data.photo || "/images/placeholder-avatar.svg",
+    sessions,
+  };
+});
 ---
 
 <section class="Section" id="intervenants">
   <div class="Wrap">
     <h2 class="Section-title">Intervenants</h2>
     <div class="Grid cols3">
-      {allSpeakers.map((speaker) => (
-        <div class="SpeakerCard">
+      {sortedSpeakers.map((speaker) => (
+        <button
+          class="SpeakerCard"
+          type="button"
+          data-speaker-id={speaker.data.id}
+          aria-label={`Voir la bio de ${speaker.data.name}`}
+        >
           <div class="SpeakerCard-photo">
             <img
               src={speaker.data.photo || "/images/placeholder-avatar.svg"}
@@ -24,11 +56,13 @@ const allSpeakers = await getCollection("speakers");
             <p class="SpeakerCard-role">{speaker.data.role} — {speaker.data.company}</p>
             <p class="SpeakerCard-bio">{speaker.data.bio}</p>
           </div>
-        </div>
+        </button>
       ))}
     </div>
   </div>
 </section>
+
+<script type="application/json" id="speakers-data" set:html={JSON.stringify(speakersJson)} />
 
 <style>
   .SpeakerCard {
@@ -37,6 +71,20 @@ const allSpeakers = await getCollection("speakers");
     padding: var(--space-md);
     background-color: var(--color-bg-alt);
     border-radius: var(--radius-lg);
+    border: 1px solid transparent;
+    text-align: left;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    width: 100%;
+    transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+  }
+
+  .SpeakerCard:hover,
+  .SpeakerCard:focus-visible {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-sm);
+    outline: none;
   }
 
   .SpeakerCard-photo {
@@ -54,6 +102,11 @@ const allSpeakers = await getCollection("speakers");
     object-fit: cover;
   }
 
+  .SpeakerCard-info {
+    min-width: 0;
+    flex: 1;
+  }
+
   .SpeakerCard-name {
     font-size: var(--text-base);
     font-weight: 600;
@@ -69,5 +122,11 @@ const allSpeakers = await getCollection("speakers");
     font-size: var(--text-sm);
     color: var(--color-text-light);
     line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 </style>

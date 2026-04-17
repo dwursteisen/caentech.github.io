@@ -1,0 +1,103 @@
+---
+import { X } from "lucide-astro";
+---
+
+<div
+  class="Modal"
+  id="speaker-modal"
+  aria-hidden="true"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="speaker-modal-title"
+>
+  <div class="Modal-overlay" data-modal-close></div>
+  <div class="Modal-content">
+    <button class="Modal-close" data-modal-close aria-label="Fermer">
+      <X size={24} />
+    </button>
+    <div class="Modal-header SpeakerModal-header">
+      <img
+        class="SpeakerModal-photo"
+        id="speaker-modal-photo"
+        src="/images/placeholder-avatar.svg"
+        alt=""
+        width="96"
+        height="96"
+      />
+      <div>
+        <h2 class="Modal-title" id="speaker-modal-title"></h2>
+        <p class="SpeakerModal-role" id="speaker-modal-role"></p>
+      </div>
+    </div>
+    <div class="Modal-body">
+      <p class="SpeakerModal-bio" id="speaker-modal-bio"></p>
+      <div class="SpeakerModal-sessions" id="speaker-modal-sessions" hidden>
+        <h3 class="SpeakerModal-sessionsTitle">Sessions</h3>
+        <ul class="SpeakerModal-sessionsList" id="speaker-modal-sessions-list"></ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style is:global>
+  .SpeakerModal-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+  }
+
+  .SpeakerModal-photo {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    background-color: var(--color-border);
+  }
+
+  .SpeakerModal-role {
+    color: var(--color-text-light);
+    margin-top: var(--space-xs);
+  }
+
+  .SpeakerModal-bio {
+    white-space: pre-wrap;
+    line-height: 1.7;
+  }
+
+  .SpeakerModal-sessions {
+    margin-top: var(--space-lg);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .SpeakerModal-sessionsTitle {
+    font-size: var(--text-base);
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+  }
+
+  .SpeakerModal-sessionsList {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: var(--space-xs);
+  }
+
+  .SpeakerModal-sessionsList li {
+    font-size: var(--text-sm);
+    line-height: 1.5;
+  }
+
+  .SpeakerModal-sessionsList li {
+    display: flex;
+    gap: var(--space-sm);
+  }
+
+  .SpeakerModal-sessionsTime {
+    flex-shrink: 0;
+    min-width: 7rem;
+    color: var(--color-text-light);
+    font-variant-numeric: tabular-nums;
+  }
+</style>
