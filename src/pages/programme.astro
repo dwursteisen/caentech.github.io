@@ -22,7 +22,10 @@ const rooms = allRooms
   }));
 
 function formatTime(iso: string) {
-  return new Date(iso).toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
+  return new Date(iso).toLocaleTimeString("fr-FR", {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
 }
 
 function getSpeakerNames(speakerIds: string[]) {
@@ -41,7 +44,7 @@ const sortedTimes = [...timeSet].sort();
 const timeSlots = sortedTimes.map((time) => {
   const slots = rooms.map((room) => {
     const item = allProgram.find(
-      (p) => p.data.startTime === time && p.data.roomId === room.id
+      (p) => p.data.startTime === time && p.data.roomId === room.id,
     );
     return {
       roomId: room.id,
@@ -66,7 +69,7 @@ const timeSlots = sortedTimes.map((time) => {
 
   // Check for "all rooms" items
   const allRoomsItem = allProgram.find(
-    (p) => p.data.startTime === time && p.data.roomId === "all"
+    (p) => p.data.startTime === time && p.data.roomId === "all",
   );
   if (allRoomsItem) {
     slots.push({
@@ -119,9 +122,12 @@ const talksJson = allProgram.map((p) => ({
   startTime: p.data.startTime,
   endTime: p.data.endTime,
   room: (() => {
-    if (p.data.roomId === "all") return { name: "Toutes les salles", color: "#ffdd00" };
+    if (p.data.roomId === "all")
+      return { name: "Toutes les salles", color: "#ffdd00" };
     const room = rooms.find((r) => r.id === p.data.roomId);
-    return room ? { name: room.name, color: room.color } : { name: "", color: "" };
+    return room
+      ? { name: room.name, color: room.color }
+      : { name: "", color: "" };
   })(),
   theme: p.data.theme,
   level: p.data.level,
@@ -129,15 +135,24 @@ const talksJson = allProgram.map((p) => ({
 }));
 ---
 
-<BaseLayout title="Programme — Caen.Tech 2026" description="Découvrez le programme complet de Caen.Tech 2026 : conférences et intervenants.">
+<BaseLayout
+  title="Programme — Caen.Tech 2026"
+  description="Découvrez le programme complet de Caen.Tech 2026 : conférences et intervenants."
+>
   <section class="Section">
     <div class="Wrap medium">
       <h1>Programme</h1>
       <p class="Section-intro Programme-intro">
         Une journée de conférences dédiées aux retours d'expérience concrets.
-        Développement, data, produit, design, infrastructure, entrepreneuriat — le programme
-        reflète la diversité de l'écosystème tech caennais et normand. Des gens qui font,
-        qui partagent, qui construisent ici.
+        Développement, data, produit, design, infrastructure, entrepreneuriat —
+        le programme reflète la diversité de l'écosystème tech caennais et
+        normand. Des gens qui font, qui partagent, qui construisent ici.
+      </p>
+      <p>
+        <i
+          >Le programme est en cours de validation, les horaires et les
+          intervenants peuvent être sujets à des modifications.</i
+        >
       </p>
     </div>
   </section>
@@ -152,8 +167,9 @@ const talksJson = allProgram.map((p) => ({
   <section class="Section">
     <div class="Wrap medium">
       <p class="Programme-apero">
-        Un apéritif sera proposé à l'issue de la session de clôture de Caen.Tech. L'occasion
-        de prolonger les échanges dans une ambiance conviviale.
+        Un apéritif sera proposé à l'issue de la session de clôture de
+        Caen.Tech. L'occasion de prolonger les échanges dans une ambiance
+        conviviale.
       </p>
     </div>
   </section>
@@ -163,7 +179,11 @@ const talksJson = allProgram.map((p) => ({
   <TalkModal />
   <SpeakerModal />
 
-  <script type="application/json" id="talks-data" set:html={JSON.stringify(talksJson)} />
+  <script
+    type="application/json"
+    id="talks-data"
+    set:html={JSON.stringify(talksJson)}
+  />
   <script src="../scripts/modal.ts"></script>
   <script src="../scripts/speaker-modal.ts"></script>
 </BaseLayout>
