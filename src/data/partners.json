@@ -1,5 +1,12 @@
 [
   {
+    "id": "eventozor",
+    "name": "Eventozor",
+    "logo": "/images/partners/eventozor.svg",
+    "url": "https://www.eventozor.com",
+    "description": "Billetterie officielle de Caen.Tech, Eventozor est une plateforme de billetterie en ligne qui facilite la gestion des inscriptions et des paiements pour tous vos événements."
+  },
+  {
     "id": "moho",
     "name": "MoHo",
     "logo": "/images/partners/moho.svg",
@@ -7,10 +14,10 @@
     "description": "Le MoHo accueille Caen.Tech dans ses locaux au cœur de Caen. Tiers-lieu d'innovation, il réunit entrepreneurs, chercheurs et créatifs."
   },
   {
-    "id": "normandie-web-xperts",
-    "name": "Normandie Web Xperts",
-    "logo": "/images/partners/nwx.webp",
-    "url": "https://nwx.fr",
-    "description": "Le réseau des professionnels du web en Normandie. NWX fédère la communauté tech depuis plus de 10 ans."
+    "id": "m2-event",
+    "name": "M2 Event",
+    "logo": "/images/partners/m2-event.webp",
+    "url": "https://m2-event.fr",
+    "description": "AGENCE ÉVÉNEMENTIELLE EN NORMANDIE - M2 Event est une agence événementielle basée à Caen, spécialisée dans l'organisation d'événements d'entreprise, de séminaires, de team building et de soirées d'entreprise en Normandie."
   }
 ]
