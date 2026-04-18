@@ -1,32 +1,32 @@
 [
   {
-    "id": "alice-moreau",
-    "name": "Alice Moreau",
-    "photo": "/images/team/alice-moreau.webp",
-    "contact": "https://www.linkedin.com/in/alice-moreau",
+    "id": "abdoulkader-gassama",
+    "name": "Abdoulkader Gassama",
+    "contact": "https://www.linkedin.com/in/abdoulkader-gassama-3b6923bb/",
     "volunteer": false
   },
   {
-    "id": "remi-lambert",
-    "name": "Rémi Lambert",
-    "photo": "/images/team/remi-lambert.webp",
+    "id": "cedric-bidet",
+    "name": "Cédric Bidet",
+    "contact": "https://www.linkedin.com/in/cedric-bidet/",
     "volunteer": false
   },
   {
-    "id": "lea-fournier",
-    "name": "Léa Fournier",
-    "photo": "/images/team/lea-fournier.webp",
-    "volunteer": true
+    "id": "maxime-stevenot",
+    "name": "Maxime Stevenot",
+    "contact": "https://www.linkedin.com/in/maximestevenot/",
+    "volunteer": false
   },
   {
-    "id": "paul-girard",
-    "name": "Paul Girard",
-    "volunteer": true
+    "id": "mathias-deshayes",
+    "name": "Mathias Deshayes",
+    "contact": "https://www.linkedin.com/in/mathias-deshayes/",
+    "volunteer": false
   },
   {
-    "id": "julie-renault",
-    "name": "Julie Renault",
-    "contact": "https://www.linkedin.com/in/julie-renault",
-    "volunteer": true
+    "id": "david-wursteisen",
+    "name": "David Wursteisen",
+    "contact": "https://www.linkedin.com/in/davidwursteisen/",
+    "volunteer": false
   }
 ]
