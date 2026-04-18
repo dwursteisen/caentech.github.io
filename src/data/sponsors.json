@@ -54,5 +54,19 @@
     "logo": "/images/sponsors/you-switch.webp",
     "url": "https://youswitch.co",
     "tier": "bronze"
+  },
+  {
+    "id": "cloud-temple",
+    "name": "Cloud Temple",
+    "logo": "/images/sponsors/cloud-temple.webp",
+    "url": "https://www.cloud-temple.com",
+    "tier": "bronze"
+  },
+  {
+    "id": "le-village-by-ca",
+    "name": "Le Village By CA",
+    "logo": "/images/sponsors/le-village-by-ca.svg",
+    "url": "https://normandie.levillagebyca.com/",
+    "tier": "bronze"
   }
 ]
