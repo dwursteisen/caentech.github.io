@@ -1,32 +1,62 @@
 [
   {
-    "id": "ep-01-ecosysteme",
-    "title": "Épisode 1 — L'écosystème tech caennais, état des lieux",
-    "image": "/images/podcasts/ep-01.webp",
-    "summary": "Premier épisode : on dresse le portrait de la tech à Caen. Qui sont les acteurs, quels sont les enjeux, et pourquoi il est temps de se rassembler.",
+    "id": "ep-01-arterya-lucile-derly",
+    "title": "Construire un dispositif médical depuis la Normandie : six ans de deep tech — avec Lucile Derly (Arterya)",
+    "image": "/images/podcasts/arterya.webp",
+    "summary": "Lucile Derly, fondatrice et CEO d'Arterya, raconte six ans de R&D pour développer Blood'Up, un dispositif qui localise précisément l'artère radiale. Deep tech médicale, réglementation, certification et patience depuis Caen.",
     "links": {
-      "spotify": "https://open.spotify.com/show/example-caentech",
-      "apple": "https://podcasts.apple.com/podcast/example-caentech"
+      "spotify": "https://open.spotify.com/episode/76mthujNKVzgwAnbiBmXSu",
+      "apple": "https://podcasts.apple.com/us/podcast/construire-un-dispositif-m%C3%A9dical-depuis-la-normandie/id1871428177?i=1000759495088"
     }
   },
   {
-    "id": "ep-02-reconversion",
-    "title": "Épisode 2 — Reconversion dans la tech : parcours et réalités",
-    "image": "/images/podcasts/ep-02.webp",
-    "summary": "Trois personnes reconverties dans la tech racontent leur parcours, les galères, et ce qui les a fait tenir.",
+    "id": "ep-02-yousign-antoine-louiset",
+    "title": "Antoine Louiset — co-fondateur & ex-CTO de Yousign : de la scale-up tech à l'engagement pour le climat",
+    "image": "/images/podcasts/yousign.webp",
+    "summary": "Antoine Louiset, co-fondateur et ancien CTO de Yousign, revient sur dix ans à construire la plateforme technique d'un acteur européen de la signature électronique, avant de se consacrer aux enjeux climatiques.",
     "links": {
-      "spotify": "https://open.spotify.com/show/example-caentech-02",
-      "apple": "https://podcasts.apple.com/podcast/example-caentech-02"
+      "spotify": "https://open.spotify.com/episode/3rqer0yTzTuQLfIRCtQs2L",
+      "apple": "https://podcasts.apple.com/us/podcast/antoine-louiset-co-fondateur-ex-cto-de-yousign-de/id1871428177?i=1000755061494"
     }
   },
   {
-    "id": "ep-03-remote",
-    "title": "Épisode 3 — Travailler en remote depuis Caen",
-    "image": "/images/podcasts/ep-03.webp",
-    "summary": "Le télétravail depuis la Normandie : avantages, limites, et comment rester connecté à la communauté locale.",
+    "id": "ep-03-meta-quentin-deslandes",
+    "title": "Développer de l'open source à l'échelle mondiale, depuis Caen — avec Quentin Deslandes (Meta)",
+    "image": "/images/podcasts/meta.webp",
+    "summary": "Quentin Deslandes, développeur open source chez Meta, partage son parcours et ce que signifie contribuer à de l'open source mondial tout en vivant et travaillant depuis Caen : process, collaboration et travail asynchrone.",
     "links": {
-      "spotify": "https://open.spotify.com/show/example-caentech-03",
-      "apple": "https://podcasts.apple.com/podcast/example-caentech-03"
+      "spotify": "https://open.spotify.com/episode/5IdczZkdYXnutiH8aXqexC",
+      "apple": "https://podcasts.apple.com/us/podcast/d%C3%A9velopper-de-lopen-source-%C3%A0-l%C3%A9chelle-mondiale/id1871428177?i=1000746327542"
+    }
+  },
+  {
+    "id": "ep-04-kanta-pierre-lepetit",
+    "title": "CTO en legal tech : sécurité, scalabilité et équipe — avec Pierre Lepetit (Kanta)",
+    "image": "/images/podcasts/kanta.webp",
+    "summary": "Pierre Lepetit, co-fondateur et CTO de Kanta, détaille la construction d'une legal tech caennaise qui modernise la conformité anti-blanchiment : architecture, sécurité des données sensibles et structuration de l'équipe.",
+    "links": {
+      "spotify": "https://open.spotify.com/episode/20u1rp5AocaNlhqVw5LntP",
+      "apple": "https://podcasts.apple.com/us/podcast/cto-en-legal-tech-s%C3%A9curit%C3%A9-scalabilit%C3%A9-et-%C3%A9quipe-avec/id1871428177?i=1000746327465"
+    }
+  },
+  {
+    "id": "ep-05-orion-jordan-ernult",
+    "title": "Doper le jeu, pas les joueurs : data, vision et sport en conditions réelles — avec Jordan Ernult (ORION SporTech)",
+    "image": "/images/podcasts/orion.webp",
+    "summary": "Jordan Ernult, CTO et co-fondateur d'ORION SporTech, plonge dans la performance sportive par la data : vision par ordinateur, capteurs et analyse du jeu en conditions réelles, conçus depuis Caen.",
+    "links": {
+      "spotify": "https://open.spotify.com/episode/2NXXnYEl6VUPwBIOV2BhAV",
+      "apple": "https://podcasts.apple.com/us/podcast/doper-le-jeu-pas-les-joueurs-data-vision-et-sport-en/id1871428177?i=1000746327407"
+    }
+  },
+  {
+    "id": "ep-06-lowtech-ilan-vermeren",
+    "title": "Low-tech, territoire et sobriété : penser la tech autrement en Normandie — avec Ilan Vermeren",
+    "image": "/images/podcasts/lowtech.webp",
+    "summary": "Ilan Vermeren, chargé de mission Low-Tech à la Région Normandie, prend du recul sur la tech : ce que recouvre concrètement la low-tech, son ancrage territorial et ses frictions avec l'écosystème tech local.",
+    "links": {
+      "spotify": "https://open.spotify.com/episode/5RNH8e7OB6UHci6yeeiwxK",
+      "apple": "https://podcasts.apple.com/us/podcast/low-tech-territoire-et-sobri%C3%A9t%C3%A9-penser-la-tech-autrement/id1871428177?i=1000746327487"
     }
   }
 ]
