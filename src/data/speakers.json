@@ -1,41 +1,5 @@
 [
   {
-    "id": "david-wursteisen",
-    "name": "David Wursteisen",
-    "role": "",
-    "company": "",
-    "bio": "David est développeur chez Memo Bank depuis 2017, où il travaille sur les systèmes de paiement et l'architecture backend. Installé en Normandie, il fait partie de ceux qui ont choisi de rester dans la région tout en travaillant pour des entreprises extérieures. Co-fondateur de C:\\aen\\Tech, il s'investit pour créer des liens entre les professionnels de la tech à Caen et ses alentours.",
-    "photo": "https://lh3.googleusercontent.com/a/ACg8ocIoFYNRrrjFUQpaiLDgREmrA16-YgUVipZWE5D6SXTaQFduTKs=s96-c"
-  },
-  {
-    "id": "maxime-stevenot",
-    "name": "Maxime Stevenot",
-    "role": "",
-    "company": "Backwise",
-    "bio": ""
-  },
-  {
-    "id": "abdoulkader-gassama",
-    "name": "Abdoulkader Gassama",
-    "role": "",
-    "company": "Caen Tech",
-    "bio": ""
-  },
-  {
-    "id": "mathias-deshayes",
-    "name": "Mathias Deshayes",
-    "role": "",
-    "company": "Caen Tech",
-    "bio": ""
-  },
-  {
-    "id": "cedric-bidet",
-    "name": "Cédric Bidet",
-    "role": "",
-    "company": "Caen Tech",
-    "bio": ""
-  },
-  {
     "id": "thomas-charrier",
     "name": "Thomas Charrier",
     "role": "",

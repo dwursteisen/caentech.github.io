@@ -13,19 +13,13 @@
   },
   {
     "id": "introduction-caen-tech",
-    "title": "Introduction Caen tech",
-    "description": "TODO",
-    "speakerIds": [
-      "david-wursteisen",
-      "maxime-stevenot",
-      "abdoulkader-gassama",
-      "mathias-deshayes",
-      "cedric-bidet"
-    ],
+    "title": "Introduction Caen Tech",
+    "description": "Introduction Caen Tech",
+    "speakerIds": [],
     "startTime": "2026-06-09T09:00:00",
     "endTime": "2026-06-09T09:15:00",
     "roomId": "conference",
-    "theme": "Autres",
+    "theme": "Événement",
     "level": "débutant",
     "type": "conférence"
   },
@@ -137,14 +131,12 @@
   {
     "id": "table-ronde",
     "title": "Table Ronde",
-    "description": "Thème en cours de définition",
-    "speakerIds": [
-      "david-wursteisen"
-    ],
+    "description": "Table Ronde",
+    "speakerIds": [],
     "startTime": "2026-06-09T13:30:00",
     "endTime": "2026-06-09T14:15:00",
     "roomId": "auditorium",
-    "theme": "Autres",
+    "theme": "Événement",
     "level": "débutant",
     "type": "conférence"
   },
