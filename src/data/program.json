@@ -98,7 +98,7 @@
     "startTime": "2026-06-09T11:15:00",
     "endTime": "2026-06-09T12:00:00",
     "roomId": "auditorium",
-    "theme": "Autres",
+    "theme": "IA, Data & Automatisation",
     "level": "intermédiaire",
     "type": "conférence"
   },
@@ -112,7 +112,7 @@
     "startTime": "2026-06-09T11:15:00",
     "endTime": "2026-06-09T12:00:00",
     "roomId": "conference",
-    "theme": "Autres",
+    "theme": "Cybersécurité & Résilience",
     "level": "intermédiaire",
     "type": "conférence"
   },
@@ -150,7 +150,7 @@
     "startTime": "2026-06-09T13:30:00",
     "endTime": "2026-06-09T14:15:00",
     "roomId": "conference",
-    "theme": "Tech & Ingénierie Logicielle",
+    "theme": "IA, Data & Automatisation",
     "level": "débutant",
     "type": "conférence"
   },
@@ -270,7 +270,7 @@
     "startTime": "2026-06-09T17:00:00",
     "endTime": "2026-06-09T17:45:00",
     "roomId": "conference",
-    "theme": "Autres",
+    "theme": "UX / UI & Design Produit",
     "level": "intermédiaire",
     "type": "conférence"
   },
