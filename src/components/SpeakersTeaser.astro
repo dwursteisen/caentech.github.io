@@ -14,15 +14,21 @@ const speakers = allSpeakers.map((s) => ({
 
 <section class="Section alt">
   <div class="Wrap">
-    <h2 class="Section-title">Intervenants</h2>
+    <h2 class="Section-title">Intervenant•es</h2>
     <div class="Grid cols3" id="speakers-teaser-grid" aria-live="polite"></div>
     <div class="Section-cta">
-      <a href="/programme/#intervenants" class="Btn outline">Voir tous les intervenants</a>
+      <a href="/programme/#intervenants" class="Btn outline"
+        >Voir tous les intervenant•es</a
+      >
     </div>
   </div>
 </section>
 
-<script type="application/json" id="speakers-teaser-data" set:html={JSON.stringify(speakers)} />
+<script
+  type="application/json"
+  id="speakers-teaser-data"
+  set:html={JSON.stringify(speakers)}
+/>
 
 <script is:inline>
   (function () {

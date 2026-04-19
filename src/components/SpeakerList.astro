@@ -33,36 +33,44 @@ const speakersJson = sortedSpeakers.map((speaker) => {
 
 <section class="Section" id="intervenants">
   <div class="Wrap">
-    <h2 class="Section-title">Intervenants</h2>
+    <h2 class="Section-title">Intervenant•es</h2>
     <div class="Grid cols3">
-      {sortedSpeakers.map((speaker) => (
-        <button
-          class="SpeakerCard"
-          type="button"
-          data-speaker-id={speaker.data.id}
-          aria-label={`Voir la bio de ${speaker.data.name}`}
-        >
-          <div class="SpeakerCard-photo">
-            <img
-              src={speaker.data.photo || "/images/placeholder-avatar.svg"}
-              alt={speaker.data.name}
-              width="240"
-              height="240"
-              loading="lazy"
-            />
-          </div>
-          <div class="SpeakerCard-info">
-            <h3 class="SpeakerCard-name">{speaker.data.name}</h3>
-            <p class="SpeakerCard-role">{speaker.data.role} — {speaker.data.company}</p>
-            <p class="SpeakerCard-bio">{speaker.data.bio}</p>
-          </div>
-        </button>
-      ))}
+      {
+        sortedSpeakers.map((speaker) => (
+          <button
+            class="SpeakerCard"
+            type="button"
+            data-speaker-id={speaker.data.id}
+            aria-label={`Voir la bio de ${speaker.data.name}`}
+          >
+            <div class="SpeakerCard-photo">
+              <img
+                src={speaker.data.photo || "/images/placeholder-avatar.svg"}
+                alt={speaker.data.name}
+                width="240"
+                height="240"
+                loading="lazy"
+              />
+            </div>
+            <div class="SpeakerCard-info">
+              <h3 class="SpeakerCard-name">{speaker.data.name}</h3>
+              <p class="SpeakerCard-role">
+                {speaker.data.role} — {speaker.data.company}
+              </p>
+              <p class="SpeakerCard-bio">{speaker.data.bio}</p>
+            </div>
+          </button>
+        ))
+      }
     </div>
   </div>
 </section>
 
-<script type="application/json" id="speakers-data" set:html={JSON.stringify(speakersJson)} />
+<script
+  type="application/json"
+  id="speakers-data"
+  set:html={JSON.stringify(speakersJson)}
+/>
 
 <style>
   .SpeakerCard {
@@ -77,7 +85,10 @@ const speakersJson = sortedSpeakers.map((speaker) => {
     color: inherit;
     cursor: pointer;
     width: 100%;
-    transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+    transition:
+      border-color var(--transition),
+      transform var(--transition),
+      box-shadow var(--transition);
   }
 
   .SpeakerCard:hover,
