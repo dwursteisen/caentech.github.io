@@ -2,30 +2,35 @@
   {
     "id": "abdoulkader-gassama",
     "name": "Abdoulkader Gassama",
+    "photo": "/images/team/abdoulkader-gassama.webp",
     "contact": "https://www.linkedin.com/in/abdoulkader-gassama-3b6923bb/",
     "volunteer": false
   },
   {
     "id": "cedric-bidet",
     "name": "Cédric Bidet",
+    "photo": "/images/team/cedric-bidet.webp",
     "contact": "https://www.linkedin.com/in/cedric-bidet/",
     "volunteer": false
   },
   {
     "id": "maxime-stevenot",
     "name": "Maxime Stevenot",
+    "photo": "/images/team/maxime-stevenot.webp",
     "contact": "https://www.linkedin.com/in/maximestevenot/",
     "volunteer": false
   },
   {
     "id": "mathias-deshayes",
     "name": "Mathias Deshayes",
+    "photo": "/images/team/mathias-deshayes.webp",
     "contact": "https://www.linkedin.com/in/mathias-deshayes/",
     "volunteer": false
   },
   {
     "id": "david-wursteisen",
     "name": "David Wursteisen",
+    "photo": "/images/team/david-wursteisen.webp",
     "contact": "https://www.linkedin.com/in/davidwursteisen/",
     "volunteer": false
   }

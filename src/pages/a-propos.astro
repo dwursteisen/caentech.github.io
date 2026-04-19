@@ -84,7 +84,7 @@ const allTeam = await getCollection("team");
   <section class="Section alt" id="equipe">
     <div class="Wrap">
       <h2 class="Section-title">L'équipe</h2>
-      <div class="Grid cols4">
+      <div class="Grid cols5">
         {
           allTeam.map((member) => (
             <div class="TeamMember">
@@ -131,6 +131,16 @@ const allTeam = await getCollection("team");
     margin-bottom: var(--space-md);
     line-height: 1.8;
     color: var(--color-text-light);
+  }
+
+  :global(.Grid.cols5) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  @media (max-width: 768px) {
+    :global(.Grid.cols5) {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 
   .TeamMember {
