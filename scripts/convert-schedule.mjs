@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import { readFileSync, writeFileSync } from "node:fs";
-import { resolve } from "node:path";
+import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import { resolve, extname } from "node:path";
 
 const inputPath = process.argv[2];
 if (!inputPath) {
@@ -214,6 +214,49 @@ program.sort((a, b) => {
 });
 
 const speakers = Array.from(speakersMap.values());
+
+const SPEAKERS_IMAGES_DIR = resolve("public/images/speakers");
+const SPEAKERS_PUBLIC_PATH = "/images/speakers";
+const CONTENT_TYPE_TO_EXT = {
+  "image/jpeg": ".jpg",
+  "image/jpg": ".jpg",
+  "image/png": ".png",
+  "image/webp": ".webp",
+  "image/gif": ".gif",
+  "image/avif": ".avif",
+};
+
+function pickExtension(url, contentType) {
+  try {
+    const pathnameExt = extname(new URL(url).pathname).toLowerCase();
+    if (/^\.(jpg|jpeg|png|webp|gif|avif)$/.test(pathnameExt)) {
+      return pathnameExt === ".jpeg" ? ".jpg" : pathnameExt;
+    }
+  } catch {}
+  const base = (contentType || "").split(";")[0].trim().toLowerCase();
+  return CONTENT_TYPE_TO_EXT[base] || ".jpg";
+}
+
+async function downloadSpeakerPhoto(speaker) {
+  if (!speaker.photo) return;
+  const url = speaker.photo;
+  try {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const buffer = Buffer.from(await res.arrayBuffer());
+    const ext = pickExtension(url, res.headers.get("content-type"));
+    const filename = `${speaker.id}${ext}`;
+    writeFileSync(resolve(SPEAKERS_IMAGES_DIR, filename), buffer);
+    speaker.photo = `${SPEAKERS_PUBLIC_PATH}/${filename}`;
+  } catch (err) {
+    console.warn(
+      `Failed to download photo for ${speaker.id} (${url}): ${err.message}`,
+    );
+  }
+}
+
+mkdirSync(SPEAKERS_IMAGES_DIR, { recursive: true });
+await Promise.all(speakers.map(downloadSpeakerPhoto));
 
 writeFileSync(
   "src/data/program.json",
