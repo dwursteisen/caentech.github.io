@@ -1,0 +1,86 @@
+/* =============================================
+   .Hero — Full-width hero block
+   ============================================= */
+
+.Hero {
+  position: relative;
+  padding-block: var(--space-2xl);
+  text-align: center;
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  overflow: hidden;
+}
+
+/* White corner at bottom-right — visual identity variant 3 */
+.Hero::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    -55deg,
+    var(--color-bg) 0%,
+    var(--color-bg) 28%,
+    var(--color-primary) 28%,
+    var(--color-primary) 32%,
+    transparent 32.3%
+  );
+  pointer-events: none;
+}
+
+.Hero-wrap {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.Hero-logo {
+  max-width: 200px;
+}
+
+@media (min-width: 768px) {
+  .Hero-logo {
+    max-width: 280px;
+  }
+}
+
+.Hero-title {
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  max-width: 18ch;
+}
+
+.Hero-subtitle {
+  font-size: var(--text-lg);
+  color: var(--color-text-light);
+}
+
+.Hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm) var(--space-md);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.Hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.Hero-metaItem {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+

@@ -1,0 +1,101 @@
+---
+import { getCollection } from "astro:content";
+
+interface Props {
+  calendarData: {
+    timeSlots: {
+      time: string;
+      formattedTime: string;
+      slots: Array<{
+        roomId: string;
+        item: {
+          id: string;
+          title: string;
+          speakerNames: string;
+          startTime: string;
+          endTime: string;
+          formattedStart: string;
+          formattedEnd: string;
+          theme: string;
+          level: string;
+          type: string;
+          roomId: string;
+          isAllRooms: boolean;
+        } | null;
+      }>;
+    }[];
+    rooms: { id: string; name: string; color: string }[];
+  };
+}
+
+const { calendarData } = Astro.props;
+const { timeSlots, rooms } = calendarData;
+---
+
+<div class="Calendar" style={`--room-count: ${rooms.length}`}>
+  {/* Header row */}
+  <div class="Calendar-header">
+    <div class="Calendar-headerCorner"></div>
+    {rooms.map((room) => (
+      <div class="Calendar-headerCell" style={`--room-color: ${room.color}`}>
+        {room.name}
+      </div>
+    ))}
+  </div>
+
+  {/* Time slot rows */}
+  {timeSlots.map((slot) => {
+    const allRoomsItem = slot.slots.find((s) => s.item?.isAllRooms)?.item;
+
+    return (
+      <>
+        <div class="Calendar-timeLabel">{slot.formattedTime}</div>
+
+        {allRoomsItem ? (
+          <div
+            class="Calendar-slot allRooms"
+            style={`grid-column: 2 / -1;`}
+            data-talk-id={allRoomsItem.id}
+            role="button"
+            tabindex="0"
+          >
+            <div class="Calendar-slotTitle">{allRoomsItem.title}</div>
+            {allRoomsItem.speakerNames && (
+              <div class="Calendar-slotSpeaker">{allRoomsItem.speakerNames}</div>
+            )}
+            <div class="Calendar-slotTime">{allRoomsItem.formattedStart} – {allRoomsItem.formattedEnd}</div>
+          </div>
+        ) : (
+          rooms.map((room) => {
+            const cellItem = slot.slots.find((s) => s.roomId === room.id)?.item;
+
+            if (!cellItem) {
+              return <div class="Calendar-empty"></div>;
+            }
+
+            return (
+              <div
+                class="Calendar-slot"
+                style={`--room-color: ${room.color}`}
+                data-talk-id={cellItem.id}
+                role="button"
+                tabindex="0"
+              >
+                <div class="Calendar-slotTitle">{cellItem.title}</div>
+                {cellItem.speakerNames && (
+                  <div class="Calendar-slotSpeaker">{cellItem.speakerNames}</div>
+                )}
+                <div class="Calendar-slotTime">{cellItem.formattedStart} – {cellItem.formattedEnd}</div>
+                <span class="Calendar-slotRoom Tag" style={`background-color: ${room.color}; color: white;`}>{room.name}</span>
+                <div class="Calendar-slotTags">
+                  <span class="Tag theme">{cellItem.theme}</span>
+                  <span class="Tag level">{cellItem.level}</span>
+                </div>
+              </div>
+            );
+          })
+        )}
+      </>
+    );
+  })}
+</div>

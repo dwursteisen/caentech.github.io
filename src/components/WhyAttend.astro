@@ -1,0 +1,55 @@
+---
+import { Mic, Users, Brain, Hammer } from "lucide-astro";
+---
+
+<section class="Section alt">
+  <div class="Wrap">
+    <h2 class="Section-title">Pourquoi venir ?</h2>
+    <div class="Grid cols2">
+      <div class="WhyAttend-item">
+        <div class="WhyAttend-icon"><Mic size={32} /></div>
+        <h3>Des retours concrets</h3>
+        <p>Pas des pitchs corporate — des retours d'expérience terrain, par des gens qui font la tech au quotidien.</p>
+      </div>
+      <div class="WhyAttend-item">
+        <div class="WhyAttend-icon"><Users size={32} /></div>
+        <h3>Une communauté locale, accessible</h3>
+        <p>Un événement à taille humaine, où l'on se croise, on discute, on avance ensemble.</p>
+      </div>
+      <div class="WhyAttend-item">
+        <div class="WhyAttend-icon"><Brain size={32} /></div>
+        <h3>Tech, produit, data, design, infra, entrepreneuriat</h3>
+        <p>Un programme pluridisciplinaire qui reflète la réalité de nos métiers.</p>
+      </div>
+      <div class="WhyAttend-item">
+        <div class="WhyAttend-icon"><Hammer size={32} /></div>
+        <h3>Des gens qui construisent, ici</h3>
+        <p>On met en avant ceux qui bâtissent l'écosystème tech caennais et normand.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .WhyAttend-item {
+    padding: var(--space-lg);
+    background: var(--color-bg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .WhyAttend-icon {
+    color: var(--color-primary-dark);
+    margin-bottom: var(--space-md);
+  }
+
+  .WhyAttend-item h3 {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-sm);
+  }
+
+  .WhyAttend-item p {
+    color: var(--color-text-light);
+    font-size: var(--text-sm);
+  }
+</style>

@@ -1,0 +1,61 @@
+---
+import { getCollection } from "astro:content";
+
+const allSponsors = await getCollection("sponsors");
+const goldSponsors = allSponsors.filter((s) => s.data.tier === "gold");
+---
+
+<section class="Section alt">
+  <div class="Wrap">
+    <h2 class="Section-title">Sponsor Gold</h2>
+    <div class="SponsorsTeaser-logos">
+      {
+        goldSponsors.map((sponsor) => (
+          <a
+            href={sponsor.data.url}
+            target="_blank"
+            class="SponsorsTeaser-logo"
+          >
+            <img
+              src={sponsor.data.logo}
+              alt={sponsor.data.name}
+              width="480"
+              height="144"
+              loading="lazy"
+            />
+          </a>
+        ))
+      }
+    </div>
+    <div class="Section-cta">
+      <a href="/contact" class="Btn outline">Devenir sponsor</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .SponsorsTeaser-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-lg);
+    align-items: center;
+  }
+
+  .SponsorsTeaser-logo {
+    display: block;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity var(--transition);
+  }
+
+  .SponsorsTeaser-logo:hover {
+    opacity: 1;
+  }
+
+  .SponsorsTeaser-logo img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+  }
+</style>

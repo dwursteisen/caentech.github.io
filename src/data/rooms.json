@@ -1,0 +1,16 @@
+[
+  {
+    "id": "conference",
+    "name": "Conférence",
+    "seats": 250,
+    "color": "#4A90D9",
+    "order": 1
+  },
+  {
+    "id": "auditorium",
+    "name": "Amphithéâtre",
+    "seats": 130,
+    "color": "#E85D75",
+    "order": 2
+  }
+]

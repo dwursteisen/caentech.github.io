@@ -1,0 +1,72 @@
+[
+  {
+    "id": "veolia-flexcity",
+    "name": "Veolia Flexcity",
+    "logo": "/images/sponsors/veolia.svg",
+    "url": "https://veolia.com/fr",
+    "tier": "gold"
+  },
+  {
+    "id": "normandie-numerique",
+    "name": "Normandie Numérique",
+    "logo": "/images/sponsors/normandie-numerique.webp",
+    "url": "https://normandie-numerique.fr/",
+    "tier": "silver"
+  },
+  {
+    "id": "supinfo",
+    "name": "Supinfo",
+    "logo": "/images/sponsors/supinfo.webp",
+    "url": "https://www.supinfo.com/ecole-informatique-caen",
+    "tier": "silver"
+  },
+  {
+    "id": "legallais",
+    "name": "Legallais",
+    "logo": "/images/sponsors/legallais.webp",
+    "url": "https://www.legallais.com",
+    "tier": "bronze"
+  },
+  {
+    "id": "normandie-french-tech",
+    "name": "Normandie French Tech",
+    "logo": "/images/sponsors/normandie-french-tech.webp",
+    "url": "https://www.normandie-french-tech.fr",
+    "tier": "bronze"
+  },
+  {
+    "id": "redlab",
+    "name": "RedLab",
+    "logo": "/images/sponsors/redlab.webp",
+    "url": "https://www.redlab.io",
+    "tier": "bronze"
+  },
+  {
+    "id": "sii",
+    "name": "SII",
+    "logo": "/images/sponsors/sii.svg",
+    "url": "https://www.sii-group.com",
+    "tier": "bronze"
+  },
+  {
+    "id": "you-switch",
+    "name": "YouSwitch",
+    "logo": "/images/sponsors/you-switch.webp",
+    "url": "https://youswitch.co",
+    "tier": "bronze"
+  },
+  {
+    "id": "cloud-temple",
+    "name": "Cloud Temple",
+    "logo": "/images/sponsors/cloud-temple.webp",
+    "url": "https://www.cloud-temple.com",
+    "tier": "bronze"
+  },
+  {
+    "id": "le-village-by-ca",
+    "name": "Le Village By CA",
+    "logo": "/images/sponsors/le-village-by-ca.svg",
+    "url": "https://normandie.levillagebyca.com/",
+    "tier": "bronze"
+  }
+]

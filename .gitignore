@@ -1,3 +1,8 @@
-identity.md
-.claude/settings.local.json
-.DS_Store
+.local
+.plans
+.astro
+
+node_modules
+dist
+/.playwright-mcp/
+.claude/.settings.json

@@ -1,0 +1,64 @@
+---
+import { getEntry } from "astro:content";
+import IconLinkedin from "./icons/IconLinkedin.astro";
+import IconDiscord from "./icons/IconDiscord.astro";
+import IconWhatsapp from "./icons/IconWhatsapp.astro";
+
+const siteEntry = await getEntry("site", "caen-tech-2026");
+const site = siteEntry!.data;
+
+const navLinks = [
+  { href: "/", label: "Accueil" },
+  { href: site.billetterieUrl, label: "Billetterie", external: true },
+  { href: "/programme", label: "Programme" },
+  { href: "/infos-pratiques", label: "Infos pratiques" },
+  { href: "/sponsors", label: "Sponsors" },
+  { href: "/a-propos", label: "À propos" },
+  { href: "/podcasts", label: "Podcasts" },
+  { href: "/contact", label: "Contact" },
+];
+
+const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
+---
+
+<header class="Header">
+  <div class="Header-wrap Wrap">
+    <a href="/" class="Header-logo" aria-label="Caen.Tech — Accueil">
+      <img src="/images/logo-bar-yellow.svg" alt="Caen.Tech" width="140" height="40" />
+    </a>
+
+    <nav class="Header-nav" id="main-nav" aria-label="Navigation principale">
+      <ul class="Header-navList">
+        {navLinks.map(({ href, label, external }) => (
+          <li>
+            <a
+              href={href}
+              class:list={["Header-navLink", { active: !external && currentPath === href }]}
+              {...(external ? { target: "_blank", rel: "noopener" } : {})}
+            >
+              {label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="Header-social SocialLinks">
+      <a href={site.socialLinks.linkedin} target="_blank" aria-label="LinkedIn">
+        <IconLinkedin size={20} />
+      </a>
+      <a href={site.socialLinks.discord} target="_blank" aria-label="Discord">
+        <IconDiscord size={20} />
+      </a>
+      <a href={site.socialLinks.whatsapp} target="_blank" aria-label="WhatsApp">
+        <IconWhatsapp size={20} />
+      </a>
+    </div>
+
+    <button class="Header-toggle" data-nav-toggle aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
+      <span class="Header-toggleBar"></span>
+      <span class="Header-toggleBar"></span>
+      <span class="Header-toggleBar"></span>
+    </button>
+  </div>
+</header>

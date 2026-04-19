@@ -1,0 +1,52 @@
+---
+import { getEntry } from "astro:content";
+import IconLinkedin from "./icons/IconLinkedin.astro";
+import IconDiscord from "./icons/IconDiscord.astro";
+import IconWhatsapp from "./icons/IconWhatsapp.astro";
+
+const siteEntry = await getEntry("site", "caen-tech-2026");
+const site = siteEntry!.data;
+
+const navLinks = [
+  { href: "/", label: "Accueil" },
+  { href: "/programme", label: "Programme" },
+  { href: "/infos-pratiques", label: "Infos pratiques" },
+  { href: "/sponsors", label: "Sponsors" },
+  { href: "/a-propos", label: "À propos" },
+  { href: "/podcasts", label: "Podcasts" },
+  { href: "/contact", label: "Contact" },
+];
+---
+
+<footer class="Footer">
+  <div class="Footer-wrap Wrap">
+    <div class="Footer-brand">
+      <a href="/" class="Footer-logo">
+        <img src="/images/logo-bar-white.svg" alt="Caen.Tech" height="28" width="auto" />
+      </a>
+      <p class="Footer-tagline">Les rencontres de l'écosystème tech caennais</p>
+    </div>
+
+    <nav class="Footer-nav" aria-label="Navigation pied de page">
+      <ul class="Footer-navList">
+        {navLinks.map(({ href, label }) => (
+          <li><a href={href} class="Footer-navLink">{label}</a></li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="Footer-social SocialLinks">
+      <a href={site.socialLinks.linkedin} target="_blank" aria-label="LinkedIn">
+        <IconLinkedin size={20} />
+      </a>
+      <a href={site.socialLinks.discord} target="_blank" aria-label="Discord">
+        <IconDiscord size={20} />
+      </a>
+      <a href={site.socialLinks.whatsapp} target="_blank" aria-label="WhatsApp">
+        <IconWhatsapp size={20} />
+      </a>
+    </div>
+
+    <p class="Footer-legal">Caen.Tech — RNA : W142018515 — © 2026 Caen.Tech — <a href="/mentions-legales">Mentions légales</a></p>
+  </div>
+</footer>

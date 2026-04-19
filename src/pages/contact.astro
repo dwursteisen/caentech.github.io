@@ -1,0 +1,95 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getEntry } from "astro:content";
+import { Mail } from "lucide-astro";
+import IconLinkedin from "../components/icons/IconLinkedin.astro";
+import IconDiscord from "../components/icons/IconDiscord.astro";
+import IconWhatsapp from "../components/icons/IconWhatsapp.astro";
+
+const siteEntry = await getEntry("site", "caen-tech-2026");
+const site = siteEntry!.data;
+---
+
+<BaseLayout title="Contact — Caen.Tech" description="Contactez l'équipe Caen.Tech par email ou via nos réseaux sociaux.">
+  <section class="Section">
+    <div class="Wrap narrow Contact-header">
+      <h1>Contact</h1>
+      <p class="Section-intro">
+        Une question, une proposition de partenariat, une envie d'intervenir ? Écrivez-nous.
+      </p>
+    </div>
+  </section>
+
+  <section class="Section alt">
+    <div class="Wrap narrow">
+      <div class="ContactCard">
+        <span class="ContactCard-email" id="email-link" aria-label="Adresse email">
+          <Mail size={24} />
+          <span>Chargement…</span>
+        </span>
+
+        <script>
+          const el = document.getElementById("email-link");
+          if (el) {
+            const parts = ["hello", "caen", "tech"];
+            const addr = `${parts[0]}@${parts[1]}.${parts[2]}`;
+            const link = document.createElement("a");
+            link.href = `mailto:${addr}`;
+            link.className = "ContactCard-email";
+            link.innerHTML = el.innerHTML;
+            link.querySelector("span")!.textContent = addr;
+            el.replaceWith(link);
+          }
+        </script>
+
+        <div class="ContactCard-social">
+          <h2 class="Contact-socialTitle">Retrouvez-nous</h2>
+          <div class="SocialLinks centered">
+            <a href={site.socialLinks.linkedin} target="_blank" aria-label="LinkedIn">
+              <IconLinkedin size={24} />
+            </a>
+            <a href={site.socialLinks.discord} target="_blank" aria-label="Discord">
+              <IconDiscord size={24} />
+            </a>
+            <a href={site.socialLinks.whatsapp} target="_blank" aria-label="WhatsApp">
+              <IconWhatsapp size={24} />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .Contact-header {
+    text-align: center;
+  }
+
+  .Contact-socialTitle {
+    font-size: var(--text-base);
+    margin-bottom: var(--space-md);
+  }
+
+  .ContactCard {
+    background: var(--color-bg);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+  }
+
+  :global(.ContactCard-email) {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: var(--text-xl);
+    font-weight: 600;
+    margin-bottom: var(--space-xl);
+  }
+
+  .ContactCard-social {
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-lg);
+  }
+</style>
