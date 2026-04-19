@@ -19,5 +19,12 @@
     "logo": "/images/partners/m2-event.webp",
     "url": "https://m2-event.fr",
     "description": "AGENCE ÉVÉNEMENTIELLE EN NORMANDIE - M2 Event est une agence événementielle basée à Caen, spécialisée dans l'organisation d'événements d'entreprise, de séminaires, de team building et de soirées d'entreprise en Normandie."
+  },
+  {
+    "id": "show-me-the-rex",
+    "name": "Show me the REX",
+    "logo": "/images/partners/show-me-the-rex.webp",
+    "url": "https://www.showmetherex.com",
+    "description": "Partenaire média de Caen.Tech, Show me the REX est un portail de partage et de valorisation des REX projets sur la Tech, de la data et de l’IA"
   }
 ]
