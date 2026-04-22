@@ -62,17 +62,17 @@
     "type": "conférence"
   },
   {
-    "id": "de-l-open-data-a-la-ville-un-urbaniste-bidouilleur-temoigne",
-    "title": "De l'open data à la ville : un urbaniste bidouilleur témoigne",
-    "description": "Urbaniste de métier, pas développeur pour un sou. Pourtant, l'open data s'est imposée dans mon quotidien professionnel — pour cartographier les logements vacants d'un territoire, recenser les commerces sobres ou explorer des dynamiques urbaines que les études classiques ne voient pas. Dans ce retour d'expérience, je raconterai comment un professionnel de l'aménagement sans formation technique s'est approprié des outils et des données ouvertes pour produire de la connaissance utile, partageable et libre. Via des projets comme pasdevacances.org — qui croise données publiques et la plateforme Datafair de Koumoul — je montrerai ce qu'on peut faire avec peu de moyens, beaucoup de curiosité et des infrastructures ouvertes. Ce sera aussi un plaidoyer : une part trop grande de données publiques reste enfouie ou non publiée. Et les outils qui existent sont encore trop peu connus des professionnels qui pourraient en faire des usages puissants. Vous repartirez avec : la conviction que l'open data n'est pas réservée aux devs — et quelques pistes concrètes pour commencer à bidouiller.",
+    "id": "dynamique-de-frappe-au-clavier-du-laboratoire-aux-applications-industrielles",
+    "title": "Dynamique de frappe au clavier : du laboratoire aux applications industrielles",
+    "description": "La biométrie vise à identifier ou vérifier l'identité d'individus pour différentes applications (authentification, profilage...). La dynamique de frappe au clavier (analyse comportementale de l'utilisateur lors de l'usage d'un clavier) est une information étudiée depuis plus de 15 ans au GREYC à Caen avec de nombreuses thèses de doctorat dont certaines avec des industriels. Une étude du GREYC en 2019 a montré que 10% des sites Web sur Internet collectent cette information avec un simple code javascript. Le but de cette conférence est de présenter cette information biométrique et de montrer son intérêt dans de nombreuses applications industrielles déployées (surveillance d'examens à distance, protection des enfants sur Internet) et applications recherche en cours (émotion, attribution de texte...).",
     "speakerIds": [
-      "thomas-charrier"
+      "christophe-rosenberger"
     ],
     "startTime": "2026-06-09T10:00:00",
     "endTime": "2026-06-09T10:45:00",
     "roomId": "conference",
-    "theme": "Autres",
-    "level": "débutant",
+    "theme": "Cybersécurité & Résilience",
+    "level": "intermédiaire",
     "type": "conférence"
   },
   {
@@ -103,16 +103,16 @@
     "type": "conférence"
   },
   {
-    "id": "dynamique-de-frappe-au-clavier-du-laboratoire-aux-applications-industrielles",
-    "title": "Dynamique de frappe au clavier : du laboratoire aux applications industrielles",
-    "description": "La biométrie vise à identifier ou vérifier l'identité d'individus pour différentes applications (authentification, profilage...). La dynamique de frappe au clavier (analyse comportementale de l'utilisateur lors de l'usage d'un clavier) est une information étudiée depuis plus de 15 ans au GREYC à Caen avec de nombreuses thèses de doctorat dont certaines avec des industriels. Une étude du GREYC en 2019 a montré que 10% des sites Web sur Internet collectent cette information avec un simple code javascript. Le but de cette conférence est de présenter cette information biométrique et de montrer son intérêt dans de nombreuses applications industrielles déployées (surveillance d'examens à distance, protection des enfants sur Internet) et applications recherche en cours (émotion, attribution de texte...).",
+    "id": "de-6-mois-a-2-jours-la-revolution-llm-pour-le-traitement-documentaire",
+    "title": "De 6 mois à 2 jours : la révolution LLM pour le traitement documentaire",
+    "description": "Classifier et extraire les données de milliers, voire de millions de documents, c'était 6 mois de développement, une équipe de ML engineers et d'annotateurs externes, des dizaines de milliers d'images annotées et un budget à six chiffres. Aujourd'hui, un LLM multimodal fait le même travail en quelques jours, sans dataset et sans entraînement. Trop beau pour être vrai ? Dans cette démo live, je vous montre exactement comment ça fonctionne sur un cas réel de KYC bancaire, par exemple CNI, passeports, justificatifs, RIB, et surtout, comment on évite que le modèle hallucine sur vos données les plus sensibles.",
     "speakerIds": [
-      "christophe-rosenberger"
+      "vinorth-varatharasan"
     ],
     "startTime": "2026-06-09T11:15:00",
     "endTime": "2026-06-09T12:00:00",
     "roomId": "conference",
-    "theme": "Cybersécurité & Résilience",
+    "theme": "IA, Data & Automatisation",
     "level": "intermédiaire",
     "type": "conférence"
   },
@@ -221,17 +221,17 @@
     "type": "conférence"
   },
   {
-    "id": "de-6-mois-a-2-jours-la-revolution-llm-pour-le-traitement-documentaire",
-    "title": "De 6 mois à 2 jours : la révolution LLM pour le traitement documentaire",
-    "description": "Classifier et extraire les données de milliers, voire de millions de documents, c'était 6 mois de développement, une équipe de ML engineers et d'annotateurs externes, des dizaines de milliers d'images annotées et un budget à six chiffres. Aujourd'hui, un LLM multimodal fait le même travail en quelques jours, sans dataset et sans entraînement. Trop beau pour être vrai ? Dans cette démo live, je vous montre exactement comment ça fonctionne sur un cas réel de KYC bancaire, par exemple CNI, passeports, justificatifs, RIB, et surtout, comment on évite que le modèle hallucine sur vos données les plus sensibles.",
+    "id": "de-l-open-data-a-la-ville-un-urbaniste-bidouilleur-temoigne",
+    "title": "De l'open data à la ville : un urbaniste bidouilleur témoigne",
+    "description": "Urbaniste de métier, pas développeur pour un sou. Pourtant, l'open data s'est imposée dans mon quotidien professionnel — pour cartographier les logements vacants d'un territoire, recenser les commerces sobres ou explorer des dynamiques urbaines que les études classiques ne voient pas. Dans ce retour d'expérience, je raconterai comment un professionnel de l'aménagement sans formation technique s'est approprié des outils et des données ouvertes pour produire de la connaissance utile, partageable et libre. Via des projets comme pasdevacances.org — qui croise données publiques et la plateforme Datafair de Koumoul — je montrerai ce qu'on peut faire avec peu de moyens, beaucoup de curiosité et des infrastructures ouvertes. Ce sera aussi un plaidoyer : une part trop grande de données publiques reste enfouie ou non publiée. Et les outils qui existent sont encore trop peu connus des professionnels qui pourraient en faire des usages puissants. Vous repartirez avec : la conviction que l'open data n'est pas réservée aux devs — et quelques pistes concrètes pour commencer à bidouiller.",
     "speakerIds": [
-      "vinorth"
+      "thomas-charrier"
     ],
     "startTime": "2026-06-09T15:45:00",
     "endTime": "2026-06-09T16:30:00",
     "roomId": "conference",
-    "theme": "IA, Data & Automatisation",
-    "level": "intermédiaire",
+    "theme": "Autres",
+    "level": "débutant",
     "type": "conférence"
   },
   {
