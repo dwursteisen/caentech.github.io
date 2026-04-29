@@ -16,8 +16,8 @@
     "title": "Introduction Caen Tech",
     "description": "Introduction Caen Tech",
     "speakerIds": [],
-    "startTime": "2026-06-09T09:00:00",
-    "endTime": "2026-06-09T09:15:00",
+    "startTime": "2026-06-09T09:00:00.000+02:00",
+    "endTime": "2026-06-09T09:15:00.000+02:00",
     "roomId": "conference",
     "theme": "Événement",
     "level": "débutant",
@@ -26,10 +26,10 @@
   {
     "id": "keynote-annonce-prochaine",
     "title": "Keynote : Annonce prochaine",
-    "description": "Annonce prochaine",
+    "description": "<p>Annonce prochaine </p>",
     "speakerIds": [],
-    "startTime": "2026-06-09T09:15:00",
-    "endTime": "2026-06-09T09:45:00",
+    "startTime": "2026-06-09T09:15:00.000+02:00",
+    "endTime": "2026-06-09T09:45:00.000+02:00",
     "roomId": "conference",
     "theme": "Autres",
     "level": "débutant",
@@ -50,12 +50,12 @@
   {
     "id": "du-debug-a-la-vision-metier-globale-notre-cheminement-vers-l-observabilite-d-un-produit",
     "title": "Du débug à la vision métier globale: notre cheminement vers l'observabilité d'un produit",
-    "description": "Pouvez vous, en quelques clics, me donner le taux de réussite de l'opération principale de votre produit? Le différencier selon le type de client? Me donner sa latence moyenne selon si le client utilise un téléphone ou un ordinateur? Voir même savoir sur quels boutons il clique, comme si vous étiez derrière son épaule. Chez nous, les développeurs sont mêmes capables d'obtenir les erreurs en production, de quantifier l'impact et de réaliser le fix avant que le client s'en rende compte. Et ce, même pour des erreurs dites \"métiers\" (en clair \"tout est vert mais le service n'est pas rendu\"). Chez Market Pay Financial Institutions (MPFI), (ou Dejamobile pour les plus vieux), ces réponses étaient fastidieuses à obtenir. Pourtant, nous avons des logs, nous avons des traces reliant nos services et leurs requêtes afin de savoir ce qui se produit à chaque interaction, chaque appel d'API. Et notre infrastructure est entièrement monitorée par notre partenaire. Cette présentation vise à dérouler comment, au sein de MPFI, nous avons amélioré la vision de notre produit afin de le surveiller de bout en bout, aussi détaillé que nécessaire, tout en réutilisant les briques que nous avions. Notre chemin n'est ni linéaire, ni parfait, ni même terminé. C'est un apprentissage constant, que nous souhaitons partager.",
+    "description": "<p>Pouvez vous, en quelques clics, me donner le taux de réussite de l&#39;opération principale de votre produit? Le différencier selon le type de client? Me donner sa latence moyenne selon si le client utilise un téléphone ou un ordinateur? Voir même savoir sur quels boutons il clique, comme si vous étiez derrière son épaule. Chez nous, les développeurs sont mêmes capables d&#39;obtenir les erreurs en production, de quantifier l&#39;impact et de réaliser le fix avant que le client s&#39;en rende compte. Et ce, même pour des erreurs dites &quot;métiers&quot; (en clair &quot;tout est vert mais le service n&#39;est pas rendu&quot;). </p>\n<p>Chez Market Pay Financial Institutions (MPFI), (ou Dejamobile pour les plus vieux), ces réponses étaient fastidieuses à obtenir. Pourtant, nous avons des logs, nous avons des traces reliant nos services et leurs requêtes afin de savoir ce qui se produit à chaque interaction, chaque appel d&#39;API. Et notre infrastructure est entièrement monitorée par notre partenaire. </p>\n<p>Cette présentation vise à dérouler comment, au sein de MPFI, nous avons amélioré la vision de notre produit afin de le surveiller de bout en bout, aussi détaillé que nécessaire, tout en réutilisant les briques que nous avions. Notre chemin n&#39;est ni linéaire, ni parfait, ni même terminé. C&#39;est un apprentissage constant, que nous souhaitons partager.</p>",
     "speakerIds": [
       "jasmine-c"
     ],
-    "startTime": "2026-06-09T10:00:00",
-    "endTime": "2026-06-09T10:45:00",
+    "startTime": "2026-06-09T10:00:00.000+02:00",
+    "endTime": "2026-06-09T10:45:00.000+02:00",
     "roomId": "auditorium",
     "theme": "Tech & Ingénierie Logicielle",
     "level": "intermédiaire",
@@ -64,12 +64,12 @@
   {
     "id": "dynamique-de-frappe-au-clavier-du-laboratoire-aux-applications-industrielles",
     "title": "Dynamique de frappe au clavier : du laboratoire aux applications industrielles",
-    "description": "La biométrie vise à identifier ou vérifier l'identité d'individus pour différentes applications (authentification, profilage...). La dynamique de frappe au clavier (analyse comportementale de l'utilisateur lors de l'usage d'un clavier) est une information étudiée depuis plus de 15 ans au GREYC à Caen avec de nombreuses thèses de doctorat dont certaines avec des industriels. Une étude du GREYC en 2019 a montré que 10% des sites Web sur Internet collectent cette information avec un simple code javascript. Le but de cette conférence est de présenter cette information biométrique et de montrer son intérêt dans de nombreuses applications industrielles déployées (surveillance d'examens à distance, protection des enfants sur Internet) et applications recherche en cours (émotion, attribution de texte...).",
+    "description": "<p>La biométrie vise à identifier ou vérifier l&#39;identité d&#39;individus pour différentes applications (authentification, profilage...). La dynamique de frappe au clavier (analyse comportementale de l&#39;utilisateur lors de l&#39;usage d&#39;un clavier) est une information étudiée depuis plus de 15 ans au GREYC à Caen avec de nombreuses thèses de doctorat dont certaines avec des industriels. Une étude du GREYC en 2019 a montré que 10% des sites Web sur Internet collectent cette information avec un simple code javascript. Le but de cette conférence est de présenter cette information biométrique et de montrer son intérêt dans de nombreuses applications industrielles déployées (surveillance d&#39;examens à distance, protection des enfants sur Internet) et applications recherche en cours (émotion, attribution de texte...).</p>",
     "speakerIds": [
       "christophe-rosenberger"
     ],
-    "startTime": "2026-06-09T10:00:00",
-    "endTime": "2026-06-09T10:45:00",
+    "startTime": "2026-06-09T10:00:00.000+02:00",
+    "endTime": "2026-06-09T10:45:00.000+02:00",
     "roomId": "conference",
     "theme": "Cybersécurité & Résilience",
     "level": "intermédiaire",
@@ -90,13 +90,13 @@
   {
     "id": "souverainete-numerique-et-transition-ecologique-comment-un-territoire-peut-re-prendre-le-pouvoir-sur-ses-donnees",
     "title": "Souveraineté numérique et transition écologique : comment un territoire peut (re)prendre le pouvoir sur ses données ?",
-    "description": "On parle beaucoup de souveraineté numérique. Mais qu'est-ce que ça change, concrètement, pour un territoire et ses habitants ? Une conférence à deux voix Kevin Guérin (expert Numérique Responsable) et Romuald Poretti (Co-fondateur du PTCE de Caen Métropole) croisent leurs regards : l'un apporte la lecture technique, l'autre la réalité du terrain coopératif. Ensemble, ils reviennent sur une expérimentation réelle menée à Caen La Mer : caen.eco-urbanis.fr, un embryon de réseau social local conçu pour relier les acteurs de la transition écologique — associations, commerces engagés, collectivités, citoyens. Le problème Ce projet est né d'un constat simple : les outils numériques existants fragmentent les données, créent des dépendances et privent les territoires de leur propre souveraineté sur l'information locale. Sur le terrain, cela se traduit par : Une compétition invisible pour la visibilité : chaque structure publie dans son coin, sur sa plateforme, pour son audience Une information locale éparpillée : difficile à trouver pour les citoyens comme pour les décideurs Des énergies gaspillées en doublons Des initiatives qui peinent à se faire connaître Une coopération territoriale qui bute sur des outils pensés pour la concurrence, pas pour le commun Ce qui en ressort D'abord, une plongée dans les fondations techniques : découvrir les solutions qui libèrent les données territoriales de leurs cages fermées, comprendre leur fonctionnement et les raisons qui ont guidé chaque choix. Ensuite, une expérience du terrain, brute et honnête : comment animer un écosystème numérique à l'échelle locale, fédérer des acteurs disparates, transformer des intentions en projets concrets et responsables. Enfin, la rencontre de ces deux mondes : montrer que les alternatives numériques ne naissent pas de la technologie seule, mais de la volonté collective d'un territoire à reprendre possession de son bien commun. C'est la coopération, l'engagement des acteurs locaux qui donnent corps et pérennité à ces initiatives. La conviction qui nous réunit La donnée territoriale est un bien commun. Elle ne devrait pas appartenir aux plateformes — elle devrait appartenir aux habitants et aux acteurs qui la produisent.",
+    "description": "<p>On parle beaucoup de souveraineté numérique. Mais qu&#39;est-ce que ça change, concrètement, pour un territoire et ses habitants ?</p>\n<h3>Une conférence à deux voix</h3>\n<p><strong>Kevin Guérin</strong> (expert Numérique Responsable) et <strong>Romuald Poretti</strong> (Co-fondateur du PTCE de Caen Métropole) croisent leurs regards : l&#39;un apporte la lecture technique, l&#39;autre la réalité du terrain coopératif.</p>\n<p>Ensemble, ils reviennent sur une expérimentation réelle menée à Caen La Mer : <strong>caen.eco-urbanis.fr</strong>, un embryon de réseau social local conçu pour relier les acteurs de la transition écologique — associations, commerces engagés, collectivités, citoyens.</p>\n<h3>Le problème</h3>\n<p>Ce projet est né d&#39;un constat simple : les outils numériques existants fragmentent les données, créent des dépendances et privent les territoires de leur propre souveraineté sur l&#39;information locale.</p>\n<p>Sur le terrain, cela se traduit par :</p>\n<ul><li>Une compétition invisible pour la visibilité : chaque structure publie dans son coin, sur sa plateforme, pour son audience</li><li>Une information locale éparpillée : difficile à trouver pour les citoyens comme pour les décideurs</li><li>Des énergies gaspillées en doublons</li><li>Des initiatives qui peinent à se faire connaître</li><li>Une coopération territoriale qui bute sur des outils pensés pour la concurrence, pas pour le commun</li></ul>\n<h3>Ce qui en ressort</h3>\n<p>D&#39;abord, une plongée dans les <strong>fondations techniques</strong> : découvrir les solutions qui libèrent les données territoriales de leurs cages fermées, comprendre leur fonctionnement et les raisons qui ont guidé chaque choix.</p>\n<p>Ensuite, une <strong>expérience du terrain</strong>, brute et honnête : comment animer un écosystème numérique à l&#39;échelle locale, fédérer des acteurs disparates, transformer des intentions en projets concrets et responsables.</p>\n<p>Enfin, la <strong>rencontre de ces deux mondes</strong> : montrer que les alternatives numériques ne naissent pas de la technologie seule, mais de la volonté collective d&#39;un territoire à reprendre possession de son bien commun. C&#39;est la coopération, l&#39;engagement des acteurs locaux qui donnent corps et pérennité à ces initiatives.</p>\n<h3>La conviction qui nous réunit</h3>\n<p>La donnée territoriale est un bien commun. Elle ne devrait pas appartenir aux plateformes — elle devrait appartenir aux habitants et aux acteurs qui la produisent.</p>",
     "speakerIds": [
       "romuald-poretti",
       "kevin-guerin"
     ],
-    "startTime": "2026-06-09T11:15:00",
-    "endTime": "2026-06-09T12:00:00",
+    "startTime": "2026-06-09T11:15:00.000+02:00",
+    "endTime": "2026-06-09T12:00:00.000+02:00",
     "roomId": "auditorium",
     "theme": "IA, Data & Automatisation",
     "level": "intermédiaire",
@@ -105,12 +105,12 @@
   {
     "id": "de-6-mois-a-2-jours-la-revolution-llm-pour-le-traitement-documentaire",
     "title": "De 6 mois à 2 jours : la révolution LLM pour le traitement documentaire",
-    "description": "Classifier et extraire les données de milliers, voire de millions de documents, c'était 6 mois de développement, une équipe de ML engineers et d'annotateurs externes, des dizaines de milliers d'images annotées et un budget à six chiffres. Aujourd'hui, un LLM multimodal fait le même travail en quelques jours, sans dataset et sans entraînement. Trop beau pour être vrai ? Dans cette démo live, je vous montre exactement comment ça fonctionne sur un cas réel de KYC bancaire, par exemple CNI, passeports, justificatifs, RIB, et surtout, comment on évite que le modèle hallucine sur vos données les plus sensibles.",
+    "description": "<p>Classifier et extraire les données de milliers, voire de millions de documents, c&#39;était <strong>6 mois de développement</strong>, une équipe de ML engineers et d&#39;annotateurs externes, des dizaines de milliers d&#39;images annotées et un budget à six chiffres.</p>\n<p>Aujourd&#39;hui, un LLM multimodal fait le même travail en <strong>quelques jours</strong>, sans dataset et sans entraînement.</p>\n<p>Trop beau pour être vrai ? Dans cette <strong>démo live</strong>, je vous montre exactement comment ça fonctionne sur un cas réel de KYC bancaire, par exemple CNI, passeports, justificatifs, RIB, et surtout, comment on évite que le modèle <strong>hallucine</strong> sur vos données les plus sensibles.</p>",
     "speakerIds": [
       "vinorth-varatharasan"
     ],
-    "startTime": "2026-06-09T11:15:00",
-    "endTime": "2026-06-09T12:00:00",
+    "startTime": "2026-06-09T11:15:00.000+02:00",
+    "endTime": "2026-06-09T12:00:00.000+02:00",
     "roomId": "conference",
     "theme": "IA, Data & Automatisation",
     "level": "intermédiaire",
@@ -133,8 +133,8 @@
     "title": "Table Ronde",
     "description": "Table Ronde",
     "speakerIds": [],
-    "startTime": "2026-06-09T13:30:00",
-    "endTime": "2026-06-09T14:15:00",
+    "startTime": "2026-06-09T13:30:00.000+02:00",
+    "endTime": "2026-06-09T14:15:00.000+02:00",
     "roomId": "auditorium",
     "theme": "Événement",
     "level": "débutant",
@@ -143,12 +143,12 @@
   {
     "id": "context-engineering-pas-des-modeles-plus-malins-du-contexte-plus-malin",
     "title": "Context Engineering : pas des modèles plus malins, du contexte plus malin",
-    "description": "\"Trop de slop.\" \"Usine à dette technique.\" \"Ça marche pas sur les gros repos.\" On a tous vécu ça : on lance un agent IA sur un vrai projet, et le résultat est générique, inadapté, voire cassé. La réaction classique, c'est d'attendre des modèles plus intelligents. Mais le problème n'est pas l'intelligence du modèle, c'est ce qu'on lui donne à manger. Dans ce talk, je vous montre pourquoi le context engineering, la discipline de gérer ce qui entre dans la fenêtre de contexte d'un LLM, est la compétence la plus importante pour tirer parti des outils IA en développement. On verra : Pourquoi les LLMs sont des fonctions stateless, et ce que ça implique concrètement Ce qui bouffe le contexte avant même que l'agent commence à coder La technique de compaction intentionnelle pour garder le savoir sans le bruit Comment les micro-agents permettent de contrôler la qualité en isolant l'exploration Le workflow Research → Plan → Implement qui garde chaque session dans la \"smart zone\" Comment structurer un CLAUDE.md (ou équivalent) pour que l'agent démarre informé Ce talk s'appuie sur le travail de Dex Horthy (HumanLayer, 12-Factor Agents) et sur des exemples concrets tirés de mes propres expérience avec mon équipe. Pas de théorie abstraite : des techniques applicables dès lundi.",
+    "description": "<p>&quot;Trop de slop.&quot; &quot;Usine à dette technique.&quot; &quot;Ça marche pas sur les gros repos.&quot;</p>\n<p>On a tous vécu ça : on lance un agent IA sur un vrai projet, et le résultat est générique, inadapté, voire cassé. La réaction classique, c&#39;est d&#39;attendre des modèles plus intelligents. Mais le problème n&#39;est pas l&#39;intelligence du modèle, c&#39;est ce qu&#39;on lui donne à manger.</p>\n<p>Dans ce talk, je vous montre pourquoi le context engineering, la discipline de gérer ce qui entre dans la fenêtre de contexte d&#39;un LLM, est la compétence la plus importante pour tirer parti des outils IA en développement.</p>\n<p>On verra :</p>\n<ul><li>Pourquoi les LLMs sont des fonctions stateless, et ce que ça implique concrètement</li><li>Ce qui bouffe le contexte avant même que l&#39;agent commence à coder</li><li>La technique de compaction intentionnelle pour garder le savoir sans le bruit</li><li>Comment les micro-agents permettent de contrôler la qualité en isolant l&#39;exploration</li><li>Le workflow Research → Plan → Implement qui garde chaque session dans la &quot;smart zone&quot;</li><li>Comment structurer un CLAUDE.md (ou équivalent) pour que l&#39;agent démarre informé</li></ul>\n<p>Ce talk s&#39;appuie sur le travail de Dex Horthy (HumanLayer, 12-Factor Agents) et sur des exemples concrets tirés de mes propres expérience avec mon équipe. Pas de théorie abstraite : des techniques applicables dès lundi.</p>",
     "speakerIds": [
       "mehdi-lahmam"
     ],
-    "startTime": "2026-06-09T13:30:00",
-    "endTime": "2026-06-09T14:15:00",
+    "startTime": "2026-06-09T13:30:00.000+02:00",
+    "endTime": "2026-06-09T14:15:00.000+02:00",
     "roomId": "conference",
     "theme": "IA, Data & Automatisation",
     "level": "débutant",
@@ -169,12 +169,12 @@
   {
     "id": "de-pionnieres-a-invisibles-ou-sont-passees-les-femmes-dans-l-informatique",
     "title": "De pionnières à invisibles : où sont passées les femmes dans l’informatique ?",
-    "description": "Saviez-vous que les premiers développeurs de l’histoire étaient des femmes ? Que Grace Hopper, Margaret Hamilton ou Ada Lovelace ont posé les fondations de l’informatique moderne, alors même que l’histoire populaire les a presque effacées ? Dans cette conférence, je vous propose un voyage passionnant à travers l’histoire des femmes dans l’informatique, depuis les « human computers » du début du XXᵉ siècle jusqu’aux défis contemporains de l’intelligence artificielle. Nous découvrirons comment ces pionnières ont révolutionné la programmation et le hardware, avant que la micro-informatique et le stéréotype du « geek » masculin ne les marginalisent progressivement. À travers des figures emblématiques comme Grace Hopper et Margaret Hamilton, mais aussi des exceptions françaises comme Alice Recoque, nous explorerons les contributions souvent méconnues des femmes dans le développement des ordinateurs, des logiciels et des systèmes embarqués. Nous réfléchirons ensuite aux conséquences de cette invisibilisation sur les générations actuelles et sur les révolutions numériques récentes, notamment Internet et l’intelligence artificielle, encore largement façonnées sans la participation des femmes. Cette conférence mêle histoire, anecdotes et réflexions sur le présent : pourquoi l’inclusion des femmes dans la tech est encore un combat, et comment faire connaître ces parcours peut inspirer de nouvelles générations de développeuses et ingénieures. Une invitation à repenser la mémoire collective de l’informatique…",
+    "description": "<p>Saviez-vous que les premiers développeurs de l’histoire étaient des femmes ? Que Grace Hopper, Margaret Hamilton ou Ada Lovelace ont posé les fondations de l’informatique moderne, alors même que l’histoire populaire les a presque effacées ?</p>\n<p>Dans cette conférence, je vous propose un voyage passionnant à travers l’histoire des femmes dans l’informatique, depuis les « human computers » du début du XXᵉ siècle jusqu’aux défis contemporains de l’intelligence artificielle. Nous découvrirons comment ces pionnières ont révolutionné la programmation et le hardware, avant que la micro-informatique et le stéréotype du « geek » masculin ne les marginalisent progressivement.</p>\n<p>À travers des figures emblématiques comme Grace Hopper et Margaret Hamilton, mais aussi des exceptions françaises comme Alice Recoque, nous explorerons les contributions souvent méconnues des femmes dans le développement des ordinateurs, des logiciels et des systèmes embarqués. Nous réfléchirons ensuite aux conséquences de cette invisibilisation sur les générations actuelles et sur les révolutions numériques récentes, notamment Internet et l’intelligence artificielle, encore largement façonnées sans la participation des femmes.</p>\n<p>Cette conférence mêle histoire, anecdotes et réflexions sur le présent : pourquoi l’inclusion des femmes dans la tech est encore un combat, et comment faire connaître ces parcours peut inspirer de nouvelles générations de développeuses et ingénieures. Une invitation à repenser la mémoire collective de l’informatique…</p>",
     "speakerIds": [
       "chloe-masse"
     ],
-    "startTime": "2026-06-09T14:30:00",
-    "endTime": "2026-06-09T15:15:00",
+    "startTime": "2026-06-09T14:30:00.000+02:00",
+    "endTime": "2026-06-09T15:15:00.000+02:00",
     "roomId": "auditorium",
     "theme": "Autres",
     "level": "débutant",
@@ -183,12 +183,12 @@
   {
     "id": "toujours-plus-vite-filtrer-le-traffic-chez-meta",
     "title": "Toujours plus vite : filtrer le traffic chez Meta",
-    "description": "Ici, pas d'UI. Pas de cloud. Pas de framework. On écrit de l'assembleur, on teste, on push en prod, et on prie pour pas avoir introduit un bug qui down Instagram. Si j'ai piqué ta curiosité, viens, prends ma main. Je t'emmène avec moi filtrer des paquets réseau. 100 à 800GB/s, du matériel (presque) grand public, des millions de serveurs. Le terrain de jeu est immense. Entre avec moi dans un monde où chaque nanoseconde compte, un monde où les succès sont silencieux et les échecs assourdissants. N'aie crainte, tu ne risques rien : je suis un professionnel. Je te ferai découvrir les entrailles du noyau Linux et la génération d'assembleur à la volée. Promis, on va s'amuser...",
+    "description": "<p>Ici, pas d&#39;UI. Pas de cloud. Pas de framework. On écrit de l&#39;assembleur, on teste, on push en prod, et on prie pour pas avoir introduit un bug qui down Instagram.</p>\n<p>Si j&#39;ai piqué ta curiosité, viens, prends ma main. Je t&#39;emmène avec moi filtrer des paquets réseau. 100 à 800GB/s, du matériel (presque) grand public, des millions de serveurs. Le terrain de jeu est immense. Entre avec moi dans un monde où chaque nanoseconde compte, un monde où les succès sont silencieux et les échecs  assourdissants.</p>\n<p>N&#39;aie crainte, tu ne risques rien : je suis un professionnel. Je te ferai découvrir les entrailles du noyau Linux et la génération d&#39;assembleur à la volée. Promis, on va s&#39;amuser...</p>",
     "speakerIds": [
       "quentin-deslandes"
     ],
-    "startTime": "2026-06-09T14:30:00",
-    "endTime": "2026-06-09T15:15:00",
+    "startTime": "2026-06-09T14:30:00.000+02:00",
+    "endTime": "2026-06-09T15:15:00.000+02:00",
     "roomId": "conference",
     "theme": "Tech & Ingénierie Logicielle",
     "level": "intermédiaire",
@@ -209,12 +209,12 @@
   {
     "id": "migration-de-300-bases-postgresql-vers-kubernetes-retour-d-experience-avec-cloudnativepg",
     "title": "Migration de 300 bases PostgreSQL vers Kubernetes : retour d'expérience avec CloudNativePG",
-    "description": "Chez Mirakl, on aime beaucoup les bases de données et en particulier PostgreSQL. Depuis la création de l'entreprise, la stack base de données n'avait pas trop bougé et était provisionnée à partir du célèbre combo Terraform + Ansible. C'était bien en 2013, mais avec la croissance de l'entreprise il était de plus en plus difficile de maintenir ces composants à jour, scalable et évolutifs. Fort de ce constat, en 2022 nous avons étudié différentes options. En bon SRE, notre choix s'est porté assez naturellement vers CloudNativePG, un opérateur Kubernetes pour gérer du PostgreSQL. Un long chemin a débuté en 2023 : comment intégrer l'opérateur à notre écosystème ? Comment déployer nos nouveaux clients sur cette nouvelle stack ? Et surtout, comment migrer nos 300 environnements actuellement en production tout en garantissant une indisponibilité minimale pour nos clients ? Après une première étape \"tranquille\" et un arrêt forcé par le Black Friday, nous avons repris nos migrations sans nous douter que le read_ahead du kernel Linux allait nous poser autant de difficultés ! Une fois l'ensemble de nos environnements sur CloudNativePG, notre aventure se poursuit à l'été 2025 avec le passage de PostgreSQL 12 (sic !) à la version 17. Alors, \"easy\" les migrations PostgreSQL avec CNPG ? Peut-être pas autant qu'espéré 🙂 Dans ce retour d'expérience sans filtre, vous apprendrez de nombreuses choses sur Kubernetes, ArgoCD, PostgreSQL, Linux, et même sur vous-même ! Vous repartirez avec des patterns concrets, des anti-patterns à éviter absolument, et surtout la conviction que migrer 300 bases PostgreSQL en production vers Kubernetes est possible — à condition de ne jamais sous-estimer ni son kernel Linux, ni son Black Friday.",
+    "description": "<p>Chez Mirakl, on aime beaucoup les bases de données et en particulier PostgreSQL.</p>\n<p>Depuis la création de l&#39;entreprise, la stack base de données n&#39;avait pas trop bougé et était provisionnée à partir du célèbre combo Terraform + Ansible. C&#39;était bien en 2013, mais avec la croissance de l&#39;entreprise il était de plus en plus difficile de maintenir ces composants à jour, scalable et évolutifs.</p>\n<p>Fort de ce constat, en 2022 nous avons étudié différentes options. En bon SRE, notre choix s&#39;est porté assez naturellement vers CloudNativePG, un opérateur Kubernetes pour gérer du PostgreSQL.</p>\n<p>Un long chemin a débuté en 2023 : comment intégrer l&#39;opérateur à notre écosystème ? Comment déployer nos nouveaux clients sur cette nouvelle stack ? Et surtout, comment migrer nos 300 environnements actuellement en production tout en garantissant une indisponibilité minimale pour nos clients ? Après une première étape &quot;tranquille&quot; et un arrêt forcé par le Black Friday, nous avons repris nos migrations sans nous douter que le read_ahead du kernel Linux allait nous poser autant de difficultés !</p>\n<p>Une fois l&#39;ensemble de nos environnements sur CloudNativePG, notre aventure se poursuit à l&#39;été 2025 avec le passage de PostgreSQL 12 (sic !) à la version 17. Alors, &quot;easy&quot; les migrations PostgreSQL avec CNPG ? Peut-être pas autant qu&#39;espéré 🙂</p>\n<p>Dans ce retour d&#39;expérience sans filtre, vous apprendrez de nombreuses choses sur Kubernetes, ArgoCD, PostgreSQL, Linux, et même sur vous-même ! </p>\n<p>Vous repartirez avec des patterns concrets, des anti-patterns à éviter absolument, et surtout la conviction que migrer 300 bases PostgreSQL en production vers Kubernetes est possible — à condition de ne jamais sous-estimer ni son kernel Linux, ni son Black Friday.</p>",
     "speakerIds": [
       "emmanuel-lagree"
     ],
-    "startTime": "2026-06-09T15:45:00",
-    "endTime": "2026-06-09T16:30:00",
+    "startTime": "2026-06-09T15:45:00.000+02:00",
+    "endTime": "2026-06-09T16:30:00.000+02:00",
     "roomId": "auditorium",
     "theme": "Tech & Ingénierie Logicielle",
     "level": "intermédiaire",
@@ -223,12 +223,12 @@
   {
     "id": "de-l-open-data-a-la-ville-un-urbaniste-bidouilleur-temoigne",
     "title": "De l'open data à la ville : un urbaniste bidouilleur témoigne",
-    "description": "Urbaniste de métier, pas développeur pour un sou. Pourtant, l'open data s'est imposée dans mon quotidien professionnel — pour cartographier les logements vacants d'un territoire, recenser les commerces sobres ou explorer des dynamiques urbaines que les études classiques ne voient pas. Dans ce retour d'expérience, je raconterai comment un professionnel de l'aménagement sans formation technique s'est approprié des outils et des données ouvertes pour produire de la connaissance utile, partageable et libre. Via des projets comme pasdevacances.org — qui croise données publiques et la plateforme Datafair de Koumoul — je montrerai ce qu'on peut faire avec peu de moyens, beaucoup de curiosité et des infrastructures ouvertes. Ce sera aussi un plaidoyer : une part trop grande de données publiques reste enfouie ou non publiée. Et les outils qui existent sont encore trop peu connus des professionnels qui pourraient en faire des usages puissants. Vous repartirez avec : la conviction que l'open data n'est pas réservée aux devs — et quelques pistes concrètes pour commencer à bidouiller.",
+    "description": "<p>Urbaniste de métier, pas développeur pour un sou. Pourtant, l&#39;open data s&#39;est imposée dans mon quotidien professionnel — pour cartographier les logements vacants d&#39;un territoire, recenser les commerces sobres ou explorer des dynamiques urbaines que les études classiques ne voient pas.</p>\n<p>Dans ce retour d&#39;expérience, je raconterai comment un professionnel de l&#39;aménagement sans formation technique s&#39;est approprié des outils et des données ouvertes pour produire de la connaissance utile, partageable et libre. </p>\n<p>Via des projets comme pasdevacances.org — qui croise données publiques et la plateforme Datafair de Koumoul — je montrerai ce qu&#39;on peut faire avec peu de moyens, beaucoup de curiosité et des infrastructures ouvertes.</p>\n<p>Ce sera aussi un plaidoyer : une part trop grande de données publiques reste enfouie ou non publiée. Et les outils qui existent sont encore trop peu connus des professionnels qui pourraient en faire des usages puissants.</p>\n<p>Vous repartirez avec : la conviction que l&#39;open data n&#39;est pas réservée aux devs — et quelques pistes concrètes pour commencer à bidouiller.</p>",
     "speakerIds": [
       "thomas-charrier"
     ],
-    "startTime": "2026-06-09T15:45:00",
-    "endTime": "2026-06-09T16:30:00",
+    "startTime": "2026-06-09T15:45:00.000+02:00",
+    "endTime": "2026-06-09T16:30:00.000+02:00",
     "roomId": "conference",
     "theme": "Autres",
     "level": "débutant",
@@ -249,12 +249,12 @@
   {
     "id": "l-ia-fait-le-boulot-reste-a-savoir-lequel",
     "title": "L'IA fait le boulot. Reste à savoir lequel.",
-    "description": "Il y a encore quelques mois, l'IA pondait des écrans génériques, dignes d'un kit UI gratuit… et moche. Pour obtenir ce chef-d'œuvre, il fallait rédiger un prompt plus long que l'odyssée. Autant dire qu'on était plus proche du \"cousin qui fait du design\" que de l'équipe d'Apple au bout du clavier. Sauf que ça, c'était avant. Aujourd'hui, entre les agents IA et le design conversationnel, on peut prototyper à la voix, itérer en temps réel, et aller dix fois plus loin qu'avant. L'outil est devenu redoutable. Mais un outil redoutable sans quelqu'un qui sait où il va, ça reste un canon qui tire dans tous les sens. Mon rêve en tant qu'UX designer n'a jamais été de pousser des pixels. Ce qui m'anime, c'est de résoudre de vrais problèmes pour de vrais utilisateurs, avec leurs contraintes bien concrètes. Et ça, aucun agent ne le fait à votre place. Cette conférence, c'est un retour d'expérience sans filtre après 15 ans en design et dev front. Ce que l'IA change vraiment dans le process, pourquoi on a plus que jamais besoin d'un capitaine dans le navire… et pourquoi les designers ont encore une sacrée carte à jouer. Au moins jusqu'à la prochaine mise à jour.",
+    "description": "<p>Il y a encore quelques mois, l&#39;IA pondait des écrans génériques, dignes d&#39;un kit UI gratuit… et moche. Pour obtenir ce chef-d&#39;œuvre, il fallait rédiger un prompt plus long que l&#39;odyssée. Autant dire qu&#39;on était plus proche du &quot;cousin qui fait du design&quot; que de l&#39;équipe d&#39;Apple au bout du clavier.</p>\n<p>Sauf que ça, c&#39;était avant. Aujourd&#39;hui, entre les agents IA et le design conversationnel, on peut prototyper à la voix, itérer en temps réel, et aller dix fois plus loin qu&#39;avant. L&#39;outil est devenu redoutable. Mais un outil redoutable sans quelqu&#39;un qui sait où il va, ça reste un canon qui tire dans tous les sens.</p>\n<p>Mon rêve en tant qu&#39;UX designer n&#39;a jamais été de pousser des pixels. Ce qui m&#39;anime, c&#39;est de résoudre de vrais problèmes pour de vrais utilisateurs, avec leurs contraintes bien concrètes. Et ça, aucun agent ne le fait à votre place.</p>\n<p>Cette conférence, c&#39;est un retour d&#39;expérience sans filtre après 15 ans en design et dev front. Ce que l&#39;IA change vraiment dans le process, pourquoi on a plus que jamais besoin d&#39;un capitaine dans le navire… et pourquoi les designers ont encore une sacrée carte à jouer. Au moins jusqu&#39;à la prochaine mise à jour.</p>",
     "speakerIds": [
       "ivan-dalmet"
     ],
-    "startTime": "2026-06-09T17:00:00",
-    "endTime": "2026-06-09T17:45:00",
+    "startTime": "2026-06-09T17:00:00.000+02:00",
+    "endTime": "2026-06-09T17:45:00.000+02:00",
     "roomId": "auditorium",
     "theme": "UX / UI & Design Produit",
     "level": "débutant",
@@ -263,12 +263,12 @@
   {
     "id": "the-blind-designer-construire-des-produits-pour-airbnb-uber-ou-younited-en-perdant-progressivement-la-vue",
     "title": "The Blind Designer — Construire des produits pour Airbnb, Uber ou Younited en perdant progressivement la vue",
-    "description": "À 15 ans, j’apprends que je suis atteint de rétinite pigmentaire. Une maladie dégénérative qui me fera perdre progressivement la vue. À 35 ans, j’ai perdu environ 50 % de ma vision. Entre ces deux moments, j’ai pourtant construit ma carrière dans l’un des métiers les plus visuels qui soient : le design produit. J’ai travaillé avec certaines des startups les plus influentes (Airbnb, Uber, Deliveroo, WeWork), participé à l’hyper-croissance de Meero (de 4 à 1500 employés) et aidé plus de 30 startups à passer le cap critique du 0 → 1. Dans ce talk, je partage ce que concevoir des produits en étant malvoyant m’a appris sur le design, les organisations et la créativité. Comment transformer une contrainte extrême en avantage. Pourquoi le design est un levier stratégique pour les entreprises. Et comment l’IA est en train de redéfinir ce que signifie vraiment « concevoir ». Un retour d’expérience honnête sur 20 ans de design dans des environnements à très forte pression, entre intuition, systèmes imparfaits et méthodes parfois… assez atypiques.",
+    "description": "<p>À 15 ans, j’apprends que je suis atteint de rétinite pigmentaire. Une maladie dégénérative qui me fera perdre progressivement la vue.</p>\n<p>À 35 ans, j’ai perdu environ 50 % de ma vision.</p>\n<p>Entre ces deux moments, j’ai pourtant construit ma carrière dans l’un des métiers les plus visuels qui soient : le design produit.</p>\n<p>J’ai travaillé avec certaines des startups les plus influentes (Airbnb, Uber, Deliveroo, WeWork), participé à l’hyper-croissance de Meero (de 4 à 1500 employés) et aidé plus de 30 startups à passer le cap critique du 0 → 1.</p>\n<p>Dans ce talk, je partage ce que concevoir des produits en étant malvoyant m’a appris sur le design, les organisations et la créativité.</p>\n<p>Comment transformer une contrainte extrême en avantage. Pourquoi le design est un levier stratégique pour les entreprises. Et comment l’IA est en train de redéfinir ce que signifie vraiment « concevoir ».</p>\n<p>Un retour d’expérience honnête sur 20 ans de design dans des environnements à très forte pression, entre intuition, systèmes imparfaits et méthodes parfois… assez atypiques.</p>",
     "speakerIds": [
       "francois-nikolenko"
     ],
-    "startTime": "2026-06-09T17:00:00",
-    "endTime": "2026-06-09T17:45:00",
+    "startTime": "2026-06-09T17:00:00.000+02:00",
+    "endTime": "2026-06-09T17:45:00.000+02:00",
     "roomId": "conference",
     "theme": "UX / UI & Design Produit",
     "level": "intermédiaire",
@@ -279,8 +279,8 @@
     "title": "Cloture Caen.Tech",
     "description": "Cloture Caen.Tech",
     "speakerIds": [],
-    "startTime": "2026-06-09T17:45:00",
-    "endTime": "2026-06-09T18:00:00",
+    "startTime": "2026-06-09T17:45:00.000+02:00",
+    "endTime": "2026-06-09T18:00:00.000+02:00",
     "roomId": "conference",
     "theme": "Événement",
     "level": "débutant",

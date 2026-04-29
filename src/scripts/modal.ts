@@ -54,7 +54,10 @@ function populateModal(talk: TalkData) {
     <span class="Tag type">${escapeHtml(talk.type)}</span>
   `;
 
-  let bodyHtml = `<p>${escapeHtml(talk.description)}</p>`;
+  const descriptionHtml = talk.description.trim().startsWith("<")
+    ? talk.description
+    : `<p>${escapeHtml(talk.description)}</p>`;
+  let bodyHtml = `<div class="Modal-description">${descriptionHtml}</div>`;
 
   for (const speaker of talk.speakers) {
     bodyHtml += `

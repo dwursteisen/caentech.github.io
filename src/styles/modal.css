@@ -100,6 +100,62 @@
   line-height: 1.7;
 }
 
+.Modal-description > :last-child {
+  margin-bottom: 0;
+}
+
+.Modal-description h3,
+.Modal-description h4,
+.Modal-description h5 {
+  font-weight: 700;
+  line-height: 1.3;
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-sm);
+}
+
+.Modal-description h3 {
+  font-size: var(--text-lg);
+}
+
+.Modal-description h4 {
+  font-size: var(--text-base);
+}
+
+.Modal-description h5 {
+  font-size: var(--text-base);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-light);
+}
+
+.Modal-description ul {
+  margin: 0 0 var(--space-md) var(--space-md);
+  padding: 0;
+  list-style: disc outside;
+}
+
+.Modal-description li {
+  margin-bottom: var(--space-xs);
+  line-height: 1.7;
+}
+
+.Modal-description li::marker {
+  color: var(--color-text-light);
+}
+
+.Modal-description strong {
+  font-weight: 700;
+}
+
+.Modal-description em {
+  font-style: italic;
+}
+
+.Modal-description a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
 /* Speaker cards inside modal */
 .Modal-speaker {
   display: flex;
