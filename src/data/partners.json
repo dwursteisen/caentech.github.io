@@ -26,5 +26,12 @@
     "logo": "/images/partners/show-me-the-rex.webp",
     "url": "https://www.showmetherex.com",
     "description": "Partenaire média de Caen.Tech, Show me the REX est un portail de partage et de valorisation des REX projets sur la Tech, de la data et de l’IA"
+  },
+  {
+    "id": "appel-cyber-juin",
+    "name": "L'Appel du Cyber Juin",
+    "logo": "/images/partners/appel-cyber-juin.webp",
+    "url": "https://appelcyberjuin.sciencesconf.org",
+    "description": "Inspiré par l’esprit de résilience du célèbre Appel du 18 juin 1940, cet événement inédit, dont la 1ère édition s’est déroulé du 10 juin au 5 juillet 2024, met en lumière l’engagement des différents acteurs normands investis dans la cybersécurité sur tout le territoire."
   }
 ]
