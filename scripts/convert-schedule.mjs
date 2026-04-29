@@ -41,18 +41,108 @@ function detectType(formats) {
   return "conférence";
 }
 
-function stripMarkdown(text) {
+function escapeHtml(text) {
+  return text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function renderInline(text) {
+  let out = escapeHtml(text);
+  // Links: [label](url) — emit before bold/italic so we don't eat * inside URLs
+  out = out.replace(
+    /\[([^\]]+)\]\(([^)\s]+)\)/g,
+    (_m, label, url) =>
+      `<a href="${url}" target="_blank" rel="noopener noreferrer">${label}</a>`,
+  );
+  // Bold: **text**
+  out = out.replace(/\*\*([^*\n]+?)\*\*/g, "<strong>$1</strong>");
+  // Italic: *text* (avoid matching ** by requiring non-* on each side)
+  out = out.replace(
+    /(^|[^*])\*([^*\n]+?)\*(?!\*)/g,
+    "$1<em>$2</em>",
+  );
+  return out;
+}
+
+function markdownToHtml(text) {
+  if (!text) return "";
+  const lines = text.replace(/\r\n/g, "\n").split("\n");
+  const blocks = [];
+  let i = 0;
+
+  while (i < lines.length) {
+    const line = lines[i];
+
+    if (line.trim() === "") {
+      i++;
+      continue;
+    }
+
+    const heading = line.match(/^(#{1,6})\s+(.+?)\s*#*\s*$/);
+    if (heading) {
+      // Shift down by one so headings nest under the modal's h2 title
+      const level = Math.min(6, heading[1].length + 1);
+      blocks.push(`<h${level}>${renderInline(heading[2])}</h${level}>`);
+      i++;
+      continue;
+    }
+
+    if (/^\s*[-*]\s+/.test(line)) {
+      const items = [];
+      while (i < lines.length && /^\s*[-*]\s+/.test(lines[i])) {
+        let item = lines[i].replace(/^\s*[-*]\s+/, "");
+        i++;
+        // Continuation lines (indented, no list marker)
+        while (
+          i < lines.length &&
+          lines[i].trim() !== "" &&
+          /^\s+\S/.test(lines[i]) &&
+          !/^\s*[-*]\s+/.test(lines[i])
+        ) {
+          item += " " + lines[i].trim();
+          i++;
+        }
+        items.push(item);
+      }
+      blocks.push(
+        `<ul>${items.map((it) => `<li>${renderInline(it)}</li>`).join("")}</ul>`,
+      );
+      continue;
+    }
+
+    const paraLines = [line];
+    i++;
+    while (
+      i < lines.length &&
+      lines[i].trim() !== "" &&
+      !/^#{1,6}\s+/.test(lines[i]) &&
+      !/^\s*[-*]\s+/.test(lines[i])
+    ) {
+      paraLines.push(lines[i]);
+      i++;
+    }
+    blocks.push(`<p>${renderInline(paraLines.join(" "))}</p>`);
+  }
+
+  return blocks.join("\n");
+}
+
+function markdownToPlainText(text) {
   if (!text) return "";
   return text
+    .replace(/\r\n/g, "\n")
     .replace(/\*\*(.*?)\*\*/g, "$1")
     .replace(/\*(.*?)\*/g, "$1")
     .replace(/\[(.*?)\]\(.*?\)/g, "$1")
     .replace(/^#+\s+/gm, "")
     .replace(/^\s*[-*]\s+/gm, "")
-    .replace(/\n{2,}/g, " ")
-    .replace(/\n/g, " ")
-    .replace(/\s{2,}/g, " ")
-    .replace(/[📣📈😱🤖💡🔥✨🎯🚀🧠💻🎉👀🏆]+/gu, "")
+    .replace(/[ \t]+\n/g, "\n")
+    .replace(/\n{3,}/g, "\n\n")
+    .replace(/[ \t]{2,}/g, " ")
     .trim();
 }
 
@@ -94,7 +184,7 @@ for (const session of data.sessions) {
         name: speaker.name,
         role: "",
         company: speaker.company || "",
-        bio: stripMarkdown(speaker.bio) || "",
+        bio: markdownToPlainText(speaker.bio) || "",
         ...(speaker.picture ? { photo: speaker.picture } : {}),
       });
     }
@@ -119,7 +209,7 @@ for (const session of data.sessions) {
     }
     level = mapLevel(session.proposal.level);
     type = detectType(session.proposal.formats);
-    description = stripMarkdown(session.proposal.abstract) || session.title;
+    description = markdownToHtml(session.proposal.abstract) || session.title;
     theme = mapCategories(session.proposal.categories);
   }
 
