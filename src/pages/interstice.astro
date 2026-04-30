@@ -10,7 +10,11 @@ const site = siteEntry!.data;
 
 function formatTime(iso: string): string {
   const d = new Date(iso);
-  return d.toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
+  return d.toLocaleTimeString("fr-FR", {
+    hour: "2-digit",
+    minute: "2-digit",
+    timeZone: "Europe/Paris",
+  });
 }
 
 function getSpeakerNames(ids: string[]): string {
@@ -246,6 +250,7 @@ const roomsJson = JSON.stringify(
           const time = new Date(item.startTime).toLocaleTimeString("fr-FR", {
             hour: "2-digit",
             minute: "2-digit",
+            timeZone: "Europe/Paris",
           });
           const isBreak = isBreakItem(item);
           const isCurrent = !isBreak && isCurrentItem(item);
@@ -288,6 +293,7 @@ const roomsJson = JSON.stringify(
             const time = new Date(item.startTime).toLocaleTimeString("fr-FR", {
               hour: "2-digit",
               minute: "2-digit",
+              timeZone: "Europe/Paris",
             });
             const isCurrent = isCurrentItem(item);
             const isPast = isPastItem(item);
@@ -361,10 +367,12 @@ const roomsJson = JSON.stringify(
           const startT = new Date(item.startTime).toLocaleTimeString("fr-FR", {
             hour: "2-digit",
             minute: "2-digit",
+            timeZone: "Europe/Paris",
           });
           const endT = new Date(item.endTime).toLocaleTimeString("fr-FR", {
             hour: "2-digit",
             minute: "2-digit",
+            timeZone: "Europe/Paris",
           });
           const isActive = item.roomId === activeSalle || item.roomId === "all";
           const roomLabel = item.roomId === "all" ? "Toutes les salles" : (room ? room.name : "");
