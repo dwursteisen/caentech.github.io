@@ -71,6 +71,7 @@ const roomsJson = JSON.stringify(
     />
   </head>
   <body>
+    <div class="Interstice-stage">
     <!-- ===== Slide 1: Programme ===== -->
     <div class="Interstice-slide" data-slide="programme">
       <div class="Interstice-diagonal"></div>
@@ -160,6 +161,20 @@ const roomsJson = JSON.stringify(
       <button class="Interstice-pip" data-target="sponsors" aria-label="Sponsors"></button>
       <button class="Interstice-pip" data-target="session" aria-label="Session courante"></button>
     </div>
+    </div>
+
+    <script is:inline>
+      (function fitStage() {
+        const stage = document.querySelector(".Interstice-stage");
+        if (!stage) return;
+        function apply() {
+          const scale = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+          stage.style.transform = "scale(" + scale + ")";
+        }
+        apply();
+        window.addEventListener("resize", apply);
+      })();
+    </script>
 
     <script is:inline define:vars={{ programJson, roomsJson }}>
       const program = JSON.parse(programJson);
@@ -207,18 +222,89 @@ const roomsJson = JSON.stringify(
         return nowMinutes < startMin;
       }
 
-      // Keep only the last N past items + all current/future items
-      function trimPastItems(items, keepPast) {
+      // Keep only the last N past items + up to keepFuture upcoming items
+      function trimPastItems(items, keepPast, keepFuture) {
         const pastItems = items.filter((p) => isPastItem(p));
         const rest = items.filter((p) => !isPastItem(p));
-        const trimmed = pastItems.slice(-keepPast);
-        return trimmed.concat(rest);
+        const trimmedPast = pastItems.slice(-keepPast);
+        const trimmedFuture = keepFuture != null ? rest.slice(0, keepFuture) : rest;
+        return trimmedPast.concat(trimmedFuture);
       }
 
       // --- Programme slide ---
+      function renderProgrammeItem(item, secondary) {
+        const time = new Date(item.startTime).toLocaleTimeString("fr-FR", {
+          hour: "2-digit",
+          minute: "2-digit",
+          timeZone: "Europe/Paris",
+        });
+        const isBreak = isBreakItem(item);
+        const isCurrent = !isBreak && isCurrentItem(item);
+        const isPast = isPastItem(item);
+        let cls = "Programme-item";
+        if (secondary) cls += " is-secondary";
+        if (isBreak) cls += " is-break";
+        if (isPast) cls += " is-past";
+        if (isCurrent) cls += " is-current";
+        let html = '<div class="' + cls + '">';
+        html +=
+          '<span class="Programme-itemTime' +
+          (secondary ? " is-secondary" : "") +
+          '">' +
+          time +
+          "</span>";
+        html += '<div class="Programme-itemBody">';
+        html +=
+          '<h3 class="Programme-itemTitle' +
+          (secondary ? " is-secondary" : "") +
+          '">' +
+          item.title +
+          "</h3>";
+        if (item.speakers) {
+          html += '<p class="Programme-itemSpeakers">' + item.speakers + "</p>";
+        }
+        html += "</div>";
+        if (item.type === "atelier" && !secondary) {
+          html += '<span class="Programme-itemTag">Atelier</span>';
+        }
+        html += "</div>";
+        return html;
+      }
+
       function buildProgramme() {
         const grid = document.getElementById("programme-grid");
         if (!grid) return;
+
+        // TV mode: render every room as an equal-width main column
+        // (no main/secondary distinction).
+        if (activeSalle === "tv") {
+          let tvHtml = "";
+          for (const r of rooms) {
+            const items = program
+              .filter((p) => p.roomId === r.id || p.roomId === "all")
+              .sort(
+                (a, b) =>
+                  new Date(a.startTime).getTime() - new Date(b.startTime).getTime(),
+              );
+            const visible = trimPastItems(items, 1, 11);
+            tvHtml += '<section class="Programme-main">';
+            tvHtml +=
+              '<div class="Programme-roomHeader">' +
+              '<h2 class="Programme-roomName">' +
+              r.name +
+              "</h2>" +
+              '<div class="Programme-roomLine"></div>' +
+              "</div>";
+            tvHtml += '<div class="Programme-items">';
+            for (const item of visible) {
+              tvHtml += renderProgrammeItem(item, false);
+            }
+            tvHtml += "</div></section>";
+          }
+          grid.innerHTML = tvHtml;
+          grid.classList.add("is-tv");
+          return;
+        }
 
         const activeRoom = rooms.find((r) => r.id === activeSalle);
         const secondaryRooms = rooms.filter((r) => r.id !== activeSalle);
@@ -245,33 +331,8 @@ const roomsJson = JSON.stringify(
           '<div class="Programme-roomLine"></div>' +
           "</div>";
         html += '<div class="Programme-items">';
-        const visibleMainItems = trimPastItems(mainItems, 2);
-        for (const item of visibleMainItems) {
-          const time = new Date(item.startTime).toLocaleTimeString("fr-FR", {
-            hour: "2-digit",
-            minute: "2-digit",
-            timeZone: "Europe/Paris",
-          });
-          const isBreak = isBreakItem(item);
-          const isCurrent = !isBreak && isCurrentItem(item);
-          const isPast = isPastItem(item);
-          let cls = "Programme-item";
-          if (isBreak) cls += " is-break";
-          if (isPast) cls += " is-past";
-          if (isCurrent) cls += " is-current";
-          html += '<div class="' + cls + '">';
-          html += '<span class="Programme-itemTime">' + time + "</span>";
-          html += '<div class="Programme-itemBody">';
-          html += '<h3 class="Programme-itemTitle">' + item.title + "</h3>";
-          if (item.speakers) {
-            html += '<p class="Programme-itemSpeakers">' + item.speakers + "</p>";
-          }
-          html += "</div>";
-          if (item.type === "atelier") {
-            html +=
-              '<span class="Programme-itemTag">Atelier</span>';
-          }
-          html += "</div>";
+        for (const item of trimPastItems(mainItems, 1, 11)) {
+          html += renderProgrammeItem(item, false);
         }
         html += "</div></section>";
 
@@ -288,24 +349,8 @@ const roomsJson = JSON.stringify(
             '<div class="Programme-roomLine"></div>' +
             "</div>";
           html += '<div class="Programme-items is-secondary">';
-          const visibleItems = trimPastItems(items, 2);
-          for (const item of visibleItems) {
-            const time = new Date(item.startTime).toLocaleTimeString("fr-FR", {
-              hour: "2-digit",
-              minute: "2-digit",
-              timeZone: "Europe/Paris",
-            });
-            const isCurrent = isCurrentItem(item);
-            const isPast = isPastItem(item);
-            html += '<div class="Programme-item is-secondary' + (isPast ? " is-past" : "") + (isCurrent ? " is-current" : "") + '">';
-            html += '<span class="Programme-itemTime is-secondary">' + time + "</span>";
-            html += '<div class="Programme-itemBody">';
-            html += '<h3 class="Programme-itemTitle is-secondary">' + item.title + "</h3>";
-            if (item.speakers) {
-              html += '<p class="Programme-itemSpeakers">' + item.speakers + "</p>";
-            }
-            html += "</div>";
-            html += "</div>";
+          for (const item of trimPastItems(items, 1, 11)) {
+            html += renderProgrammeItem(item, true);
           }
           html += "</div></section>";
         }
@@ -408,21 +453,7 @@ const roomsJson = JSON.stringify(
 
       function showSlide(index) {
         slides.forEach((s, i) => {
-          if (i === index) {
-            s.classList.add("is-entering");
-            s.classList.remove("is-leaving", "is-hidden");
-          } else if (s.classList.contains("is-entering") || (!s.classList.contains("is-hidden"))) {
-            s.classList.add("is-leaving");
-            s.classList.remove("is-entering");
-            s.addEventListener(
-              "animationend",
-              () => {
-                s.classList.add("is-hidden");
-                s.classList.remove("is-leaving");
-              },
-              { once: true },
-            );
-          }
+          s.hidden = i !== index;
         });
         pips.forEach((p, i) => p.classList.toggle("is-active", i === index));
       }
@@ -437,8 +468,7 @@ const roomsJson = JSON.stringify(
       buildSession();
 
       slides.forEach((s, i) => {
-        if (i !== 0) s.classList.add("is-hidden");
-        else s.classList.add("is-entering");
+        s.hidden = i !== 0;
       });
 
       let timer = setInterval(nextSlide, INTERVAL);
@@ -466,13 +496,28 @@ const roomsJson = JSON.stringify(
 
       html,
       body {
-        width: 1920px;
-        height: 1080px;
+        width: 100vw;
+        height: 100vh;
         overflow: hidden;
         font-family: "Outfit", system-ui, sans-serif;
         background: #000;
         color: #fff;
         -webkit-font-smoothing: antialiased;
+      }
+
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* === Stage: fixed 1920x1080 design surface, scaled to fit viewport === */
+      .Interstice-stage {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        flex-shrink: 0;
+        transform-origin: center center;
       }
 
       /* === Slide shell === */
@@ -485,38 +530,10 @@ const roomsJson = JSON.stringify(
         color: #1b1b1b;
         display: flex;
         flex-direction: column;
-        opacity: 1;
       }
 
-      .Interstice-slide.is-hidden {
-        opacity: 0;
-        pointer-events: none;
-      }
-
-      .Interstice-slide.is-entering {
-        animation: fadeIn 0.6s ease-out forwards;
-      }
-
-      .Interstice-slide.is-leaving {
-        animation: fadeOut 0.6s ease-in forwards;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-
-      @keyframes fadeOut {
-        from {
-          opacity: 1;
-        }
-        to {
-          opacity: 0;
-        }
+      .Interstice-slide[hidden] {
+        display: none;
       }
 
       /* === Diagonal accent === */
@@ -588,7 +605,7 @@ const roomsJson = JSON.stringify(
 
       /* === Pips === */
       .Interstice-pips {
-        position: fixed;
+        position: absolute;
         bottom: 40px;
         left: 64px;
         z-index: 100;
@@ -603,7 +620,6 @@ const roomsJson = JSON.stringify(
         border-radius: 2px;
         background: rgba(27, 27, 27, 0.15);
         cursor: pointer;
-        transition: all 0.3s ease;
       }
 
       .Interstice-pip.is-active {
@@ -630,11 +646,11 @@ const roomsJson = JSON.stringify(
         display: flex;
         align-items: flex-end;
         gap: 24px;
-        margin-bottom: 48px;
+        margin-bottom: 32px;
       }
 
       .Programme-title h1 {
-        font-size: 4rem;
+        font-size: 3.5rem;
         font-weight: 900;
         line-height: 0.9;
         letter-spacing: -0.03em;
@@ -668,7 +684,7 @@ const roomsJson = JSON.stringify(
         display: flex;
         align-items: center;
         gap: 16px;
-        margin-bottom: 24px;
+        margin-bottom: 16px;
       }
 
       .Programme-roomName {
@@ -699,16 +715,15 @@ const roomsJson = JSON.stringify(
       .Programme-items {
         display: flex;
         flex-direction: column;
-        gap: 8px;
+        gap: 4px;
       }
 
       .Programme-item {
         display: flex;
         align-items: center;
         gap: 32px;
-        padding: 20px 24px;
+        padding: 12px 24px;
         border-radius: 12px;
-        transition: background 0.2s;
       }
 
       .Programme-item.is-past {
@@ -734,12 +749,18 @@ const roomsJson = JSON.stringify(
       .Programme-item.is-break {
         background: rgba(27, 27, 27, 0.04);
         color: rgba(27, 27, 27, 0.5);
+        padding-top: 6px;
+        padding-bottom: 6px;
       }
 
       .Programme-item.is-break .Programme-itemTitle {
         text-transform: uppercase;
         letter-spacing: 0.1em;
-        font-size: 0.95rem;
+        font-size: 0.85rem;
+      }
+
+      .Programme-item.is-break .Programme-itemTime {
+        font-size: 1.1rem;
       }
 
       .Programme-itemTime {
@@ -930,13 +951,11 @@ const roomsJson = JSON.stringify(
         background: #fff;
         border-radius: 16px;
         padding: 40px;
-        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid rgba(27, 27, 27, 0.06);
       }
 
       .Session-card.is-active {
         border-left: 6px solid #ffd600;
-        box-shadow: 0 12px 48px rgba(109, 94, 0, 0.12);
       }
 
       .Session-cardHeader {
