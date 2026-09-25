@@ -4,6 +4,7 @@ import IconLinkedin from "./icons/IconLinkedin.astro";
 import IconDiscord from "./icons/IconDiscord.astro";
 import IconWhatsapp from "./icons/IconWhatsapp.astro";
 import IconYoutube from "./icons/IconYoutube.astro";
+import IconSpotify from "./icons/IconSpotify.astro";
 
 const siteEntry = await getEntry("site", "caen-tech-2026");
 const site = siteEntry!.data;
@@ -14,7 +15,7 @@ const navLinks = [
   { href: "/infos-pratiques", label: "Infos pratiques" },
   { href: "/sponsors", label: "Sponsors" },
   { href: "/a-propos", label: "À propos" },
-  { href: "/podcasts", label: "Podcasts" },
+  { href: site.socialLinks.spotify, label: "Podcasts", external: true },
   { href: "/contact", label: "Contact" },
   { href: "/charte-graphique", label: "Charte graphique" },
   {
@@ -62,6 +63,9 @@ const navLinks = [
       </a>
       <a href={site.socialLinks.youtube} target="_blank" aria-label="YouTube">
         <IconYoutube size={20} />
+      </a>
+      <a href={site.socialLinks.spotify} target="_blank" aria-label="Spotify">
+        <IconSpotify size={20} />
       </a>
     </div>
 

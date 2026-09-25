@@ -4,6 +4,7 @@ import IconLinkedin from "./icons/IconLinkedin.astro";
 import IconDiscord from "./icons/IconDiscord.astro";
 import IconWhatsapp from "./icons/IconWhatsapp.astro";
 import IconYoutube from "./icons/IconYoutube.astro";
+import IconSpotify from "./icons/IconSpotify.astro";
 
 const siteEntry = await getEntry("site", "caen-tech-2026");
 const site = siteEntry!.data;
@@ -15,7 +16,7 @@ const navLinks = [
   { href: "/sponsors", label: "Sponsors" },
   { href: "/photos", label: "Photos" },
   { href: "/a-propos", label: "À propos" },
-  { href: "/podcasts", label: "Podcasts" },
+  { href: site.socialLinks.spotify, label: "Podcasts", external: true },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -30,9 +31,13 @@ const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
 
     <nav class="Header-nav" id="main-nav" aria-label="Navigation principale">
       <ul class="Header-navList">
-        {navLinks.map(({ href, label }) => (
+        {navLinks.map(({ href, label, external }) => (
           <li>
-            <a href={href} class:list={["Header-navLink", { active: currentPath === href }]}>
+            <a
+              href={href}
+              class:list={["Header-navLink", { active: currentPath === href }]}
+              {...(external ? { target: "_blank", rel: "noopener" } : {})}
+            >
               {label}
             </a>
           </li>
@@ -52,6 +57,9 @@ const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
       </a>
       <a href={site.socialLinks.youtube} target="_blank" aria-label="YouTube">
         <IconYoutube size={20} />
+      </a>
+      <a href={site.socialLinks.spotify} target="_blank" aria-label="Spotify">
+        <IconSpotify size={20} />
       </a>
     </div>
 

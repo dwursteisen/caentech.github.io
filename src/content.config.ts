@@ -18,6 +18,7 @@ const site = defineCollection({
       discord: z.string().url(),
       whatsapp: z.string().url(),
       youtube: z.string().url(),
+      spotify: z.string().url(),
     }),
     billetterieUrl: z.string().url(),
     email: z.string().email(),
@@ -98,17 +99,6 @@ const team = defineCollection({
   }),
 });
 
-const podcasts = defineCollection({
-  loader: file("src/data/podcasts.json"),
-  schema: z.object({
-    id: z.string(),
-    title: z.string(),
-    image: z.string(),
-    summary: z.string(),
-    links: z.record(z.string(), z.string().url()),
-  }),
-});
-
 const faq = defineCollection({
   loader: file("src/data/faq.json"),
   schema: z.object({
@@ -126,6 +116,5 @@ export const collections = {
   sponsors,
   partners,
   team,
-  podcasts,
   faq,
 };

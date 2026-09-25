@@ -48,10 +48,6 @@ Event partners: `name`, `logo`, `url`, `description`.
 
 Organizers: `name`, `photo`, optional `contact` URL, `volunteer` boolean.
 
-### podcasts
-
-Episodes: `title`, `image`, `summary`, `links` (record of platform name → URL).
-
 ### faq
 
 FAQ entries: `question`, `answer`.

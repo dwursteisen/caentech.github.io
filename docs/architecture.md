@@ -30,7 +30,6 @@ src/
 | `/programme` | `programme.astro` | Full schedule grid + speaker list |
 | `/sponsors` | `sponsors.astro` | Sponsor tiers |
 | `/infos-pratiques` | `infos-pratiques.astro` | Venue, FAQ, practical details |
-| `/podcasts` | `podcasts.astro` | Podcast episodes |
 | `/a-propos` | `a-propos.astro` | About the event and team |
 | `/contact` | `contact.astro` | Contact info |
 

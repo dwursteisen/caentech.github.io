@@ -21,10 +21,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://caen.tech/podcasts/</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://caen.tech/contact/</loc>
     <priority>0.5</priority>
   </url>
