@@ -16,7 +16,6 @@ const navLinks = [
   { href: "/sponsors", label: "Sponsors" },
   { href: "/photos", label: "Photos" },
   { href: "/a-propos", label: "À propos" },
-  { href: site.socialLinks.spotify, label: "Podcasts", external: true },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -58,10 +57,12 @@ const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
       <a href={site.socialLinks.youtube} target="_blank" aria-label="YouTube">
         <IconYoutube size={20} />
       </a>
-      <a href={site.socialLinks.spotify} target="_blank" aria-label="Spotify">
-        <IconSpotify size={20} />
-      </a>
     </div>
+
+    <a href={site.socialLinks.spotify} class="Header-podcast" target="_blank" rel="noopener" aria-label="Écouter le podcast Caen.Tech sur Spotify">
+      <IconSpotify size={18} />
+      <span>Podcast</span>
+    </a>
 
     <button class="Header-toggle" data-nav-toggle aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
       <span class="Header-toggleBar"></span>

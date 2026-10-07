@@ -422,6 +422,41 @@ a.Card:hover,
   }
 }
 
+/* Spotify podcast link — a labelled pill so "Podcast" stays visible */
+.Header-podcast {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  flex-shrink: 0;
+  margin-left: auto;
+  padding: var(--space-xs) var(--space-sm);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid var(--color-text);
+  border-radius: 999px;
+  transition: background-color var(--transition), border-color var(--transition);
+}
+
+.Header-podcast svg {
+  transition: color var(--transition);
+}
+
+.Header-podcast:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.Header-podcast:hover svg {
+  color: #1db954;
+}
+
+@media (min-width: 1024px) {
+  .Header-podcast {
+    margin-left: 0;
+  }
+}
+
 .Header-toggle {
   display: flex;
   flex-direction: column;
@@ -433,7 +468,6 @@ a.Card:hover,
   background: none;
   border: none;
   cursor: pointer;
-  margin-left: auto;
 }
 
 @media (min-width: 1024px) {
