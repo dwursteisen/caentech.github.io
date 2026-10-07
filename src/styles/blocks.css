@@ -300,6 +300,23 @@ a.Card:hover,
   color: #4a2d6e;
 }
 
+/* Lien vers le replay YouTube d'une session */
+.Tag.video {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  /* Poussé à droite de sa ligne de tags (grille et fiche session) */
+  margin-left: auto;
+  background-color: #cc0000;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color var(--transition);
+}
+
+a.Tag.video:hover {
+  background-color: #990000;
+}
+
 /* --- .SocialLinks — Social icons row --- */
 .SocialLinks {
   display: flex;

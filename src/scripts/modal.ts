@@ -16,6 +16,7 @@ interface TalkData {
   level: string;
   type: string;
   photos: string[];
+  videoUrl: string | null;
 }
 
 const modal = document.getElementById("talk-modal")!;
@@ -30,6 +31,8 @@ const dataScript = document.getElementById("talks-data");
 if (dataScript) {
   talksData = JSON.parse(dataScript.textContent || "[]");
 }
+
+const YOUTUBE_ICON = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="12" height="12" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>`;
 
 function formatTime(iso: string) {
   return new Date(iso).toLocaleTimeString("fr-FR", {
@@ -55,6 +58,9 @@ function populateModal(talk: TalkData) {
     <span class="Tag level">${escapeHtml(talk.level)}</span>
     <span class="Tag type">${escapeHtml(talk.type)}</span>
   `;
+  if (talk.videoUrl) {
+    modalMeta.innerHTML += `<a class="Tag video" href="${escapeHtml(talk.videoUrl)}" target="_blank" rel="noopener">${YOUTUBE_ICON} Voir le replay</a>`;
+  }
 
   const descriptionHtml = talk.description.trim().startsWith("<")
     ? talk.description
@@ -118,8 +124,10 @@ function openTalkById(id: string) {
   openModal();
 }
 
-// Click handlers on calendar slots
+// Click handlers on calendar slots (links inside a slot, like the replay tag,
+// keep their own behavior)
 document.addEventListener("click", (e) => {
+  if ((e.target as HTMLElement).closest("a")) return;
   const slot = (e.target as HTMLElement).closest<HTMLElement>(
     "[data-talk-id]"
   );
@@ -135,6 +143,7 @@ document.addEventListener("click", (e) => {
 // Keyboard activation on calendar slots
 document.addEventListener("keydown", (e) => {
   if (e.key !== "Enter" && e.key !== " ") return;
+  if ((e.target as HTMLElement).closest("a")) return;
   const slot = (e.target as HTMLElement).closest<HTMLElement>(
     "[data-talk-id]"
   );

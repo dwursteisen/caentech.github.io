@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import IconYoutube from "./icons/IconYoutube.astro";
 
 interface Props {
   calendarData: {
@@ -21,6 +22,7 @@ interface Props {
           type: string;
           roomId: string;
           isAllRooms: boolean;
+          videoUrl?: string | null;
           nested?: {
             id: string;
             title: string;
@@ -72,6 +74,13 @@ const { timeSlots, rooms } = calendarData;
               <div class="Calendar-slotSpeaker">{allRoomsItem.speakerNames}</div>
             )}
             <div class="Calendar-slotTime">{allRoomsItem.formattedStart} – {allRoomsItem.formattedEnd}</div>
+            {allRoomsItem.videoUrl && (
+              <div class="Calendar-slotTags">
+                <a class="Tag video" href={allRoomsItem.videoUrl} target="_blank" rel="noopener" aria-label={`Voir le replay de « ${allRoomsItem.title} » sur YouTube`}>
+                  <IconYoutube size={12} /> Replay
+                </a>
+              </div>
+            )}
             {allRoomsItem.nested && (
               <div
                 class="Calendar-nested"
@@ -113,6 +122,11 @@ const { timeSlots, rooms } = calendarData;
                 <div class="Calendar-slotTags">
                   <span class="Tag theme">{cellItem.theme}</span>
                   <span class="Tag level">{cellItem.level}</span>
+                  {cellItem.videoUrl && (
+                    <a class="Tag video" href={cellItem.videoUrl} target="_blank" rel="noopener" aria-label={`Voir le replay de « ${cellItem.title} » sur YouTube`}>
+                      <IconYoutube size={12} /> Replay
+                    </a>
+                  )}
                 </div>
               </div>
             );

@@ -6,6 +6,7 @@ import SpeakerList from "../../components/SpeakerList.astro";
 import SpeakerModal from "../../components/SpeakerModal.astro";
 import { getCollection } from "astro:content";
 import sessionPhotos from "../../data/session-photos.json";
+import sessionVideos from "../../data/session-videos.json";
 
 // Load data
 const allProgram = await getCollection("program");
@@ -28,6 +29,13 @@ function formatTime(iso: string) {
     minute: "2-digit",
     timeZone: "Europe/Paris",
   });
+}
+
+// Replay YouTube de la session (playlist Caen.Tech 2026). Toutes les sessions
+// n'en ont pas : renvoie null dans ce cas.
+function getVideoUrl(id: string) {
+  const videoId = (sessionVideos as Record<string, string>)[id];
+  return videoId ? `https://www.youtube.com/watch?v=${videoId}` : null;
 }
 
 function getSpeakerNames(speakerIds: string[]) {
@@ -86,6 +94,7 @@ const timeSlots = sortedTimes.map((time) => {
             type: item.data.type,
             roomId: item.data.roomId,
             isAllRooms: item.data.roomId === "all",
+            videoUrl: getVideoUrl(item.data.id),
           }
         : null,
     };
@@ -112,6 +121,7 @@ const timeSlots = sortedTimes.map((time) => {
         type: allRoomsItem.data.type,
         roomId: allRoomsItem.data.roomId,
         isAllRooms: true,
+        videoUrl: getVideoUrl(allRoomsItem.data.id),
         nested: nested
           ? {
               id: nested.data.id,
@@ -170,6 +180,7 @@ const talksJson = allProgram.map((p) => ({
   // Photos rattachées à la session par recoupement des dates EXIF
   // (voir scripts/generate-session-photos.py). Peut être vide.
   photos: (sessionPhotos as Record<string, string[]>)[p.data.id] ?? [],
+  videoUrl: getVideoUrl(p.data.id),
 }));
 ---
 
