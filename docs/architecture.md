@@ -27,7 +27,7 @@ src/
 | Route | File | Purpose |
 | ------- | ------ | --------- |
 | `/` | `index.astro` | Homepage with hero, teasers, CTA |
-| `/programme` | `programme.astro` | Full schedule grid + speaker list |
+| `/programme/2026` | `programme/2026.astro` | Full schedule grid + speaker list |
 | `/sponsors` | `sponsors.astro` | Sponsor tiers |
 | `/infos-pratiques` | `infos-pratiques.astro` | Venue, FAQ, practical details |
 | `/a-propos` | `a-propos.astro` | About the event and team |

@@ -37,7 +37,7 @@ const talks = allProgram
     <p class="Section-subtitle">Quelques temps forts de la journée</p>
     <div class="Grid cols2" id="program-teaser-grid" aria-live="polite"></div>
     <div class="Section-cta">
-      <a href="/programme" class="Btn outline">Voir le programme complet</a>
+      <a href="/programme/2026" class="Btn outline">Voir le programme complet</a>
     </div>
   </div>
 </section>
@@ -94,7 +94,7 @@ const talks = allProgram
       grid.innerHTML = picks
         .map(
           (item) => `
-            <a class="Card interactive" href="/programme#talk-${encodeURIComponent(item.id)}">
+            <a class="Card interactive" href="/programme/2026#talk-${encodeURIComponent(item.id)}">
               <div class="Card-body">
                 <p class="Card-meta">
                   <span class="Tag theme">${escapeHtml(item.theme)}</span>
